@@ -1,0 +1,279 @@
+[
+  {
+    "name": "Sts Peter and Paul Outstation, Sherigu",
+    "email": "info@stsoutstation.org",
+    "heroImage": "https://example.com/images/sts-hero.jpg",
+    "otherImages": [
+      "https://example.com/images/sts1.jpg",
+      "https://example.com/images/sts2.jpg"
+    ],
+    "writeup": [
+      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum mattis augue justo, id dignissim sem volutpat eget. Sed sit amet nunc ultricies, malesuada urna at, tincidunt orci. Duis lorem elit, lacinia at dolor nec, sollicitudin pulvinar felis. Quisque tempus laoreet tellus. Nam at pretium odio, feugiat convallis mi. Mauris id odio eu turpis egestas maximus. Fusce quis lacinia metus. Nam mollis odio nisi, ut posuere felis interdum eleifend. Sed ullamcorper, est ut pellentesque blandit, odio dui suscipit odio, a consequat enim libero sit amet metus. Quisque viverra, neque ac vestibulum pulvinar, orci dui luctus diam, vel pretium mi nisi id augue. Quisque rhoncus rhoncus nulla vel condimentum. Proin sollicitudin lectus nec arcu maximus, et imperdiet sem rutrum. Etiam eu erat quis velit commodo molestie. Vivamus cursus molestie tincidunt. Proin aliquet nulla nibh, nec tempus lorem pretium vitae. Aliquam erat volutpat.",
+      "Integer faucibus tellus nibh, nec lacinia odio scelerisque et. Morbi ex est, maximus et odio pellentesque, tempor sagittis ligula. Donec eget nibh ornare, maximus urna et, congue lectus. Pellentesque lacus diam, commodo bibendum lobortis et, tristique vitae odio. Etiam risus lectus, ultricies sed odio eu, laoreet pellentesque leo. Nunc interdum tristique purus, eu hendrerit diam ornare sit amet. Vestibulum porttitor justo quis velit ultrices sagittis.",
+      "Ut vel venenatis tellus. Integer accumsan posuere pretium. Praesent faucibus odio quis urna tincidunt lobortis. Nullam vel arcu commodo, sagittis diam id, finibus lacus. Nam ac venenatis neque, sit amet gravida augue. Vivamus tempus semper turpis, sit amet gravida purus suscipit et. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; Fusce ut congue purus. Praesent quis pretium nibh. Morbi tempor ullamcorper neque et maximus. Maecenas sed orci purus. Maecenas pharetra purus sit amet tellus mattis ultrices. Mauris accumsan felis nec felis dictum mattis.",
+      "Proin molestie neque diam, nec dapibus est scelerisque et. Etiam dignissim purus sit amet ligula accumsan sodales. Fusce eget dolor viverra, volutpat mi vel, tincidunt metus. Quisque nunc dolor, tristique et sapien vitae, venenatis suscipit urna. Nam at felis augue. Cras commodo mollis metus vitae hendrerit. In sit amet ipsum risus. Nulla quis odio sollicitudin purus dapibus venenatis a at felis. Cras imperdiet maximus lacus id varius.",
+      "Ut mollis euismod augue, ac commodo quam suscipit vitae. Vestibulum pharetra ligula eros, sit amet pellentesque erat imperdiet at. Sed bibendum sollicitudin purus id dapibus. Etiam a auctor risus, ut scelerisque metus. Quisque aliquet nisi sed eros congue, eu cursus erat iaculis. Praesent dictum sed lacus id aliquet. Aenean vehicula vulputate tellus, ornare eleifend ligula vestibulum at."
+    ],
+    "contactDetails": {
+      "phone": "920-331-0823",
+      "address": "Unit 2483 Box 6959, DPO AP 09431",
+      "social": {
+        "facebook": "https://facebook.com/stsoutstation",
+        "website": "https://stsoutstation.org"
+      }
+    },
+    "otherInfo": {
+      "founded": "1942",
+      "memberCount": 373,
+      "region": "Upper East Region"
+    },
+    "slug": "sts-peter-and-paul-outstation-sherigu",
+    "link": "/organizations/outstations/sts-peter-and-paul-outstation-sherigu"
+  },
+  {
+    "name": "Holy Spirit Outstation, Kalbeo",
+    "email": "info@holyoutstation.org",
+    "heroImage": "https://example.com/images/holy-hero.jpg",
+    "otherImages": [
+      "https://example.com/images/holy1.jpg",
+      "https://example.com/images/holy2.jpg"
+    ],
+    "writeup": [
+      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum mattis augue justo, id dignissim sem volutpat eget. Sed sit amet nunc ultricies, malesuada urna at, tincidunt orci. Duis lorem elit, lacinia at dolor nec, sollicitudin pulvinar felis. Quisque tempus laoreet tellus. Nam at pretium odio, feugiat convallis mi. Mauris id odio eu turpis egestas maximus. Fusce quis lacinia metus. Nam mollis odio nisi, ut posuere felis interdum eleifend. Sed ullamcorper, est ut pellentesque blandit, odio dui suscipit odio, a consequat enim libero sit amet metus. Quisque viverra, neque ac vestibulum pulvinar, orci dui luctus diam, vel pretium mi nisi id augue. Quisque rhoncus rhoncus nulla vel condimentum. Proin sollicitudin lectus nec arcu maximus, et imperdiet sem rutrum. Etiam eu erat quis velit commodo molestie. Vivamus cursus molestie tincidunt. Proin aliquet nulla nibh, nec tempus lorem pretium vitae. Aliquam erat volutpat.",
+      "Integer faucibus tellus nibh, nec lacinia odio scelerisque et. Morbi ex est, maximus et odio pellentesque, tempor sagittis ligula. Donec eget nibh ornare, maximus urna et, congue lectus. Pellentesque lacus diam, commodo bibendum lobortis et, tristique vitae odio. Etiam risus lectus, ultricies sed odio eu, laoreet pellentesque leo. Nunc interdum tristique purus, eu hendrerit diam ornare sit amet. Vestibulum porttitor justo quis velit ultrices sagittis.",
+      "Ut vel venenatis tellus. Integer accumsan posuere pretium. Praesent faucibus odio quis urna tincidunt lobortis. Nullam vel arcu commodo, sagittis diam id, finibus lacus. Nam ac venenatis neque, sit amet gravida augue. Vivamus tempus semper turpis, sit amet gravida purus suscipit et. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; Fusce ut congue purus. Praesent quis pretium nibh. Morbi tempor ullamcorper neque et maximus. Maecenas sed orci purus. Maecenas pharetra purus sit amet tellus mattis ultrices. Mauris accumsan felis nec felis dictum mattis.",
+      "Proin molestie neque diam, nec dapibus est scelerisque et. Etiam dignissim purus sit amet ligula accumsan sodales. Fusce eget dolor viverra, volutpat mi vel, tincidunt metus. Quisque nunc dolor, tristique et sapien vitae, venenatis suscipit urna. Nam at felis augue. Cras commodo mollis metus vitae hendrerit. In sit amet ipsum risus. Nulla quis odio sollicitudin purus dapibus venenatis a at felis. Cras imperdiet maximus lacus id varius.",
+      "Ut mollis euismod augue, ac commodo quam suscipit vitae. Vestibulum pharetra ligula eros, sit amet pellentesque erat imperdiet at. Sed bibendum sollicitudin purus id dapibus. Etiam a auctor risus, ut scelerisque metus. Quisque aliquet nisi sed eros congue, eu cursus erat iaculis. Praesent dictum sed lacus id aliquet. Aenean vehicula vulputate tellus, ornare eleifend ligula vestibulum at."
+    ],
+    "contactDetails": {
+      "phone": "358.361.0127x403",
+      "address": "97690 Allen Road Suite 303, East Shirleyport, IN 87217",
+      "social": {
+        "facebook": "https://facebook.com/holyoutstation",
+        "website": "https://holyoutstation.org"
+      }
+    },
+    "otherInfo": {
+      "founded": "1979",
+      "memberCount": 182,
+      "region": "Upper East Region"
+    },
+    "slug": "holy-spirit-outstation-kalbeo",
+    "link": "/organizations/outstations/holy-spirit-outstation-kalbeo"
+  },
+  {
+    "name": "Christ The King Outstation, Winkogo",
+    "email": "info@christoutstation.org",
+    "heroImage": "https://example.com/images/christ-hero.jpg",
+    "otherImages": ["https://example.com/images/christ1.jpg"],
+    "writeup": [
+      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum mattis augue justo, id dignissim sem volutpat eget. Sed sit amet nunc ultricies, malesuada urna at, tincidunt orci. Duis lorem elit, lacinia at dolor nec, sollicitudin pulvinar felis. Quisque tempus laoreet tellus. Nam at pretium odio, feugiat convallis mi. Mauris id odio eu turpis egestas maximus. Fusce quis lacinia metus. Nam mollis odio nisi, ut posuere felis interdum eleifend. Sed ullamcorper, est ut pellentesque blandit, odio dui suscipit odio, a consequat enim libero sit amet metus. Quisque viverra, neque ac vestibulum pulvinar, orci dui luctus diam, vel pretium mi nisi id augue. Quisque rhoncus rhoncus nulla vel condimentum. Proin sollicitudin lectus nec arcu maximus, et imperdiet sem rutrum. Etiam eu erat quis velit commodo molestie. Vivamus cursus molestie tincidunt. Proin aliquet nulla nibh, nec tempus lorem pretium vitae. Aliquam erat volutpat.",
+      "Integer faucibus tellus nibh, nec lacinia odio scelerisque et. Morbi ex est, maximus et odio pellentesque, tempor sagittis ligula. Donec eget nibh ornare, maximus urna et, congue lectus. Pellentesque lacus diam, commodo bibendum lobortis et, tristique vitae odio. Etiam risus lectus, ultricies sed odio eu, laoreet pellentesque leo. Nunc interdum tristique purus, eu hendrerit diam ornare sit amet. Vestibulum porttitor justo quis velit ultrices sagittis.",
+      "Ut vel venenatis tellus. Integer accumsan posuere pretium. Praesent faucibus odio quis urna tincidunt lobortis. Nullam vel arcu commodo, sagittis diam id, finibus lacus. Nam ac venenatis neque, sit amet gravida augue. Vivamus tempus semper turpis, sit amet gravida purus suscipit et. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; Fusce ut congue purus. Praesent quis pretium nibh. Morbi tempor ullamcorper neque et maximus. Maecenas sed orci purus. Maecenas pharetra purus sit amet tellus mattis ultrices. Mauris accumsan felis nec felis dictum mattis.",
+      "Proin molestie neque diam, nec dapibus est scelerisque et. Etiam dignissim purus sit amet ligula accumsan sodales. Fusce eget dolor viverra, volutpat mi vel, tincidunt metus. Quisque nunc dolor, tristique et sapien vitae, venenatis suscipit urna. Nam at felis augue. Cras commodo mollis metus vitae hendrerit. In sit amet ipsum risus. Nulla quis odio sollicitudin purus dapibus venenatis a at felis. Cras imperdiet maximus lacus id varius.",
+      "Ut mollis euismod augue, ac commodo quam suscipit vitae. Vestibulum pharetra ligula eros, sit amet pellentesque erat imperdiet at. Sed bibendum sollicitudin purus id dapibus. Etiam a auctor risus, ut scelerisque metus. Quisque aliquet nisi sed eros congue, eu cursus erat iaculis. Praesent dictum sed lacus id aliquet. Aenean vehicula vulputate tellus, ornare eleifend ligula vestibulum at."
+    ],
+    "contactDetails": {
+      "phone": "001-977-237-8351x39893",
+      "address": "PSC 4832, Box 1484, APO AP 11353",
+      "social": {
+        "facebook": "https://facebook.com/christoutstation",
+        "website": "https://christoutstation.org"
+      }
+    },
+    "otherInfo": {
+      "founded": "1957",
+      "memberCount": 358,
+      "region": "Upper East Region"
+    },
+    "slug": "christ-the-king-outstation-winkogo",
+    "link": "/organizations/outstations/christ-the-king-outstation-winkogo"
+  },
+  {
+    "name": "St. Peters’ Outstation, Pusu-Namongo",
+    "email": "info@st.outstation.org",
+    "heroImage": "https://example.com/images/st.-hero.jpg",
+    "otherImages": ["https://example.com/images/st.1.jpg"],
+    "writeup": [
+      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum mattis augue justo, id dignissim sem volutpat eget. Sed sit amet nunc ultricies, malesuada urna at, tincidunt orci. Duis lorem elit, lacinia at dolor nec, sollicitudin pulvinar felis. Quisque tempus laoreet tellus. Nam at pretium odio, feugiat convallis mi. Mauris id odio eu turpis egestas maximus. Fusce quis lacinia metus. Nam mollis odio nisi, ut posuere felis interdum eleifend. Sed ullamcorper, est ut pellentesque blandit, odio dui suscipit odio, a consequat enim libero sit amet metus. Quisque viverra, neque ac vestibulum pulvinar, orci dui luctus diam, vel pretium mi nisi id augue. Quisque rhoncus rhoncus nulla vel condimentum. Proin sollicitudin lectus nec arcu maximus, et imperdiet sem rutrum. Etiam eu erat quis velit commodo molestie. Vivamus cursus molestie tincidunt. Proin aliquet nulla nibh, nec tempus lorem pretium vitae. Aliquam erat volutpat.",
+      "Integer faucibus tellus nibh, nec lacinia odio scelerisque et. Morbi ex est, maximus et odio pellentesque, tempor sagittis ligula. Donec eget nibh ornare, maximus urna et, congue lectus. Pellentesque lacus diam, commodo bibendum lobortis et, tristique vitae odio. Etiam risus lectus, ultricies sed odio eu, laoreet pellentesque leo. Nunc interdum tristique purus, eu hendrerit diam ornare sit amet. Vestibulum porttitor justo quis velit ultrices sagittis.",
+      "Ut vel venenatis tellus. Integer accumsan posuere pretium. Praesent faucibus odio quis urna tincidunt lobortis. Nullam vel arcu commodo, sagittis diam id, finibus lacus. Nam ac venenatis neque, sit amet gravida augue. Vivamus tempus semper turpis, sit amet gravida purus suscipit et. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; Fusce ut congue purus. Praesent quis pretium nibh. Morbi tempor ullamcorper neque et maximus. Maecenas sed orci purus. Maecenas pharetra purus sit amet tellus mattis ultrices. Mauris accumsan felis nec felis dictum mattis.",
+      "Proin molestie neque diam, nec dapibus est scelerisque et. Etiam dignissim purus sit amet ligula accumsan sodales. Fusce eget dolor viverra, volutpat mi vel, tincidunt metus. Quisque nunc dolor, tristique et sapien vitae, venenatis suscipit urna. Nam at felis augue. Cras commodo mollis metus vitae hendrerit. In sit amet ipsum risus. Nulla quis odio sollicitudin purus dapibus venenatis a at felis. Cras imperdiet maximus lacus id varius.",
+      "Ut mollis euismod augue, ac commodo quam suscipit vitae. Vestibulum pharetra ligula eros, sit amet pellentesque erat imperdiet at. Sed bibendum sollicitudin purus id dapibus. Etiam a auctor risus, ut scelerisque metus. Quisque aliquet nisi sed eros congue, eu cursus erat iaculis. Praesent dictum sed lacus id aliquet. Aenean vehicula vulputate tellus, ornare eleifend ligula vestibulum at."
+    ],
+    "contactDetails": {
+      "phone": "001-413-506-5149x84424",
+      "address": "579 Michelle Spurs, West Julie, UT 74495",
+      "social": {
+        "facebook": "https://facebook.com/st.outstation",
+        "website": "https://st.outstation.org"
+      }
+    },
+    "otherInfo": {
+      "founded": "1985",
+      "memberCount": 425,
+      "region": "Upper East Region"
+    },
+    "slug": "st-peters-outstation-pusu-namongo",
+    "link": "/organizations/outstations/st-peters-outstation-pusu-namongo"
+  },
+  {
+    "name": "St. Patrick Outstation, Balungu",
+    "email": "info@st.outstation.org",
+    "heroImage": "https://example.com/images/st.-hero.jpg",
+    "otherImages": [
+      "https://example.com/images/st.1.jpg",
+      "https://example.com/images/st.2.jpg"
+    ],
+    "writeup": [
+      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum mattis augue justo, id dignissim sem volutpat eget. Sed sit amet nunc ultricies, malesuada urna at, tincidunt orci. Duis lorem elit, lacinia at dolor nec, sollicitudin pulvinar felis. Quisque tempus laoreet tellus. Nam at pretium odio, feugiat convallis mi. Mauris id odio eu turpis egestas maximus. Fusce quis lacinia metus. Nam mollis odio nisi, ut posuere felis interdum eleifend. Sed ullamcorper, est ut pellentesque blandit, odio dui suscipit odio, a consequat enim libero sit amet metus. Quisque viverra, neque ac vestibulum pulvinar, orci dui luctus diam, vel pretium mi nisi id augue. Quisque rhoncus rhoncus nulla vel condimentum. Proin sollicitudin lectus nec arcu maximus, et imperdiet sem rutrum. Etiam eu erat quis velit commodo molestie. Vivamus cursus molestie tincidunt. Proin aliquet nulla nibh, nec tempus lorem pretium vitae. Aliquam erat volutpat.",
+      "Integer faucibus tellus nibh, nec lacinia odio scelerisque et. Morbi ex est, maximus et odio pellentesque, tempor sagittis ligula. Donec eget nibh ornare, maximus urna et, congue lectus. Pellentesque lacus diam, commodo bibendum lobortis et, tristique vitae odio. Etiam risus lectus, ultricies sed odio eu, laoreet pellentesque leo. Nunc interdum tristique purus, eu hendrerit diam ornare sit amet. Vestibulum porttitor justo quis velit ultrices sagittis.",
+      "Ut vel venenatis tellus. Integer accumsan posuere pretium. Praesent faucibus odio quis urna tincidunt lobortis. Nullam vel arcu commodo, sagittis diam id, finibus lacus. Nam ac venenatis neque, sit amet gravida augue. Vivamus tempus semper turpis, sit amet gravida purus suscipit et. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; Fusce ut congue purus. Praesent quis pretium nibh. Morbi tempor ullamcorper neque et maximus. Maecenas sed orci purus. Maecenas pharetra purus sit amet tellus mattis ultrices. Mauris accumsan felis nec felis dictum mattis.",
+      "Proin molestie neque diam, nec dapibus est scelerisque et. Etiam dignissim purus sit amet ligula accumsan sodales. Fusce eget dolor viverra, volutpat mi vel, tincidunt metus. Quisque nunc dolor, tristique et sapien vitae, venenatis suscipit urna. Nam at felis augue. Cras commodo mollis metus vitae hendrerit. In sit amet ipsum risus. Nulla quis odio sollicitudin purus dapibus venenatis a at felis. Cras imperdiet maximus lacus id varius.",
+      "Ut mollis euismod augue, ac commodo quam suscipit vitae. Vestibulum pharetra ligula eros, sit amet pellentesque erat imperdiet at. Sed bibendum sollicitudin purus id dapibus. Etiam a auctor risus, ut scelerisque metus. Quisque aliquet nisi sed eros congue, eu cursus erat iaculis. Praesent dictum sed lacus id aliquet. Aenean vehicula vulputate tellus, ornare eleifend ligula vestibulum at."
+    ],
+    "contactDetails": {
+      "phone": "615-745-5355",
+      "address": "7711 Juarez Port, Lake Katie, MN 47577",
+      "social": {
+        "facebook": "https://facebook.com/st.outstation",
+        "website": "https://st.outstation.org"
+      }
+    },
+    "otherInfo": {
+      "founded": "2015",
+      "memberCount": 139,
+      "region": "Upper East Region"
+    },
+    "slug": "st-patrick-outstation-balungu",
+    "link": "/organizations/outstations/st-patrick-outstation-balungu"
+  },
+  {
+    "name": "Holy Trinity Outstation, Pwalugu",
+    "email": "info@holyoutstation.org",
+    "heroImage": "https://example.com/images/holy-hero.jpg",
+    "otherImages": [
+      "https://example.com/images/holy1.jpg",
+      "https://example.com/images/holy2.jpg",
+      "https://example.com/images/holy3.jpg"
+    ],
+    "writeup": [
+      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum mattis augue justo, id dignissim sem volutpat eget. Sed sit amet nunc ultricies, malesuada urna at, tincidunt orci. Duis lorem elit, lacinia at dolor nec, sollicitudin pulvinar felis. Quisque tempus laoreet tellus. Nam at pretium odio, feugiat convallis mi. Mauris id odio eu turpis egestas maximus. Fusce quis lacinia metus. Nam mollis odio nisi, ut posuere felis interdum eleifend. Sed ullamcorper, est ut pellentesque blandit, odio dui suscipit odio, a consequat enim libero sit amet metus. Quisque viverra, neque ac vestibulum pulvinar, orci dui luctus diam, vel pretium mi nisi id augue. Quisque rhoncus rhoncus nulla vel condimentum. Proin sollicitudin lectus nec arcu maximus, et imperdiet sem rutrum. Etiam eu erat quis velit commodo molestie. Vivamus cursus molestie tincidunt. Proin aliquet nulla nibh, nec tempus lorem pretium vitae. Aliquam erat volutpat.",
+      "Integer faucibus tellus nibh, nec lacinia odio scelerisque et. Morbi ex est, maximus et odio pellentesque, tempor sagittis ligula. Donec eget nibh ornare, maximus urna et, congue lectus. Pellentesque lacus diam, commodo bibendum lobortis et, tristique vitae odio. Etiam risus lectus, ultricies sed odio eu, laoreet pellentesque leo. Nunc interdum tristique purus, eu hendrerit diam ornare sit amet. Vestibulum porttitor justo quis velit ultrices sagittis.",
+      "Ut vel venenatis tellus. Integer accumsan posuere pretium. Praesent faucibus odio quis urna tincidunt lobortis. Nullam vel arcu commodo, sagittis diam id, finibus lacus. Nam ac venenatis neque, sit amet gravida augue. Vivamus tempus semper turpis, sit amet gravida purus suscipit et. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; Fusce ut congue purus. Praesent quis pretium nibh. Morbi tempor ullamcorper neque et maximus. Maecenas sed orci purus. Maecenas pharetra purus sit amet tellus mattis ultrices. Mauris accumsan felis nec felis dictum mattis.",
+      "Proin molestie neque diam, nec dapibus est scelerisque et. Etiam dignissim purus sit amet ligula accumsan sodales. Fusce eget dolor viverra, volutpat mi vel, tincidunt metus. Quisque nunc dolor, tristique et sapien vitae, venenatis suscipit urna. Nam at felis augue. Cras commodo mollis metus vitae hendrerit. In sit amet ipsum risus. Nulla quis odio sollicitudin purus dapibus venenatis a at felis. Cras imperdiet maximus lacus id varius.",
+      "Ut mollis euismod augue, ac commodo quam suscipit vitae. Vestibulum pharetra ligula eros, sit amet pellentesque erat imperdiet at. Sed bibendum sollicitudin purus id dapibus. Etiam a auctor risus, ut scelerisque metus. Quisque aliquet nisi sed eros congue, eu cursus erat iaculis. Praesent dictum sed lacus id aliquet. Aenean vehicula vulputate tellus, ornare eleifend ligula vestibulum at."
+    ],
+    "contactDetails": {
+      "phone": "(576)890-1966x2391",
+      "address": "9166 Contreras Land, North Eric, NV 17465",
+      "social": {
+        "facebook": "https://facebook.com/holyoutstation",
+        "website": "https://holyoutstation.org"
+      }
+    },
+    "otherInfo": {
+      "founded": "2009",
+      "memberCount": 119,
+      "region": "Upper East Region"
+    },
+    "slug": "holy-trinity-outstation-pwalugu",
+    "link": "/organizations/outstations/holy-trinity-outstation-pwalugu"
+  },
+  {
+    "name": "St. Vincent De Paul Outstation, Yinduri",
+    "email": "info@st.outstation.org",
+    "heroImage": "https://example.com/images/st.-hero.jpg",
+    "otherImages": [
+      "https://example.com/images/st.1.jpg",
+      "https://example.com/images/st.2.jpg",
+      "https://example.com/images/st.3.jpg"
+    ],
+    "writeup": [
+      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum mattis augue justo, id dignissim sem volutpat eget. Sed sit amet nunc ultricies, malesuada urna at, tincidunt orci. Duis lorem elit, lacinia at dolor nec, sollicitudin pulvinar felis. Quisque tempus laoreet tellus. Nam at pretium odio, feugiat convallis mi. Mauris id odio eu turpis egestas maximus. Fusce quis lacinia metus. Nam mollis odio nisi, ut posuere felis interdum eleifend. Sed ullamcorper, est ut pellentesque blandit, odio dui suscipit odio, a consequat enim libero sit amet metus. Quisque viverra, neque ac vestibulum pulvinar, orci dui luctus diam, vel pretium mi nisi id augue. Quisque rhoncus rhoncus nulla vel condimentum. Proin sollicitudin lectus nec arcu maximus, et imperdiet sem rutrum. Etiam eu erat quis velit commodo molestie. Vivamus cursus molestie tincidunt. Proin aliquet nulla nibh, nec tempus lorem pretium vitae. Aliquam erat volutpat.",
+      "Integer faucibus tellus nibh, nec lacinia odio scelerisque et. Morbi ex est, maximus et odio pellentesque, tempor sagittis ligula. Donec eget nibh ornare, maximus urna et, congue lectus. Pellentesque lacus diam, commodo bibendum lobortis et, tristique vitae odio. Etiam risus lectus, ultricies sed odio eu, laoreet pellentesque leo. Nunc interdum tristique purus, eu hendrerit diam ornare sit amet. Vestibulum porttitor justo quis velit ultrices sagittis.",
+      "Ut vel venenatis tellus. Integer accumsan posuere pretium. Praesent faucibus odio quis urna tincidunt lobortis. Nullam vel arcu commodo, sagittis diam id, finibus lacus. Nam ac venenatis neque, sit amet gravida augue. Vivamus tempus semper turpis, sit amet gravida purus suscipit et. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; Fusce ut congue purus. Praesent quis pretium nibh. Morbi tempor ullamcorper neque et maximus. Maecenas sed orci purus. Maecenas pharetra purus sit amet tellus mattis ultrices. Mauris accumsan felis nec felis dictum mattis.",
+      "Proin molestie neque diam, nec dapibus est scelerisque et. Etiam dignissim purus sit amet ligula accumsan sodales. Fusce eget dolor viverra, volutpat mi vel, tincidunt metus. Quisque nunc dolor, tristique et sapien vitae, venenatis suscipit urna. Nam at felis augue. Cras commodo mollis metus vitae hendrerit. In sit amet ipsum risus. Nulla quis odio sollicitudin purus dapibus venenatis a at felis. Cras imperdiet maximus lacus id varius.",
+      "Ut mollis euismod augue, ac commodo quam suscipit vitae. Vestibulum pharetra ligula eros, sit amet pellentesque erat imperdiet at. Sed bibendum sollicitudin purus id dapibus. Etiam a auctor risus, ut scelerisque metus. Quisque aliquet nisi sed eros congue, eu cursus erat iaculis. Praesent dictum sed lacus id aliquet. Aenean vehicula vulputate tellus, ornare eleifend ligula vestibulum at."
+    ],
+    "contactDetails": {
+      "phone": "(861)392-5902x8689",
+      "address": "554 Jacob Well, Port Allenside, TX 99374",
+      "social": {
+        "facebook": "https://facebook.com/st.outstation",
+        "website": "https://st.outstation.org"
+      }
+    },
+    "otherInfo": {
+      "founded": "1960",
+      "memberCount": 414,
+      "region": "Upper East Region"
+    },
+    "slug": "st-vincent-de-paul-outstation-yinduri",
+    "link": "/organizations/outstations/st-vincent-de-paul-outstation-yinduri"
+  },
+  {
+    "name": "St. Anthony of Padua Outstation, Arigu",
+    "email": "info@st.outstation.org",
+    "heroImage": "https://example.com/images/st.-hero.jpg",
+    "otherImages": [
+      "https://example.com/images/st.1.jpg",
+      "https://example.com/images/st.2.jpg",
+      "https://example.com/images/st.3.jpg"
+    ],
+    "writeup": [
+      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum mattis augue justo, id dignissim sem volutpat eget. Sed sit amet nunc ultricies, malesuada urna at, tincidunt orci. Duis lorem elit, lacinia at dolor nec, sollicitudin pulvinar felis. Quisque tempus laoreet tellus. Nam at pretium odio, feugiat convallis mi. Mauris id odio eu turpis egestas maximus. Fusce quis lacinia metus. Nam mollis odio nisi, ut posuere felis interdum eleifend. Sed ullamcorper, est ut pellentesque blandit, odio dui suscipit odio, a consequat enim libero sit amet metus. Quisque viverra, neque ac vestibulum pulvinar, orci dui luctus diam, vel pretium mi nisi id augue. Quisque rhoncus rhoncus nulla vel condimentum. Proin sollicitudin lectus nec arcu maximus, et imperdiet sem rutrum. Etiam eu erat quis velit commodo molestie. Vivamus cursus molestie tincidunt. Proin aliquet nulla nibh, nec tempus lorem pretium vitae. Aliquam erat volutpat.",
+      "Integer faucibus tellus nibh, nec lacinia odio scelerisque et. Morbi ex est, maximus et odio pellentesque, tempor sagittis ligula. Donec eget nibh ornare, maximus urna et, congue lectus. Pellentesque lacus diam, commodo bibendum lobortis et, tristique vitae odio. Etiam risus lectus, ultricies sed odio eu, laoreet pellentesque leo. Nunc interdum tristique purus, eu hendrerit diam ornare sit amet. Vestibulum porttitor justo quis velit ultrices sagittis.",
+      "Ut vel venenatis tellus. Integer accumsan posuere pretium. Praesent faucibus odio quis urna tincidunt lobortis. Nullam vel arcu commodo, sagittis diam id, finibus lacus. Nam ac venenatis neque, sit amet gravida augue. Vivamus tempus semper turpis, sit amet gravida purus suscipit et. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; Fusce ut congue purus. Praesent quis pretium nibh. Morbi tempor ullamcorper neque et maximus. Maecenas sed orci purus. Maecenas pharetra purus sit amet tellus mattis ultrices. Mauris accumsan felis nec felis dictum mattis.",
+      "Proin molestie neque diam, nec dapibus est scelerisque et. Etiam dignissim purus sit amet ligula accumsan sodales. Fusce eget dolor viverra, volutpat mi vel, tincidunt metus. Quisque nunc dolor, tristique et sapien vitae, venenatis suscipit urna. Nam at felis augue. Cras commodo mollis metus vitae hendrerit. In sit amet ipsum risus. Nulla quis odio sollicitudin purus dapibus venenatis a at felis. Cras imperdiet maximus lacus id varius.",
+      "Ut mollis euismod augue, ac commodo quam suscipit vitae. Vestibulum pharetra ligula eros, sit amet pellentesque erat imperdiet at. Sed bibendum sollicitudin purus id dapibus. Etiam a auctor risus, ut scelerisque metus. Quisque aliquet nisi sed eros congue, eu cursus erat iaculis. Praesent dictum sed lacus id aliquet. Aenean vehicula vulputate tellus, ornare eleifend ligula vestibulum at."
+    ],
+    "contactDetails": {
+      "phone": "524.654.1623x333",
+      "address": "16496 Hurst Prairie, Patriciaport, MD 98251",
+      "social": {
+        "facebook": "https://facebook.com/st.outstation",
+        "website": "https://st.outstation.org"
+      }
+    },
+    "otherInfo": {
+      "founded": "1940",
+      "memberCount": 330,
+      "region": "Upper East Region"
+    },
+    "slug": "st-anthony-of-padua-outstation-arigu",
+    "link": "/organizations/outstations/st-anthony-of-padua-outstation-arigu"
+  },
+  {
+    "name": "Holy Rosary Outstation, Kumbilungo",
+    "email": "info@holyoutstation.org",
+    "heroImage": "https://example.com/images/holy-hero.jpg",
+    "otherImages": [
+      "https://example.com/images/holy1.jpg",
+      "https://example.com/images/holy2.jpg",
+      "https://example.com/images/holy3.jpg"
+    ],
+    "writeup": [
+      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum mattis augue justo, id dignissim sem volutpat eget. Sed sit amet nunc ultricies, malesuada urna at, tincidunt orci. Duis lorem elit, lacinia at dolor nec, sollicitudin pulvinar felis. Quisque tempus laoreet tellus. Nam at pretium odio, feugiat convallis mi. Mauris id odio eu turpis egestas maximus. Fusce quis lacinia metus. Nam mollis odio nisi, ut posuere felis interdum eleifend. Sed ullamcorper, est ut pellentesque blandit, odio dui suscipit odio, a consequat enim libero sit amet metus. Quisque viverra, neque ac vestibulum pulvinar, orci dui luctus diam, vel pretium mi nisi id augue. Quisque rhoncus rhoncus nulla vel condimentum. Proin sollicitudin lectus nec arcu maximus, et imperdiet sem rutrum. Etiam eu erat quis velit commodo molestie. Vivamus cursus molestie tincidunt. Proin aliquet nulla nibh, nec tempus lorem pretium vitae. Aliquam erat volutpat.",
+      "Integer faucibus tellus nibh, nec lacinia odio scelerisque et. Morbi ex est, maximus et odio pellentesque, tempor sagittis ligula. Donec eget nibh ornare, maximus urna et, congue lectus. Pellentesque lacus diam, commodo bibendum lobortis et, tristique vitae odio. Etiam risus lectus, ultricies sed odio eu, laoreet pellentesque leo. Nunc interdum tristique purus, eu hendrerit diam ornare sit amet. Vestibulum porttitor justo quis velit ultrices sagittis.",
+      "Ut vel venenatis tellus. Integer accumsan posuere pretium. Praesent faucibus odio quis urna tincidunt lobortis. Nullam vel arcu commodo, sagittis diam id, finibus lacus. Nam ac venenatis neque, sit amet gravida augue. Vivamus tempus semper turpis, sit amet gravida purus suscipit et. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; Fusce ut congue purus. Praesent quis pretium nibh. Morbi tempor ullamcorper neque et maximus. Maecenas sed orci purus. Maecenas pharetra purus sit amet tellus mattis ultrices. Mauris accumsan felis nec felis dictum mattis.",
+      "Proin molestie neque diam, nec dapibus est scelerisque et. Etiam dignissim purus sit amet ligula accumsan sodales. Fusce eget dolor viverra, volutpat mi vel, tincidunt metus. Quisque nunc dolor, tristique et sapien vitae, venenatis suscipit urna. Nam at felis augue. Cras commodo mollis metus vitae hendrerit. In sit amet ipsum risus. Nulla quis odio sollicitudin purus dapibus venenatis a at felis. Cras imperdiet maximus lacus id varius.",
+      "Ut mollis euismod augue, ac commodo quam suscipit vitae. Vestibulum pharetra ligula eros, sit amet pellentesque erat imperdiet at. Sed bibendum sollicitudin purus id dapibus. Etiam a auctor risus, ut scelerisque metus. Quisque aliquet nisi sed eros congue, eu cursus erat iaculis. Praesent dictum sed lacus id aliquet. Aenean vehicula vulputate tellus, ornare eleifend ligula vestibulum at."
+    ],
+    "contactDetails": {
+      "phone": "001-594-951-5325",
+      "address": "30242 Michael Way, North Patrickport, KS 61580",
+      "social": {
+        "facebook": "https://facebook.com/holyoutstation",
+        "website": "https://holyoutstation.org"
+      }
+    },
+    "otherInfo": {
+      "founded": "1971",
+      "memberCount": 183,
+      "region": "Upper East Region"
+    },
+    "slug": "holy-rosary-outstation-kumbilungo",
+    "link": "/organizations/outstations/holy-rosary-outstation-kumbilungo"
+  }
+]
