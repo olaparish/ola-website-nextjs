@@ -1,6 +1,6 @@
 import React from "react";
 
-const PriestBios = () => {
+const Page = () => {
   return (
     <div className="space-y-20">
       {priests.map((pri, indx) => {
@@ -10,7 +10,7 @@ const PriestBios = () => {
   );
 };
 
-export default PriestBios;
+export default Page;
 
 type Priest = {
   name: string;

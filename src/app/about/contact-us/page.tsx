@@ -2,14 +2,10 @@
 import Link from "next/link";
 import React from "react";
 
-const ContactUs = () => {
+const Page = () => {
   return (
     <div className="flex flex-wrap items-center">
-      <img
-        className="w-auto h-89"
-        src="/images/general/mary-full.jpg"
-        alt="mary"
-      />
+      <img className="w-auto h-89" src="/images/general/mary-full.jpg" alt="mary" />
       <div className="space-y-5">
         <h2>Our Lady Queen Of Africa Parish, Bolgatanga</h2>
         <p className="">
@@ -21,10 +17,7 @@ const ContactUs = () => {
             <br /> West Africa
           </em>
         </p>
-        <Link
-          href="mailto:info@olaparish.com"
-          className="block text-primary-900"
-        >
+        <Link href="mailto:info@olaparish.com" className="block text-primary-900">
           info@olaparish.com
         </Link>
         <Link href="tel:+233234567890">Phone: (233) 00 000-0000</Link>
@@ -33,4 +26,4 @@ const ContactUs = () => {
   );
 };
 
-export default ContactUs;
+export default Page;

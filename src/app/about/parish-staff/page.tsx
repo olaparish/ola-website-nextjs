@@ -1,5 +1,5 @@
 /* eslint-disable @next/next/no-img-element */
-const ParishStaff = () => {
+const Page = () => {
   return (
     <div className="space-y-12">
       {StaffDirectory.map((staff, indx) => {
@@ -18,7 +18,7 @@ const ParishStaff = () => {
   );
 };
 
-export default ParishStaff;
+export default Page;
 
 type CardProps = {
   name: string;

@@ -1,5 +1,5 @@
 "use client";
-import React, { useEffect, useState } from "react";
+import React, { useCallback, useEffect, useState } from "react";
 
 const CountdownTimer = () => {
   function getNextSunday(): Date {
@@ -15,7 +15,7 @@ const CountdownTimer = () => {
     return nextSunday;
   }
 
-  const calculateTimeLeft = () => {
+  const calculateTimeLeft = useCallback(() => {
     const targetDate = getNextSunday();
     const difference = +new Date(targetDate) - +new Date();
     let timeLeft = {
@@ -35,7 +35,7 @@ const CountdownTimer = () => {
     }
 
     return timeLeft;
-  };
+  }, []);
 
   const [timeLeft, setTimeLeft] = useState({
     days: 0,
@@ -43,8 +43,6 @@ const CountdownTimer = () => {
     minutes: 0,
     seconds: 0,
   });
-  const [isClient, seetIsClient] = useState(false);
-
 
   useEffect(() => {
     const timer = setInterval(() => {
@@ -52,7 +50,7 @@ const CountdownTimer = () => {
     }, 1000);
 
     return () => clearInterval(timer);
-  }, []);
+  }, [calculateTimeLeft]);
 
   return (
     <div className="flex justify-between md:gap-15 bg-primary-900 mt-4 px-15 py-4.5 w-full md:w-auto text-white">

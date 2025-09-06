@@ -13,7 +13,7 @@ const defaultValuesRanges: ValuesRanges = {
   laptop: 3,
 };
 
-type Props = { values: unknown[]; valuesRanges: ValuesRanges };
+// type Props = { values: unknown[]; valuesRanges: ValuesRanges };
 
 function UseCountPerScreen<T>(
   values: T[] = [],
@@ -50,7 +50,7 @@ function UseCountPerScreen<T>(
       mq1024.removeEventListener("change", update);
       mq1536.removeEventListener("change", update);
     };
-  }, []);
+  }, [valuesRanges.laptop, valuesRanges.mobile, valuesRanges.tablet]);
 
   const valuesToRender = [];
   let count = currentValues.count;

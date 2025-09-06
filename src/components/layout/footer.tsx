@@ -1,3 +1,4 @@
+/* eslint-disable @next/next/no-img-element */
 import Link from "next/link";
 import IconFacebookDark from "../ui/icons/socials/facebook-dark";
 import IconInstagramDark from "../ui/icons/socials/instagram-dark";
@@ -48,9 +49,7 @@ const Footer = () => {
         </li>
       </ul>
       <hr className="bg-white mt-25 h-[1px]" />
-      <p className="mt-3.5 text-center lg:text-right">
-        Ola Parish, Bolgatanga. All Rights Reserved.
-      </p>
+      <p className="mt-3.5 text-center lg:text-right">Ola Parish, Bolgatanga. All Rights Reserved.</p>
     </footer>
   );
 };
