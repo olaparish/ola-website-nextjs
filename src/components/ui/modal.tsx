@@ -14,18 +14,21 @@ const Modal: React.FC<ModalProps> = ({
   className,
 }) => {
   const [isClient, setIsClient] = useState<boolean>(false);
+  const [portalRoot, setPortalRoot] = useState<HTMLElement | null>(null);
+
   useEffect(() => {
     setIsClient(true);
-  });
-  if (!isOpen || !isClient) return <></>;
+    const root = document.getElementById("__next") || document.body;
+    setPortalRoot(root);
+  }, []);
+
+  if (!isOpen || !isClient || !portalRoot) return <></>;
+  
   return createPortal(
-    <div
-      className={"z-50000 fixed bg-primary-900 w-svw h-full " + className}
-      onClick={onClose}
-    >
+    <div className={"fixed inset-0 z-[9999] bg-primary-900 w-full h-full " + (className || "")} onClick={onClose}>
       {children}
     </div>,
-    document.getElementById("root") as HTMLElement
+    portalRoot
   );
 };
 
