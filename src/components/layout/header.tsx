@@ -46,8 +46,8 @@ const Header = () => {
 
 export const aboutDropdownData: DropDownProps = {
   name: "About",
-  to: "/about",
-  matcher: "/about",
+  to: "/welcome",
+  matcher: "/welcome",
   options: [
     {
       name: "Parish Priest",

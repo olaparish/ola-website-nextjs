@@ -26,7 +26,7 @@ const MobileNavigation = ({ closeHandler }: Props) => {
         </div>
 
         <nav className="flex flex-col gap-5 mt-4">
-          <Link className="text-2xl" href="/welcome">
+          <Link className="text-2xl" href="/home">
             Home
           </Link>
           <MobileDropDown {...aboutDropdownData} onCloseMenu={closeHandler} />
