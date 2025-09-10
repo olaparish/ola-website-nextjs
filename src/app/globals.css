@@ -26,7 +26,7 @@
     --color-primary-500: #7fbadc;
     --color-primary-300: #b6d5eb;
     --color-primary-100: #d7e9f5;
-
+    --color-secondary-900: #1b465f;
 
     --color-dark-900: #282221;
     --color-gold-200: #FAF7F2;
@@ -39,6 +39,7 @@ html,
 body {
   @apply bg-white font-montserrat font-normal text-[16px];
   background: var(--background);
+  box-sizing: border-box;
 
   @media (prefers-color-scheme: dark) {
     :root {

@@ -3,11 +3,11 @@
 import React from "react";
 
 import CountdownTimer, { getNextSundayFormatted } from "./timer";
-import { ArrowLeft } from "../ui/icons/arrow-left";
+import { ArrowLeft } from "../icons/arrow-left";
 import CustomLink from "../ui/custom-link";
-import { ArrowRight } from "../ui/icons/arrow-right";
-import { IconCalendarMonth } from "../ui/icons/icon-calendar-month";
-import { IconClock } from "../ui/icon-clock";
+import { ArrowRight } from "../icons/arrow-right";
+import { IconCalendarMonth } from "../icons/icon-calendar-month";
+import { IconClock } from "../icons/icon-clock";
 
 const Hero = () => {
   return (

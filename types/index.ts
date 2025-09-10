@@ -33,3 +33,13 @@ export interface DropDownProps {
   headerClassName?: string;
   ulClassName?: string;
 }
+
+export type SelectOption = {
+  name: string;
+  value: string;
+};
+
+export type NavElement = {
+  name: string;
+  href: string;
+};

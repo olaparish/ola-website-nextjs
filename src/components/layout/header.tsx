@@ -1,13 +1,13 @@
 /* eslint-disable @next/next/no-img-element */
 "use client";
 import { Fragment, useState } from "react";
-import { IconChevronDown } from "../ui/icons/chevron-down";
-import { IconMenu } from "../ui/icons/icon-menu";
-import Modal from "../ui/modal";
+import { IconChevronDown } from "../icons/chevron-down";
+import { IconMenu } from "../icons/icon-menu";
+import Modal from "../comon/modal";
 import Link from "next/link";
 import NavItem from "../ui/navItem";
 import { DropDownProps, MultiDropDownOption, MultiDropDownProps } from "../../../types";
-import { IconChevronRight } from "../ui/icons/chevron-right";
+import { IconChevronRight } from "../icons/chevron-right";
 import { communitiesData, outstationsData, societiesData } from "@/data";
 import MobileNavigation from "./MobileNavigation";
 

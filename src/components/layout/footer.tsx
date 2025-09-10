@@ -1,9 +1,9 @@
 /* eslint-disable @next/next/no-img-element */
 import Link from "next/link";
-import IconFacebookDark from "../ui/icons/socials/facebook-dark";
-import IconInstagramDark from "../ui/icons/socials/instagram-dark";
-import IconTwitterDark from "../ui/icons/socials/twitter-dark";
-import IconYoutubeDark from "../ui/icons/socials/youtube-dark";
+import IconFacebookDark from "../icons/socials/facebook-dark";
+import IconInstagramDark from "../icons/socials/instagram-dark";
+import IconTwitterDark from "../icons/socials/twitter-dark";
+import IconYoutubeDark from "../icons/socials/youtube-dark";
 
 const Footer = () => {
   return (

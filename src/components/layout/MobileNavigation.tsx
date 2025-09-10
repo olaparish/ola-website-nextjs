@@ -3,10 +3,10 @@
 
 import Link from "next/link";
 import React, { MouseEvent, useState } from "react";
-import { IconClose } from "../ui/icons/icon-close";
+import { IconClose } from "../icons/icon-close";
 import { MobileDropDownProps, MultiDropDownProps } from "../../../types";
-import { IconChevronDown } from "../ui/icons/chevron-down";
-import { IconChevronRight } from "../ui/icons/chevron-right";
+import { IconChevronDown } from "../icons/chevron-down";
+import { IconChevronRight } from "../icons/chevron-right";
 import { communitiesData, outstationsData, societiesData } from "@/data";
 import { aboutDropdownData } from "./header";
 

@@ -1,8 +1,8 @@
 "use client";
 /* eslint-disable @next/next/no-img-element */
 import React from "react";
-import { ArrowLeft } from "../ui/icons/arrow-left";
-import { ArrowRight } from "../ui/icons/arrow-right";
+import { ArrowLeft } from "../icons/arrow-left";
+import { ArrowRight } from "../icons/arrow-right";
 import UseCountPerScreen from "@/hooks/useCountPerScreen";
 
 const Sacraments = () => {
