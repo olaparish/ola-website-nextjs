@@ -13,6 +13,7 @@ import {
   SecondaryNavigation,
 } from "@/components/layout/navigations/Navigation";
 import DashboardCard from "@/components/ui/DashboardCard";
+import TestForm from "@/components/forms/TestForm";
 
 const options = [
   { name: "Apple", value: "apple" },
@@ -43,6 +44,9 @@ const Page = () => {
 
   return (
     <div className="">
+      <div className="px-5">
+        <TestForm />
+      </div>
       <div className="flex flex-col gap-5 p-4">
         <MemberNavigation items={navItems} />
         <SecondaryNavigation items={navItems} />

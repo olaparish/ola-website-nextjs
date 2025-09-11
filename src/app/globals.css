@@ -31,6 +31,11 @@
     --color-dark-900: #282221;
     --color-gold-200: #FAF7F2;
 
+    /*  Shadcn Colors */
+
+  --color-bg-muted: 240 4.8% 95.9%;
+  --color-text-muted-foreground: 240 3.8% 46.1%;
+
 }
 
 
