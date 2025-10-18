@@ -1,28 +1,32 @@
 "use client";
+
 import React from "react";
-import outstationList from "../../../../data/outstations_data.json";
+import societyList from "../../../../../data/societies_data.json";
 import OrganizationTemplate from "@/components/modules/organization/template";
 import Link from "next/link";
 import { useParams } from "next/navigation";
 
-const Outstations = () => {
+const Societies = () => {
   const params = useParams();
   const slug = params.slug;
-  const outstation = outstationList.find((out) => out.slug === slug);
 
-  if (outstation === undefined) {
+  const society = societyList.find((soc) => soc.slug === slug);
+  console.log("Slug", slug);
+  console.log("Society", society);
+
+  if (society === undefined) {
     return (
       <div>
-        <h2 className="mb-10">Explore our Parish Outstations</h2>
+        <h2 className="mb-10">Explore our Parish Societies</h2>
         <ul className="flex flex-col gap-4">
-          {outstationList.map((out, indx) => {
+          {societyList.map((soc, indx) => {
             return (
               <li key={indx}>
                 <Link
                   className="text-primary-900"
-                  href={`/outstations/${out.slug}`}
+                  href={`/societies/${soc.slug}`}
                 >
-                  {out.name}
+                  {soc.name}
                 </Link>
               </li>
             );
@@ -31,7 +35,7 @@ const Outstations = () => {
       </div>
     );
   }
-  return <OrganizationTemplate data={outstation} />;
+  return <OrganizationTemplate data={society} />;
 };
 
-export default Outstations;
+export default Societies;

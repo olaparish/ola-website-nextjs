@@ -1,6 +1,6 @@
 "use client";
 import React from "react";
-import communityList from "../../../../data/communities_data.json";
+import communityList from "../../../../../data/communities_data.json";
 import Link from "next/link";
 import OrganizationTemplate from "@/components/modules/organization/template";
 import { useParams } from "next/navigation";

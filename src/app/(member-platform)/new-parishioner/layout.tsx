@@ -1,13 +1,12 @@
 import type { Metadata } from "next";
 import React from "react";
-import "./globals.css";
 
 export const metadata: Metadata = {
-  title: "OLA Parish",
-  description: "OLA Parish Bolgatanga. Navrongo Bolgatange Diocese",
+  title: "New Parishioner",
+  description: "New OLA Parishioner registration form",
 };
 
-export default function RootLayout({
+export default function Layout({
   children,
 }: Readonly<{
   children: React.ReactNode;
@@ -20,6 +19,3 @@ export default function RootLayout({
     </html>
   );
 }
-
-
-

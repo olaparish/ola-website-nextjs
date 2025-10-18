@@ -1,3 +1,4 @@
+"use client";
 import React from "react";
 import { NavElement } from "../../../../types";
 import Link from "next/link";
@@ -37,7 +38,11 @@ const MergedNavigation = ({ items, className, variant = "member" }: Props) => {
       {items.map((it, index) => {
         return (
           <div key={index}>
-            <NavItem item={it} isActive={isActiveElement(it.href)} variant={variant} />
+            <NavItem
+              item={it}
+              isActive={isActiveElement(it.href)}
+              variant={variant}
+            />
           </div>
         );
       })}
@@ -53,8 +58,9 @@ type NavItemProps = {
 
 const NavItem = ({ item, isActive, variant }: NavItemProps) => {
   const getItemClassName = () => {
-    const baseClasses = "flex justify-center items-center w-45 h-10.5 font-medium text-sm";
-    
+    const baseClasses =
+      "flex justify-center items-center w-45 h-10.5 font-medium text-sm";
+
     switch (variant) {
       case "member":
         return [
@@ -63,21 +69,21 @@ const NavItem = ({ item, isActive, variant }: NavItemProps) => {
           !isActive ? "bg-gold-200" : "",
           isActive ? "bg-secondary-900 text-white" : "",
         ].join(" ");
-      
+
       case "parishioner":
         return [
           baseClasses,
           "border-1",
           !isActive ? "border-transparent" : "border-secondary-900",
         ].join(" ");
-      
+
       case "secondary":
         return [
           baseClasses,
           "border-2 border-secondary-900 shadow-[0_2px_6px_0_rgba(0,0,0,0.1)]",
           !isActive ? "bg-transparent" : "bg-secondary-900 text-white",
         ].join(" ");
-      
+
       default:
         return baseClasses;
     }
