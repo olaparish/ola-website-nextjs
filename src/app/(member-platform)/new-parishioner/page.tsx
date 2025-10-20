@@ -133,7 +133,7 @@ const Page = () => {
   return (
     <div>
       <form
-        className="mx-auto max-w-287.5"
+        className="mx-4 md:mx-10 xl:mx-auto max-w-287.5"
         onSubmit={handleSubmit(handleFormSubmit)}
       >
         <h2 className="mb-10 font-normal">Parishioner Form Progress</h2>
@@ -142,7 +142,7 @@ const Page = () => {
           {ProfileFields.map((field, index) => {
             if (Array.isArray(field)) {
               return (
-                <div key={index} className="flex gap-12.5">
+                <div key={index} className="flex sm:flex-row flex-col gap-12.5">
                   {parseInput(field[0])} {parseInput(field[1])}
                 </div>
               );
@@ -152,29 +152,27 @@ const Page = () => {
           {HomeDetails.map((field, index) => {
             if (Array.isArray(field)) {
               return (
-                <div key={index} className="flex gap-12.5">
+                <div key={index} className="flex sm:flex-row flex-col gap-12.5">
                   {parseInput(field[0])} {parseInput(field[1])}
                 </div>
               );
             } else return <div key={index}>{parseInput(field)}</div>;
           })}
           <h5 className="mt-17.5 mb-7.5 font-medium">Work Details</h5>
-
           {WorkDetails.map((field, index) => {
             if (Array.isArray(field)) {
               return (
-                <div key={index} className="flex gap-12.5">
+                <div key={index} className="flex sm:flex-row flex-col gap-12.5">
                   {parseInput(field[0])} {parseInput(field[1])}
                 </div>
               );
             } else return <div key={index}>{parseInput(field)}</div>;
           })}
           <h5 className="mt-17.5 mb-7.5 font-medium">Parish Details</h5>
-
           {ParishDetails.map((field, index) => {
             if (Array.isArray(field)) {
               return (
-                <div key={index} className="flex gap-12.5">
+                <div key={index} className="flex sm:flex-row flex-col gap-12.5">
                   {parseInput(field[0])} {parseInput(field[1])}
                 </div>
               );
@@ -184,7 +182,7 @@ const Page = () => {
           {OtherDetails.map((field, index) => {
             if (Array.isArray(field)) {
               return (
-                <div key={index} className="flex gap-12.5">
+                <div key={index} className="flex sm:flex-row flex-col gap-12.5">
                   {parseInput(field[0])} {parseInput(field[1])}
                 </div>
               );
@@ -196,9 +194,9 @@ const Page = () => {
             Thank you for taking the time to fill in your details!!!
           </p>
         </div>
-        <div className="mt-12.5 text-right">
+        <div className="mt-12.5 text-center sm:text-right">
           <Button
-            className="bg-secondary-900 mb-10 px-16.25 py-3.75 font-medium text-white cursor-pointer"
+            className="bg-secondary-900 mb-10 sm:px-16.25 sm:py-3.75 font-medium text-white cursor-pointer"
             type="submit"
           >
             Submit

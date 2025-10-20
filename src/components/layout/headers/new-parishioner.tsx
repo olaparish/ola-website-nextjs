@@ -4,7 +4,7 @@ import React from "react";
 
 const NewParishionerHeader = () => {
   return (
-    <header className="justify-between items-center grid grid-cols-[auto_1fr] p-7.5">
+    <header className="justify-between items-center grid grid-cols-[auto_1fr] p-7.5 px-2 sm:px-7.5">
       <Link href={"/home"}>
         <Image
           width={225}
@@ -15,7 +15,7 @@ const NewParishionerHeader = () => {
         />
       </Link>
       <div className="flex justify-center">
-        <div className="shadow-[0_2px_6px_0_rgba(0,0,0,0.1)] px-11 py-3.75 font-medium text-sm">
+        <div className="shadow-[0_2px_6px_0_rgba(0,0,0,0.1)] px-2 sm:px-11 py-1 sm:py-3.75 font-medium text-sm">
           Parishioner Sign Up Form
         </div>
       </div>
