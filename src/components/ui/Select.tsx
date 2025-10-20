@@ -35,7 +35,9 @@ const Select = ({ id, name, className, options, ...props }: Props) => {
         )}
         {...props}
       >
-        <option value="">Select an option</option>
+        <option value="" disabled hidden>
+          Select an option
+        </option>
         {options.map((op, index) => (
           <option key={index} value={op.value}>
             {op.name}

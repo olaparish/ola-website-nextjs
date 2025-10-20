@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import React from "react";
-import Header from "@/components/layout/header";
+import Header from "@/components/layout/headers/header";
 import Footer from "@/components/layout/footer";
 
 export const metadata: Metadata = {

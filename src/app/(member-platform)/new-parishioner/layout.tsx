@@ -1,3 +1,4 @@
+import NewParishionerHeader from "@/components/layout/headers/new-parishioner";
 import type { Metadata } from "next";
 import React from "react";
 
@@ -14,6 +15,7 @@ export default function Layout({
   return (
     <html lang="en">
       <body className="antialiased">
+        <NewParishionerHeader />
         <main>{children}</main>
       </body>
     </html>

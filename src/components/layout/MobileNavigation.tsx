@@ -8,7 +8,7 @@ import { MobileDropDownProps, MultiDropDownProps } from "../../../types";
 import { IconChevronDown } from "../icons/chevron-down";
 import { IconChevronRight } from "../icons/chevron-right";
 import { communitiesData, outstationsData, societiesData } from "@/data";
-import { aboutDropdownData } from "./header";
+import { aboutDropdownData } from "./headers/header";
 
 interface Props {
   closeHandler: () => void;

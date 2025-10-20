@@ -1,15 +1,15 @@
 /* eslint-disable @next/next/no-img-element */
 "use client";
 import { Fragment, useState } from "react";
-import { IconChevronDown } from "../icons/chevron-down";
-import { IconMenu } from "../icons/icon-menu";
-import Modal from "../comon/modal";
+import { IconChevronDown } from "../../icons/chevron-down";
+import { IconMenu } from "../../icons/icon-menu";
+import Modal from "../../comon/modal";
 import Link from "next/link";
-import NavItem from "../ui/navItem";
-import { DropDownProps, MultiDropDownOption, MultiDropDownProps } from "../../../types";
-import { IconChevronRight } from "../icons/chevron-right";
+import NavItem from "../../ui/navItem";
+import { DropDownProps, MultiDropDownOption, MultiDropDownProps } from "../../../../types";
+import { IconChevronRight } from "../../icons/chevron-right";
 import { communitiesData, outstationsData, societiesData } from "@/data";
-import MobileNavigation from "./MobileNavigation";
+import MobileNavigation from "../MobileNavigation";
 
 const Header = () => {
   const [showMobileMenu, setShowMobileMenu] = useState<boolean>(false);

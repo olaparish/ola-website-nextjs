@@ -4,10 +4,12 @@ import Select from "./Select";
 import { SelectOption } from "../../../types";
 import TagInput from "./TagInput";
 
-interface Props {
+interface MultiSelectProps {
   options: SelectOption[];
   setValue: (values: SelectOption[]) => void;
 }
+
+type Props = React.ComponentProps<"select"> & MultiSelectProps;
 
 const MultiSelect = ({ options: inputOptions, setValue }: Props) => {
   const [selected, setSelected] = useState<SelectOption[]>([]);

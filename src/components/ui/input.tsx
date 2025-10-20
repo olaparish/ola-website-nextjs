@@ -1,6 +1,8 @@
-import * as React from "react";
 import { cn } from "@/lib/utils";
+import { ChangeEvent, useState } from "react";
 import { CiCamera } from "react-icons/ci";
+import { processFile } from "@/utils/fileUtils";
+import Image from "next/image";
 
 function Input({ className, type, ...props }: React.ComponentProps<"input">) {
   return (
@@ -35,6 +37,24 @@ interface ImageInputProps {
 type InputProps = React.ComponentProps<"input"> & ImageInputProps;
 
 function ImageInput({ name, className, inputClassName, ...props }: InputProps) {
+  const [imageUrl, setImageUrl] = useState("");
+
+  const handleFileChange = async (event: ChangeEvent<HTMLInputElement>) => {
+    console.log("I am running: ");
+    const files = event.target.files;
+    const selectedFile = files && files.length > 0 ? files[0] : null;
+    if (!selectedFile) return; // user cancelled
+
+    try {
+      const parsedFile = await processFile(selectedFile, true);
+      if (parsedFile.previewUrl) {
+        setImageUrl(parsedFile.previewUrl);
+      }
+    } catch (error) {
+      console.error("Error processing file:", error);
+    }
+  };
+
   return (
     <label
       htmlFor={name}
@@ -62,13 +82,27 @@ function ImageInput({ name, className, inputClassName, ...props }: InputProps) {
           cn(inputClassName)
         )}
       >
-        <CiCamera className="size-8" />
-        <p className="text-[16px]">Drop your picture here</p>
+        {!imageUrl && (
+          <>
+            <CiCamera className="size-8" />
+            <p className="text-[16px]">{props.placeholder}</p>
+          </>
+        )}
+        {imageUrl && (
+          <Image
+            width={150}
+            height={150}
+            src={imageUrl}
+            alt="user picture preview"
+          />
+        )}
       </div>
       <input
+        id={name}
         type="file"
         data-slot="input"
         {...props}
+        onChange={handleFileChange}
         className={cn("hidden", cn(inputClassName))}
       />
     </label>
