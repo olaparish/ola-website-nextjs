@@ -1,6 +1,5 @@
 "use client";
-import React, { Fragment, useState } from "react";
-import { z } from "zod";
+import React, { Fragment, useCallback, useEffect, useState } from "react";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { useForm } from "react-hook-form";
 import {
@@ -9,54 +8,188 @@ import {
   ProfileFields,
   HomeDetails,
   WorkDetails,
-  ParishDetails,
   OtherDetails,
 } from "./form-fields";
 import { Input } from "@/components/ui/input";
-import { FormFieldType, SelectOption } from "../../../../types";
+import {
+  FormFieldsType,
+  FormFieldType,
+  NewParishionerFormData,
+  ParishGroupResponse,
+  SelectOption,
+} from "../../../../types";
 import { Label } from "@/components/ui/label";
 import Select from "@/components/ui/Select";
 import { Button } from "@/components/ui/button";
 import MultiSelect from "@/components/ui/MultiSelect";
 import { ImageInput } from "@/components/ui/ImageInput";
+// import { FileInputType, FileUploadResponse } from "../../../../types/inputs";
+import { useMutation, useQuery } from "@tanstack/react-query";
+import { parishionerService } from "@/services/parishioner.service";
+import { configService } from "@/services/config.service";
+import { Spinner } from "@/components/ui/spinner";
+import { toast } from "sonner";
+import { CreateParishionerResponseType } from "../../../../types/parishioner";
+import { processFile } from "@/utils/fileUtils";
 import { FileInputType } from "../../../../types/inputs";
-
-type FormData = z.infer<typeof MemberProfileSchema>;
+import { useParishGroupStore } from "@/hooks/useParishGroups";
+import { parishGroupsService } from "@/services/parish-groups.service";
 
 const Page = () => {
+  const { setGroups, ...parishGroups } = useParishGroupStore();
+
   const [societies, setSocieties] = useState<string[]>([]);
   const [societiesError, setSocietiesError] = useState<string>("");
   const [files, setFiles] = useState<FileInputType[]>([]);
+  const [uploadingMessage, setUploadingMessage] = useState("submit");
 
-  const handleFormSubmit = (formData: FormData) => {
-    console.log("Form is running");
-    if (!societies.length) {
-      setSocietiesError("You must select a value");
-      console.log("Returning");
-      return;
+  const {
+    data: fetchedParishGroups,
+    isLoading,
+    isSuccess,
+    isError,
+  } = useQuery<ParishGroupResponse>({
+    queryKey: ["parishGrous"],
+    queryFn: parishGroupsService.getGroups,
+    retry: 2,
+  });
+
+  useEffect(() => {
+    if (isLoading) {
+      toast.info("Fetching parish groups");
     }
-    const data = { ...formData, societies };
-    console.log(data);
-  };
+  }, [isLoading]);
 
+  useEffect(() => {
+    if (isSuccess) {
+      toast.success(
+        "Fetched all parish communities, societies, and outstations"
+      );
+      console.log("Parish groups fetched: ", fetchedParishGroups);
+      setGroups(fetchedParishGroups);
+    } else if (isError) {
+      toast.error(
+        "Error fetching parish groups. Please refresh the page to try again"
+      );
+    }
+  }, [isSuccess, isError, fetchedParishGroups, setGroups]);
+
+  const parishionerMutation = useMutation<
+    CreateParishionerResponseType | void,
+    Error,
+    NewParishionerFormData
+  >({
+    // mutationFn: (data) => parishionerService.createParishioner(data),
+    mutationFn: async (formData) => {
+      try {
+        if (!societies.length) {
+          setSocietiesError("You must select a value");
+          toast.error("You must select atleast one society");
+          return;
+        }
+        setUploadingMessage("Uploading file");
+        let fileUrl = "";
+        if (files[0]) {
+          toast.info("Uploading profile picture");
+
+          const processedFile = await processFile(files[0].file);
+          const fileRes = await configService.uploadFile(processedFile.file);
+
+          if (fileRes.error || !fileRes.data?.url) {
+            toast.error(
+              fileRes.error || "Failed to upload image. Please try again."
+            );
+
+            return;
+          }
+          toast.success("Done uploading profile picture");
+
+          fileUrl = fileRes.data?.url;
+        }
+
+        setUploadingMessage("Submitting");
+        const data = {
+          ...formData,
+          societies,
+          picture: fileUrl,
+          password: formData.dateOfBirth,
+        };
+
+        console.log("Data: ", data);
+        const res = parishionerService.createParishioner(data);
+
+        setUploadingMessage("Submit");
+        console.log("New Parishioner Data ", parishionerMutation.data);
+        return res;
+      } catch (e) {
+        setUploadingMessage("submit");
+        toast.error("Error creating parishioner");
+      }
+    },
+  });
+
+  const handleFormSubmit = (formData: NewParishionerFormData) => {
+    parishionerMutation.mutate(formData);
+  };
   const {
     register,
     handleSubmit,
     formState: { errors },
-  } = useForm<FormData>({
-    resolver: zodResolver(MemberProfileSchema),
+  } = useForm<NewParishionerFormData>({
+    // resolver: zodResolver(MemberProfileSchema),
   });
 
-  const handleSocietiesChange = (values: SelectOption[]) => {
+  const handleSocietiesChange = useCallback((values: SelectOption[]) => {
     if (values.length) {
       setSocietiesError("");
     } else setSocietiesError("You must select a value");
     setSocieties(values.map((value) => value.value));
-  };
+  }, []);
 
   const handleFileChange = (files: FileInputType[]) => {
     setFiles(files);
   };
+
+  const ParishDetails: FormFieldsType = [
+    [
+      {
+        type: "select",
+        name: "stationId",
+        label: "Station",
+        required: true,
+        options: [
+          ...parishGroups.outstations.map((station) => {
+            return { name: station.name, value: station.id };
+          }),
+          // { name: "N/A", value: "N/A" },
+        ],
+      },
+      {
+        type: "select",
+        name: "communityId",
+        label: "Community",
+        required: true,
+        options: [
+          ...parishGroups.communities.map((community) => {
+            return { name: community.name, value: community.id };
+          }),
+          // { name: "N/A", value: "N/A" },
+        ],
+      },
+    ],
+    {
+      type: "multi-select",
+      name: "society",
+      label: "Societies",
+      required: true,
+      options: [
+        ...parishGroups.societies.map((society) => {
+          return { name: society.name, value: society.id };
+        }),
+        { name: "N/A", value: "N/A" },
+      ],
+    },
+  ];
 
   const parseInput = ({ max, type, ...fields }: FormFieldType) => {
     if (type === "file") {
@@ -74,7 +207,7 @@ const Page = () => {
           <ErrorSpan
             message={`${
               (errors[fields.name as MemberFieldNames]?.message as string) ?? ""
-            } ${!files.length ? "You must select a file" : ""}`}
+            }`}
           />
         </Fragment>
       );
@@ -129,7 +262,6 @@ const Page = () => {
         </div>
       );
   };
-
   return (
     <div>
       <form
@@ -198,8 +330,12 @@ const Page = () => {
           <Button
             className="bg-secondary-900 mb-10 sm:px-16.25 sm:py-3.75 font-medium text-white cursor-pointer"
             type="submit"
+            disabled={parishionerMutation.isPending}
           >
-            Submit
+            <div className="flex items-center gap-2">
+              <span>{uploadingMessage}</span>
+              {parishionerMutation.isPending && <Spinner className="size-4" />}
+            </div>
           </Button>
         </div>
       </form>

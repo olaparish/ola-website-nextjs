@@ -1,5 +1,6 @@
 export * from "./form";
 export * from "./files";
+export * from "./parish-groups.types";
 export interface MobileDropDownProps {
   name: string;
   to?: string;

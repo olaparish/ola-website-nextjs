@@ -11,13 +11,21 @@ type Props = React.ComponentProps<"select"> & SelectProps;
 
 const Select = ({ id, name, className, options, ...props }: Props) => {
   const generatedId = useId();
-  const selectId = useMemo(() => {
-    return id ?? name ?? generatedId;
-  }, [id, name, generatedId]);
+  const selectId = useMemo(
+    () => id ?? name ?? generatedId,
+    [id, name, generatedId]
+  );
+
+  const placeholderText = "-- Select --";
+
   return (
     <div className="relative">
       <select
         id={selectId}
+        name={name}
+        ref={props.ref} // 👈 very important for RHF
+        onChange={props.onChange} // 👈 RHF's change handler
+        onBlur={props.onBlur}
         className={cn(
           "flex rounded-10 w-full min-w-0",
           "border",
@@ -33,10 +41,10 @@ const Select = ({ id, name, className, options, ...props }: Props) => {
           "aria-invalid:ring-red-100 dark:aria-invalid:ring-red-200 aria-invalid:border-red-500 aria-invalid:ring-2",
           className
         )}
-        {...props}
+        defaultValue="" // 👈 This keeps RHF happy for uncontrolled input
       >
-        <option value="" disabled hidden>
-          Select an option
+        <option value="" disabled>
+          {placeholderText}
         </option>
         {options.map((op, index) => (
           <option key={index} value={op.value}>
@@ -53,5 +61,6 @@ const Select = ({ id, name, className, options, ...props }: Props) => {
     </div>
   );
 };
+
 
 export default Select;

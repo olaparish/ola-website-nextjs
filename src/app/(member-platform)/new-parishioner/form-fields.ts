@@ -1,9 +1,13 @@
 import { z } from "zod";
 import { FormFieldsType } from "../../../../types";
-import OutStations from "@/data/outstations_data.json";
-import Communities from "@/data/communities_data.json";
-import Societies from "@/data/societies_data.json";
 
+export const MARITAL_STATUS_OBJ = [
+  { name: "Single", value: "SINGLE" },
+  { name: "Married", value: "MARRIED" },
+  { name: "Separated", value: "SEPARATED" },
+  { name: "Widowed", value: "WIDOWED" },
+  { name: "Religious (Priest / Sister / Brother)", value: "RELIGIOUS" },
+];
 const getDateMaxValue = () => {
   const today = new Date();
 
@@ -70,6 +74,13 @@ export const ProfileFields: FormFieldsType = [
     required: false,
   },
   {
+    type: "select",
+    name: "maritalStatus",
+    label: "Marital Status",
+    required: true,
+    options: MARITAL_STATUS_OBJ,
+  },
+  {
     type: "file",
     name: "picture",
     label: "Picture",
@@ -122,52 +133,52 @@ export const WorkDetails: FormFieldsType = [
   },
 ] as const;
 
-export const ParishDetails: FormFieldsType = [
-  [
-    {
-      type: "select",
-      name: "station",
-      label: "Station",
-      required: true,
-      options: [
-        ...OutStations.map((station) => {
-          return { name: station.name, value: station.name };
-        }),
-        { name: "N/A", value: "N/A" },
-      ],
-    },
-    {
-      type: "select",
-      name: "community",
-      label: "Community",
-      required: true,
-      options: [
-        ...Communities.map((community) => {
-          return { name: community.name, value: community.name };
-        }),
-        { name: "N/A", value: "N/A" },
-      ],
-    },
-  ],
-  {
-    type: "multi-select",
-    name: "society",
-    label: "Societies",
-    required: true,
-    options: [
-      ...Societies.map((society) => {
-        return { name: society.name, value: society.name };
-      }),
-      { name: "N/A", value: "N/A" },
-    ],
-  },
-] as const;
+// export const ParishDetails: FormFieldsType = [
+//   [
+//     {
+//       type: "select",
+//       name: "station",
+//       label: "Station",
+//       required: true,
+//       options: [
+//         ...OutStations.map((station) => {
+//           return { name: station.name, value: station.name };
+//         }),
+//         { name: "N/A", value: "N/A" },
+//       ],
+//     },
+//     {
+//       type: "select",
+//       name: "community",
+//       label: "Community",
+//       required: true,
+//       options: [
+//         ...Communities.map((community) => {
+//           return { name: community.name, value: community.name };
+//         }),
+//         { name: "N/A", value: "N/A" },
+//       ],
+//     },
+//   ],
+//   {
+//     type: "multi-select",
+//     name: "society",
+//     label: "Societies",
+//     required: true,
+//     options: [
+//       ...Societies.map((society) => {
+//         return { name: society.name, value: society.name };
+//       }),
+//       { name: "N/A", value: "N/A" },
+//     ],
+//   },
+// ] as const;
 
 export const OtherDetails: FormFieldsType = [
   [
     {
       type: "text",
-      name: "emergencyPerson",
+      name: "emergencyContactName",
       label: "Enter emergency person name",
       required: true,
     },
@@ -188,22 +199,8 @@ export const MemberProfileSchema = z.object({
   otherNames: z.string().optional(),
   dateOfBirth: z.string().min(1, "Date of birth is required"),
   phoneNumber: z.string().min(1, "Phone number is required"),
-  email: z.string().email("Invalid email address").optional(),
-  // 📷 File Upload (from <input type="file" />)
-  picture: z
-    .any()
-    .refine(
-      (fileList) => fileList instanceof FileList && fileList.length > 0,
-      "File is required"
-    )
-    .transform((fileList) => fileList?.[0]) // ✅ take the first file
-    .refine((file) => file instanceof File, "Invalid file")
-    .refine((file) => file.size <= 5 * 1024 * 1024, "File must be ≤ 5MB")
-    .refine(
-      (file) => ["image/jpeg", "image/png", "image/jpg"].includes(file.type),
-      "Only JPG or PNG files are allowed"
-    )
-    .optional(),
+  email: z.email("Invalid email address").optional(),
+  maritalStatus: z.enum(MARITAL_STATUS_OBJ.map((status) => status.value)),
 
   // Home Details
   residentialAddress: z.string().min(1, "Residential address is required"),
@@ -215,12 +212,12 @@ export const MemberProfileSchema = z.object({
   workDigitalAddress: z.string().optional(),
 
   // Parish Details
-  station: z.string().min(1, "Station is required"),
-  community: z.string().min(1, "Community is required"),
+  stationId: z.string().min(1, "Station is required"),
+  communityId: z.string().min(1, "Community is required"),
   // societies: z.string().min(1, "Societies are required"),
 
   // Other Details
-  emergencyPerson: z.string().min(1, "Emergency person name is required"),
+  emergencyContactName: z.string().min(1, "Emergency person name is required"),
   emergencyContact: z.string().min(1, "Emergency contact is required"),
 });
 
@@ -234,9 +231,7 @@ export type MemberFieldNames =
   | "dateOfBirth"
   | "phoneNumber"
   | "email"
-  // Note: Your field array uses "Picture" (capital P) but your schema uses "picture" (lowercase p).
-  // The schema must match the name used in register(). I'll use the schema name.
-  | "picture"
+  | "maritalStatus"
 
   // Home Details
   | "residentialAddress"
@@ -248,12 +243,9 @@ export type MemberFieldNames =
   | "workDigitalAddress"
 
   // Parish Details
-  | "station"
-  | "community"
-  // Note: Your field array uses "Societies" (capital S) but Zod keys are typically lowercase.
-  // I will use "Societies" as per your array definition.
-  // | "society"
+  | "stationId"
+  | "communityId"
 
   // Other Details
-  | "emergencyPerson"
+  | "emergencyContactName"
   | "emergencyContact";

@@ -20,6 +20,14 @@ const MultiSelect = ({ options: inputOptions, setValue }: Props) => {
     setValue(selected);
   }, [selected, setValue]);
 
+  // 2. 🌟 NEW useEffect to sync props with local state 🌟
+  useEffect(() => {
+    const newAvailableOptions = inputOptions.filter(
+      (inputOpt) => !selected.some((sel) => sel.value === inputOpt.value)
+    );
+    setOptions(newAvailableOptions);
+  }, [inputOptions, selected]);
+
   const handleSelectChange = (event: React.ChangeEvent<HTMLSelectElement>) => {
     const selectedValue = event.target.value;
     const value = options.find((op) => op.value === selectedValue);
@@ -36,7 +44,11 @@ const MultiSelect = ({ options: inputOptions, setValue }: Props) => {
   };
   return (
     <div className="w-full">
-      <Select options={options} onChange={handleSelectChange} value={selectValue} />
+      <Select
+        options={options}
+        onChange={handleSelectChange}
+        value={selectValue}
+      />
       <div className="flex flex-wrap gap-2 mt-2">
         {selected.map((value, index) => {
           return (

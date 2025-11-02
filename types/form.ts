@@ -1,4 +1,6 @@
+import z from "zod";
 import { SelectOption } from ".";
+import { MemberProfileSchema } from "@/app/(member-platform)/new-parishioner/form-fields";
 
 export type InputType =
   | "text"
@@ -34,3 +36,4 @@ export type FormFieldType = {
 };
 
 export type FormFieldsType = (FormFieldType | FormFieldType[])[];
+export type NewParishionerFormData = z.infer<typeof MemberProfileSchema>;
