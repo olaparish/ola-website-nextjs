@@ -1,10 +1,8 @@
 "use client";
 import React, { Fragment, useCallback, useEffect, useState } from "react";
-import { zodResolver } from "@hookform/resolvers/zod";
 import { useForm } from "react-hook-form";
 import {
   MemberFieldNames,
-  MemberProfileSchema,
   ProfileFields,
   HomeDetails,
   WorkDetails,
@@ -23,7 +21,7 @@ import Select from "@/components/ui/Select";
 import { Button } from "@/components/ui/button";
 import MultiSelect from "@/components/ui/MultiSelect";
 import { ImageInput } from "@/components/ui/ImageInput";
-// import { FileInputType, FileUploadResponse } from "../../../../types/inputs";
+import { FileInputType } from "../../../../types/inputs";
 import { useMutation, useQuery } from "@tanstack/react-query";
 import { parishionerService } from "@/services/parishioner.service";
 import { configService } from "@/services/config.service";
@@ -31,7 +29,6 @@ import { Spinner } from "@/components/ui/spinner";
 import { toast } from "sonner";
 import { CreateParishionerResponseType } from "../../../../types/parishioner";
 import { processFile } from "@/utils/fileUtils";
-import { FileInputType } from "../../../../types/inputs";
 import { useParishGroupStore } from "@/hooks/useParishGroups";
 import { parishGroupsService } from "@/services/parish-groups.service";
 
@@ -79,7 +76,6 @@ const Page = () => {
     Error,
     NewParishionerFormData
   >({
-    // mutationFn: (data) => parishionerService.createParishioner(data),
     mutationFn: async (formData) => {
       try {
         if (!societies.length) {
@@ -94,7 +90,7 @@ const Page = () => {
 
           const processedFile = await processFile(files[0].file);
           const fileRes = await configService.uploadFile(processedFile.file);
-
+          console.log("Uploaded File: ", fileRes);
           if (fileRes.error || !fileRes.data?.url) {
             toast.error(
               fileRes.error || "Failed to upload image. Please try again."
@@ -120,6 +116,7 @@ const Page = () => {
 
         setUploadingMessage("Submit");
         console.log("New Parishioner Data ", parishionerMutation.data);
+        toast.success("Parishioner created successfully");
         return res;
       } catch (e) {
         setUploadingMessage("submit");
