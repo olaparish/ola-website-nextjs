@@ -31,6 +31,7 @@ import { CreateParishionerResponseType } from "../../../../types/parishioner";
 import { processFile } from "@/utils/fileUtils";
 import { useParishGroupStore } from "@/hooks/useParishGroups";
 import { parishGroupsService } from "@/services/parish-groups.service";
+import { useRouter } from "next/navigation";
 
 const Page = () => {
   const { setGroups, ...parishGroups } = useParishGroupStore();
@@ -39,6 +40,8 @@ const Page = () => {
   const [societiesError, setSocietiesError] = useState<string>("");
   const [files, setFiles] = useState<FileInputType[]>([]);
   const [uploadingMessage, setUploadingMessage] = useState("submit");
+
+  const router = useRouter();
 
   const {
     data: fetchedParishGroups,
@@ -115,8 +118,7 @@ const Page = () => {
         const res = parishionerService.createParishioner(data);
 
         setUploadingMessage("Submit");
-        console.log("New Parishioner Data ", parishionerMutation.data);
-        toast.success("Parishioner created successfully");
+        router.push("/new-parishioner/success");
         return res;
       } catch (e) {
         setUploadingMessage("submit");
@@ -259,6 +261,7 @@ const Page = () => {
         </div>
       );
   };
+
   return (
     <div>
       <form
