@@ -1,3 +1,4 @@
+"use client";
 import { cn } from "@/lib/utils";
 import { ChangeEvent, useState } from "react";
 import { CiCamera } from "react-icons/ci";

@@ -32,6 +32,7 @@ import { processFile } from "@/utils/fileUtils";
 import { useParishGroupStore } from "@/hooks/useParishGroups";
 import { parishGroupsService } from "@/services/parish-groups.service";
 import { useRouter } from "next/navigation";
+import { ErrorSpan } from "@/components/ui/errors";
 
 const Page = () => {
   const { setGroups, ...parishGroups } = useParishGroupStore();
@@ -343,8 +344,5 @@ const Page = () => {
   );
 };
 
-const ErrorSpan = ({ message }: { message: string }) => {
-  return <span className="text-red-500">{message}</span>;
-};
 
 export default Page;

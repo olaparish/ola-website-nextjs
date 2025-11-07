@@ -1,6 +1,9 @@
 export * from "./form";
 export * from "./files";
 export * from "./parish-groups.types";
+export * from "./parishioner";
+export * from "./inputs";
+export * from "./users";
 export interface MobileDropDownProps {
   name: string;
   to?: string;
@@ -46,3 +49,11 @@ export type NavElement = {
   name: string;
   href: string;
 };
+
+export type MARITAL_STATUS =
+  | "MARRIED"
+  | "SINGLE"
+  | "DIVORCED"
+  | "SEPARATED"
+  | "WIDOWED";
+

@@ -3,7 +3,8 @@
 import React from "react";
 import { ArrowLeft } from "../icons/arrow-left";
 import { ArrowRight } from "../icons/arrow-right";
-import UseCountPerScreen from "@/hooks/useParishGroups";
+import UseCountPerScreen from "@/hooks/useCountPerScreen";
+
 
 const Sacraments = () => {
   const { valuesToRender, changeValue } = UseCountPerScreen(sacraments);

@@ -15,6 +15,48 @@ const Gallery = () => {
         popularised in the 1960s with the release of Letraset sheets containing
         Lorem Ipsum passages, and more recently with desktop{" "}
       </p>
+      {/* <div className="lg:flex justify-center gap-2 lg:gap-4 grid grid-cols-2 mt-10 lg:mt-20">
+        <img
+          className=""
+          src="/images/gallery/img_1.png"
+          alt="ola parish youth"
+        />
+        <img
+          className=""
+          src="/images/gallery/img_2.png"
+          alt="ola parish youth"
+        />
+        <img
+          className=""
+          src="/images/gallery/img_3.png"
+          alt="ola parish youth"
+        />
+        <img
+          className=""
+          src="/images/gallery/img_1.png"
+          alt="ola parish youth"
+        />
+        <img
+          className=""
+          src="/images/gallery/img_1.png"
+          alt="ola parish youth"
+        />
+        <img
+          className=""
+          src="/images/gallery/img_2.png"
+          alt="ola parish youth"
+        />
+        <img
+          className=""
+          src="/images/gallery/img_3.png"
+          alt="ola parish youth"
+        />
+        <img
+          className=""
+          src="/images/gallery/img_1.png"
+          alt="ola parish youth"
+        />
+      </div> */}
       <div className="lg:flex justify-center gap-2 lg:gap-4 grid grid-cols-2 mt-10 lg:mt-20">
         <img
           className=""
