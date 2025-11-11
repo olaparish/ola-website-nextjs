@@ -3,7 +3,7 @@
 import { Fragment, useState } from "react";
 import { IconChevronDown } from "../../icons/chevron-down";
 import { IconMenu } from "../../icons/icon-menu";
-import Modal from "../../comon/modal";
+import Modal from "../../common/modal";
 import Link from "next/link";
 import NavItem from "../../ui/navItem";
 import { DropDownProps, MultiDropDownOption, MultiDropDownProps } from "../../../../types";

@@ -1,3 +1,4 @@
+"use client";
 import React, { useState } from "react";
 import { NavElement } from "../../../types";
 import Link from "next/link";
@@ -20,7 +21,7 @@ const NavSelect = ({ name, items }: Props) => {
         <RiArrowDropDownLine className="size-7" />
       </div>
       {showNav && (
-        <nav className="top-14 left-0 z-10 absolute bg-primary-100 pt-6 w-44">
+        <nav className="top-14 left-0 z-10 absolute bg-primary-100 py-6 w-44">
           {items.map((it, index) => (
             <div
               className="hover:bg-primary-700 py-2.5 pl-10 hover:text-white cursor-pointer"

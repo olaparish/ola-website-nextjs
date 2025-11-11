@@ -1,7 +1,7 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 import { MARITAL_STATUS } from ".";
 
-export type CreateParishionerResponseType = { token: string };
+export type CreateParishionerResponseType = { token: string; id: string };
 
 export interface Parishioner {
   id?: string;

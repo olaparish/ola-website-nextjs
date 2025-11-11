@@ -14,7 +14,7 @@ import { signIn } from "next-auth/react";
 import { toast } from "sonner";
 
 const schema = z.object({
-  username: z.string().min(2, "Please enter a username"),
+  id: z.string().min(2, "Please enter a username"),
   password: z.string().min(2, "Please enter a password"),
 });
 
@@ -60,11 +60,11 @@ const SigninForm = () => {
   return (
     <form onSubmit={handleSubmit(onSubmit)} className="mt-12">
       <div>
-        <Label className="" htmlFor="username">
-          Username
+        <Label className="" htmlFor="id">
+          Parishioner ID
         </Label>
-        <Input id="username" type="text" {...register("username")} />
-        <ErrorSpan message={errors.username?.message as string} />
+        <Input id="id" type="text" {...register("id")} />
+        <ErrorSpan message={errors.id?.message as string} />
       </div>
       <div className="mt-7.5">
         <Label className="" htmlFor="password">

@@ -114,12 +114,16 @@ const Page = () => {
           picture: fileUrl,
           password: formData.dateOfBirth,
         };
+        if (!data.email?.length) {
+          delete data.email;
+        }
 
         console.log("Data: ", data);
-        const res = parishionerService.createParishioner(data);
+        const res = await parishionerService.createParishioner(data);
 
+        console.log("Res: ", res);
         setUploadingMessage("Submit");
-        router.push("/new-parishioner/success");
+        router.push(`/new-parishioner/success/${res.id.split("-")[0]}`);
         return res;
       } catch (e) {
         setUploadingMessage("submit");

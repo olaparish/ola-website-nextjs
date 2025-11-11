@@ -49,7 +49,7 @@ export const ProfileFields: FormFieldsType = [
     name: "otherNames",
     label: "Other names",
     placeholder: "Enter the other names you have",
-    required: true,
+    required: false,
   },
   {
     type: "date",

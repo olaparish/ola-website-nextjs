@@ -5,6 +5,15 @@ export type Credentials = {
   password: string;
 };
 
+export type ParishionerCredentials = {
+  id: string;
+  password: string;
+};
+
+
+// c0985371;
+
+
 export interface TokenObj {
   token: string;
   expires: Date;

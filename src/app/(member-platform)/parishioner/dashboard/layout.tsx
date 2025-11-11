@@ -1,5 +1,4 @@
-import NewParishionerHeader from "@/components/layout/headers/new-parishioner";
-import { useQuery } from "@tanstack/react-query";
+import ParishGroupsHeader from "@/components/layout/headers/parish-groups.header";
 import type { Metadata } from "next";
 import React from "react";
 
@@ -13,13 +12,12 @@ export default function Layout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
-  //   const {} = useQuery({});
   return (
-    <html lang="en">
+    <div className="p-7.5 px-2 sm:px-7.5">
       <body className="antialiased">
-        <NewParishionerHeader />
+        <ParishGroupsHeader />
         <main>{children}</main>
       </body>
-    </html>
+    </div>
   );
 }
