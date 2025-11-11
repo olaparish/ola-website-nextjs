@@ -1,18 +1,33 @@
 import { apiWrapper, ApiResponse } from "@/utils/api-wrapper";
 import api from "@/utils/axios";
-import { ParishionerCredentials, SignInResponse } from "../../types/auth.type";
-import { ParishionerUser } from "../../types";
+import { Credentials, SignInResponse } from "../../types/auth.type";
+import { BaseUser } from "../../types";
 
 export const authService = {
-  signin: async (
-    credentials: ParishionerCredentials
+  parishionerSignin: async (
+    credentials: Credentials
   ): Promise<ApiResponse<SignInResponse>> => {
     return apiWrapper(
       async () => {
-        const { data } = await api.post<SignInResponse<ParishionerUser>>(
-          "/auth/parishioner/login",
-          { id: credentials.id, password: credentials.password }
-          // { email: "alouismariea97@gmail.com", password: "2025-10-31" }
+        const { data } = await api.post<SignInResponse<BaseUser>>(
+          `/auth/parishioner/login`,
+          credentials
+        );
+        return data;
+      },
+      {
+        errorMessage: "Failed to sign in",
+      }
+    );
+  },
+  leaderSignin: async (
+    credentials: Credentials
+  ): Promise<ApiResponse<SignInResponse>> => {
+    return apiWrapper(
+      async () => {
+        const { data } = await api.post<SignInResponse<BaseUser>>(
+          `/auth/user/login`,
+          credentials
         );
         return data;
       },

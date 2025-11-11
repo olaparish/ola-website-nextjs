@@ -1,9 +1,9 @@
-import { UserTypes } from "./users";
+import { SessionUser, UserTypes } from "./users";
 
 declare module "next-auth" {
   interface Session {
-    userType?: string;
-    user?: UserTypes;
+    userType?: UserTypes;
+    user?: SessionUser;
     tokenData?: StaffTokenData | OrganizationTokenData;
   }
 }

@@ -1,5 +1,11 @@
 export { auth as middleware } from "./lib/auth";
 
 export const config = {
-  matcher: ["/catechist/:path*", "/parishioner/:path*"],
+  matcher: [
+    "/parishioner/:path*",
+    "/catechist/:path*",
+    "/parish-group/:path*",
+    "/accountant/:path*",
+    "/parish-council-chairman/:path*",
+  ],
 };

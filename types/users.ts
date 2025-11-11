@@ -1,3 +1,4 @@
+import { ParishGroup } from "./parish-groups.types";
 import { Parishioner } from "./parishioner";
 
 export const Roles = {
@@ -45,12 +46,33 @@ export type BaseUser = {
   accountMeta?: UserAccountMeta;
 };
 
-export type UserTypes = Parishioner;
+export type UserTypes =
+  | "PARISHIONER"
+  | "PARISH_PRIEST"
+  | "PARISH_COUNCIL_CHAIRMAN"
+  | "PRIEST"
+  | "CATECHIST"
+  | "ACCOUNTANT"
+  | "COMMUNITY"
+  | "SOCIETY"
+  | "OUTSTATION";
 
-export interface User<T = UserTypes> extends BaseUser {
+export type UserDataType = Parishioner | ParishGroupUser;
+
+export type ParishionerUser = User<Parishioner>;
+export type ParishGroupUser = User<ParishGroup>;
+
+export type AppUser = ParishionerUser | ParishGroupUser;
+
+export interface User<T = UserDataType> extends BaseUser {
   userData: T;
 }
 
-export interface ParishionerUser extends BaseUser {
-  userData: Parishioner;
-}
+export type SessionUser = {
+  id: string;
+  email: string;
+  firstName: string;
+  lastName: string;
+  avatar: string;
+  role: string;
+};

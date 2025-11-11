@@ -1,26 +1,23 @@
-export type ParishGroup = {
+export interface ParishGroup {
   id: string;
   name: string;
   email: string;
+  type: string;
   heroImage: string;
-  otherImages: string[];
-  writeup: string[];
-  contactDetails: {
-    phone: string;
-    address: string;
-    social: {
-      facebook: string;
-      website: string;
-    };
-  };
-  otherInfo: {
-    founded: string;
-    memberCount: number;
-    region: string;
-  };
+  writeup: string;
+  otherImages: string;
+  phone: string;
+  address: string;
+  facebook: string;
+  website: string;
+  dateFounded: string;
   slug: string;
   link: string;
-};
+  userId: string;
+  deletedAt: string | null;
+  createdAt: string;
+  updatedAt: string;
+}
 
 export type ParishGroupResponse = {
   communities: ParishGroup[];

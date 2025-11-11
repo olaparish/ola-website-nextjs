@@ -1,13 +1,11 @@
 import SignoutBtn from "@/components/common/signout-btn";
 import { IconEditThin } from "@/components/icons/icon-edit-thin";
-import IconSolarLogout from "@/components/icons/icon-logout";
 import NavSelect from "@/components/ui/NavSelect";
-import { auth, signOut } from "@/lib/auth";
+import { auth } from "@/lib/auth";
 import React from "react";
 
 const Page = async () => {
   const session = await auth();
-  console.log("Session: ", session);
   return (
     <div className="">
       <div className="flex justify-end-safe pt-4.75">

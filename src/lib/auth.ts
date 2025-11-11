@@ -3,11 +3,16 @@
 import NextAuth from "next-auth";
 import Credentials from "next-auth/providers/credentials";
 import { selectMinimalSessionUser, selectMinimalTokenData } from "./helpers";
+import { UserTypes } from "../../types";
 
 const UserStates = {
   parishioner: {
     route: "/parishioner",
     loginPathName: "parishioner",
+  },
+  "parish-group": {
+    route: "/parish-group",
+    loginPathName: "leader",
   },
   catechist: {
     route: "/catechist",
@@ -24,7 +29,6 @@ export const { handlers, signIn, signOut, auth } = NextAuth({
         userType: { label: "userType", type: "string" },
       },
       async authorize(credentials) {
-        console.log("Sigining in with credentials: ", credentials);
         if (!credentials) return null;
 
         if (credentials.user && credentials.tokenData) {
@@ -56,7 +60,7 @@ export const { handlers, signIn, signOut, auth } = NextAuth({
     },
     async session({ session, token }) {
       session.user = token.user as any;
-      session.userType = token.userType as string;
+      session.userType = token.userType as UserTypes;
       session.tokenData = token.tokenData as any;
       return session;
     },
@@ -66,20 +70,35 @@ export const { handlers, signIn, signOut, auth } = NextAuth({
 
       const pathname = request.nextUrl.pathname;
       const authName = pathname.split("/")[1];
-      console.log("getting: ", authName);
       const objectState = UserStates[authName as keyof typeof UserStates];
-
-      console.log("ObjectState: ", objectState);
 
       if (objectState && !isLoggedIn) {
         return Response.redirect(
-          new URL(`/auth/${authName}/login`, request.url)
+          new URL(`/auth/${objectState.loginPathName}/login`, request.url)
         );
       }
+      const userType = auth?.userType?.toLowerCase() as string;
+      const isParishGroup = ["community", "outstation", "society"].includes(
+        userType
+      );
 
-      if (authName !== auth?.userType?.toLowerCase()) {
+      console.log("Inside authorised: ", {
+        pathname,
+        authName,
+        objectState,
+        userType: auth?.userType?.toLowerCase(),
+        isParishGroup,
+      });
+
+      const isParishGroupRoute = authName === "parish-group";
+      if (isParishGroup && isParishGroupRoute) {
+        console.log("returning true", authName);
+        return true;
+      }
+      if (authName !== userType) {
+        console.log("Still here...");
         return Response.redirect(
-          new URL(`/auth/${authName}/login`, request.url)
+          new URL(`/auth/${objectState.loginPathName}/login`, request.url)
         );
       }
 

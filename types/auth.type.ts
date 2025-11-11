@@ -1,16 +1,12 @@
 import { User } from "./users";
 
 export type Credentials = {
-  username: string;
+  email?: string;
+  id?: string;
   password: string;
 };
 
-export type ParishionerCredentials = {
-  id: string;
-  password: string;
-};
-
-
+export type UserLoginTypes = "leader" | "parishioner";
 // c0985371;
 
 

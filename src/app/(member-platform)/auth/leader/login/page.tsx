@@ -17,9 +17,9 @@ const Page = () => {
         <p className="block mt-2.5 text-center">
           You are signing into
           <br /> this account as a <br />
-          <span className="font-bold text-secondary-900">Parishioner</span>.
+          <span className="font-bold text-secondary-900">Parish Leader</span>.
         </p>
-        <SigninForm type="parishioner" />
+        <SigninForm type="leader" />
         <div className="mt-15 text-sm text-center">
           <p>Do you have issues</p>
           <p>

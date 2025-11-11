@@ -10,17 +10,28 @@ import { Spinner } from "../ui/spinner";
 import z from "zod";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { authService } from "@/services/auth.service";
-import { signIn } from "next-auth/react";
+import { signIn, signOut } from "next-auth/react";
 import { toast } from "sonner";
+import { useRouter } from "next/navigation";
+import { UserLoginTypes } from "../../../types/auth.type";
+import { getLoginCallback } from "@/lib/helpers";
 
-const schema = z.object({
-  id: z.string().min(2, "Please enter a username"),
-  password: z.string().min(2, "Please enter a password"),
-});
+type Props = {
+  type: UserLoginTypes;
+};
 
-type schemaType = z.infer<typeof schema>;
+const SigninForm = ({ type }: Props) => {
+  const schema = z.object({
+    username:
+      type === "parishioner"
+        ? z.string().min(2, "Please enter your ID")
+        : z.email("Please enter your email"),
+    password: z.string().min(2, "Please enter a password"),
+  });
 
-const SigninForm = () => {
+  type schemaType = z.infer<typeof schema>;
+
+  const router = useRouter();
   const {
     register,
     handleSubmit,
@@ -29,7 +40,24 @@ const SigninForm = () => {
 
   const { isPending, mutate } = useMutation<void, Error, schemaType>({
     mutationFn: async (data) => {
-      const res = await authService.signin(data);
+      // let callbackUrl;
+      let authFunction;
+      let credentialsObj;
+      if (type === "parishioner") {
+        authFunction = authService.parishionerSignin;
+        credentialsObj = {
+          id: data.username,
+          password: data.password,
+        };
+      } else {
+        authFunction = authService.leaderSignin;
+        credentialsObj = {
+          email: data.username,
+          password: data.password,
+        };
+      }
+
+      const res = await authFunction(credentialsObj);
       if (!res.data || res.error) {
         toast.error("Incorrect username or password");
         throw new Error("username or password");
@@ -37,16 +65,26 @@ const SigninForm = () => {
       console.log("here now...");
       if (!res.data.requires2FA) {
         try {
-          console.log("Signing in...");
+          console.log("Signing in...", res.data.user);
           const signResult = await signIn("credentials", {
             user: JSON.stringify(res.data.user),
             tokenData: JSON.stringify(res.data.tokenData),
             userType: JSON.stringify(res.data.user.role),
-            callbackUrl: "/parishioner/dashboard",
+            redirect: false,
           });
+
           console.log("signin result: ", signResult);
+
+          const callbackUrl = getLoginCallback(res.data.user.role);
+          if (!callbackUrl) {
+            throw new Error("User dashboard not implemented");
+          }
+          console.log("callback url: ", callbackUrl);
+          router.push(callbackUrl);
         } catch (error) {
           console.log("Sign in error: ", error);
+          signOut();
+          throw new Error("User dashboard not implemented");
         }
       } else {
         toast.error("2FA not implemented");
@@ -61,10 +99,14 @@ const SigninForm = () => {
     <form onSubmit={handleSubmit(onSubmit)} className="mt-12">
       <div>
         <Label className="" htmlFor="id">
-          Parishioner ID
+          {type === "parishioner" ? "Parishioner ID" : "username"}
         </Label>
-        <Input id="id" type="text" {...register("id")} />
-        <ErrorSpan message={errors.id?.message as string} />
+        <Input
+          id="username"
+          type={type === "parishioner" ? "text" : "email"}
+          {...register("username")}
+        />
+        <ErrorSpan message={errors.username?.message as string} />
       </div>
       <div className="mt-7.5">
         <Label className="" htmlFor="password">
