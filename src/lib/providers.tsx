@@ -3,6 +3,7 @@
 import { ReactNode } from "react";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { Toaster } from "@/components/ui/sonner";
+import { SessionProvider } from "next-auth/react";
 
 const Providers = ({ children }: { children: ReactNode }) => {
   const queryClient = new QueryClient({
@@ -22,15 +23,15 @@ const Providers = ({ children }: { children: ReactNode }) => {
     });
   };
   return (
-    // <SessionProvider>
-    <QueryClientProvider client={queryClient}>
-      {/* <PermissionProvider> */}
-      <Toaster richColors />
-      {/* <RouteFeedbackProvider /> */}
-      {children}
-      {/* </PermissionProvider> */}
-    </QueryClientProvider>
-    // </SessionProvider>
+    <SessionProvider>
+      <QueryClientProvider client={queryClient}>
+        {/* <PermissionProvider> */}
+        <Toaster richColors />
+        {/* <RouteFeedbackProvider /> */}
+        {children}
+        {/* </PermissionProvider> */}
+      </QueryClientProvider>
+    </SessionProvider>
   );
 };
 

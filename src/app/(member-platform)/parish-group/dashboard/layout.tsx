@@ -16,7 +16,7 @@ export default function Layout({
     <div className="p-7.5 px-2 sm:px-7.5">
       <div className="antialiased">
         <ParishGroupsHeader />
-        <main>{children}</main>
+        <div>{children}</div>
       </div>
     </div>
   );

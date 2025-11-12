@@ -20,7 +20,7 @@ const ParishGroupsHeader = () => {
          </div>
        </div>
      </div>
-     <div className="bg-secondary-900 px-5 py-3 text-white">Parishioner</div>
+     <div className="bg-secondary-900 px-5 py-3 text-white">Parish Group</div>
    </header>
  );
 }

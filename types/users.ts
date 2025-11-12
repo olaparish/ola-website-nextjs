@@ -57,7 +57,7 @@ export type UserTypes =
   | "SOCIETY"
   | "OUTSTATION";
 
-export type UserDataType = Parishioner | ParishGroupUser;
+export type UserDataType = Parishioner | ParishGroup;
 
 export type ParishionerUser = User<Parishioner>;
 export type ParishGroupUser = User<ParishGroup>;
@@ -76,3 +76,5 @@ export type SessionUser = {
   avatar: string;
   role: string;
 };
+
+

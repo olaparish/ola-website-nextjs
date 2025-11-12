@@ -1,5 +1,6 @@
 import axios from "axios";
 import { toast } from "sonner";
+import { getSession } from "next-auth/react";
 
 const api = axios.create({
   baseURL: process.env.NEXT_PUBLIC_API_URL || "http://localhost:3000/api",
@@ -15,18 +16,23 @@ export class APIError extends Error {
   }
 }
 
-// // ✅ Request interceptor (optional)
-// api.interceptors.request.use(
-//   (config) => {
-//     // Example: attach auth token
-//     const token = localStorage.getItem("access_token");
-//     if (token) {
-//       config.headers.Authorization = `Bearer ${token}`;
-//     }
-//     return config;
-//   },
-//   (error) => Promise.reject(error)
-// );
+const session = await getSession();
+
+// ✅ Request interceptor (optional)
+api.interceptors.request.use(
+  (config) => {
+    if (!config.headers) {
+      config.headers = {};
+    }
+
+    const token = session?.tokenData.access.token;
+    if (token) {
+      config.headers.Authorization = `Bearer ${token}`;
+    }
+    return config;
+  },
+  (error) => Promise.reject(error)
+);
 
 // ❌ Response interceptor — Catch & Parse Errors
 api.interceptors.response.use(

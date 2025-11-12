@@ -1,10 +1,12 @@
+import { BaseUser, UserDataType } from "./users";
+
 export * from "./form";
 export * from "./files";
 export * from "./parish-groups.types";
 export * from "./parishioner";
 export * from "./inputs";
 export * from "./users";
-export * from "./table";
+export * from "./table.types";
 export interface MobileDropDownProps {
   name: string;
   to?: string;
@@ -58,3 +60,7 @@ export type MARITAL_STATUS =
   | "SEPARATED"
   | "WIDOWED";
 
+export interface GetUserDetails<T extends UserDataType> {
+  user: BaseUser;
+  userData: T;
+}
