@@ -30,9 +30,11 @@ function CustomTable<T>(props: CustomTableProps<T>) {
     queryKey: Array.isArray(props.queryKey)
       ? ["table", ...props.queryKey, pageNumber]
       : ["table", props.queryKey, pageNumber],
+    refetchOnWindowFocus: false,
     queryFn: async () => {
       try {
         const result: PaginateResult<T> = await props.fetchData(pageNumber);
+        toast.success("Fetched members");
         return result;
         // eslint-disable-next-line @typescript-eslint/no-unused-vars
       } catch (error) {

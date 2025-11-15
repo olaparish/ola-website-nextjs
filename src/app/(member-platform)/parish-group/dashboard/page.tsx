@@ -46,6 +46,7 @@ const Page = () => {
       return groupData;
     },
     enabled: !!session?.user?.id,
+    refetchOnWindowFocus: false,
   });
 
   const updateGroup = useMutation({
