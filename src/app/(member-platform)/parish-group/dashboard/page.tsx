@@ -6,13 +6,25 @@ import NavSelect from "@/components/ui/NavSelect";
 import { parishGroupService } from "@/services/parish-groups.service";
 import { useMutation, useQuery, useQueryClient } from "@tanstack/react-query";
 import { useSession } from "next-auth/react";
-import { GetUserDetails, ParishGroup } from "../../../../../types";
+import {
+  ColumnDef,
+  CustomTableProps,
+  GetUserDetails,
+  PaginateResult,
+  ParishGroup,
+  Parishioner,
+  User,
+} from "../../../../../types";
 import { toast } from "sonner";
 import DataFetchSpinner from "@/components/ui/data-fetch-spinner";
 import DataFetchError from "@/components/ui/data-fetch-error";
 import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
 import { Spinner } from "@/components/ui/spinner";
+import CustomTable from "@/components/tables/smart-table";
+import TableText from "@/components/tables/ui/normal-text";
+import { formatDateWithDuration } from "@/utils/time";
+import { IconFluentDelete } from "@/components/icons/icon-fluent-delete";
 
 const Page = () => {
   const { data: session, status } = useSession();
@@ -20,6 +32,7 @@ const Page = () => {
   const [text, setText] = useState("");
   const [expand, setExpand] = useState(false);
   const [isEditing, setIsEditing] = useState(false);
+  // const [pageNumber, setPageNumber] = useState(1);
 
   const { data, isLoading, isError } = useQuery<GetUserDetails<ParishGroup>>({
     queryKey: ["parish-group", session?.user?.id],
@@ -53,6 +66,87 @@ const Page = () => {
     },
   });
 
+  const tableColumns: ColumnDef<User<Parishioner>>[] = [
+    {
+      key: "id",
+      label: "ID",
+      headerClassName: "w-30",
+      render: (item) => {
+        return <TableText className="block w-30" text={item.id.slice(0, 8)} />;
+      },
+    },
+    {
+      key: "firstName",
+      label: "First Name",
+      headerClassName: "w-40",
+      render: (item) => {
+        return <TableText className="block w-40" text={item.firstName} />;
+      },
+    },
+    {
+      key: "lastName",
+      label: "Last Name",
+      headerClassName: "w-40",
+      render: (item) => {
+        return <TableText className="block w-40" text={item.lastName} />;
+      },
+    },
+    {
+      key: "otherNames",
+      label: "Other Names",
+      headerClassName: "w-40",
+      render: (item) => {
+        return (
+          <TableText className="block w-40" text={item.otherNames || ""} />
+        );
+      },
+    },
+    {
+      key: "dateInitiated",
+      label: "Date Initiated",
+      // headerClassName: "W-50",
+      render: (item) => {
+        const { formattedDate, duration } = formatDateWithDuration(
+          item.userData.createdAt
+        );
+        return (
+          <div className="flex flex-col gap-1.25">
+            <span>{formattedDate}</span>
+            <span className="font-light text-sm">{duration}</span>
+          </div>
+        );
+      },
+    },
+    {
+      key: "actions",
+      label: "",
+      headerClassName: "w-10",
+      render: (item) => {
+        return (
+          <div className="">
+            <IconFluentDelete className="text-red-500" />
+          </div>
+        );
+      },
+    },
+  ];
+
+  const tableProps: CustomTableProps<User<Parishioner>> = {
+    tableName: `${data?.user.firstName} members`,
+    queryKey: ["parish group members", data?.user.id],
+    columns: tableColumns,
+    tableWrapperClassName: "h-220",
+    index: true,
+    pagination: true,
+    paginationClassName: "flex justify-end mt-12.5",
+    fetchData: async (
+      pageNumber: number = 1
+    ): Promise<PaginateResult<User<Parishioner>>> => {
+      const members: PaginateResult<User<Parishioner>> =
+        await parishGroupService.getGroupMembers(pageNumber);
+      return members;
+    },
+  };
   if (status === "loading" || isLoading) return <DataFetchSpinner />;
   if (!session?.user?.id || isError) return <DataFetchError />;
 
@@ -158,6 +252,12 @@ const Page = () => {
         </div>
       </div>
 
+      <div className="mb-27">
+        <header className="my-10">
+          <h2 className="font-normal">List of Members</h2>
+        </header>
+        <CustomTable<User<Parishioner>> {...tableProps} />
+      </div>
       <SignoutBtn />
     </div>
   );

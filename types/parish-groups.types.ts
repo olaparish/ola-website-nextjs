@@ -1,3 +1,7 @@
+import { PaginateResult } from "./inputs";
+import { Parishioner } from "./parishioner";
+import { BaseUser, UserDataType } from "./users";
+
 export interface ParishGroup {
   id: string;
   name: string;
@@ -24,3 +28,9 @@ export type ParishGroupResponse = {
   societies: ParishGroup[];
   outstations: ParishGroup[];
 };
+
+interface MemberUser extends Parishioner {
+  user: BaseUser;
+}
+
+export type GroupMembersResponseType = PaginateResult<MemberUser>;

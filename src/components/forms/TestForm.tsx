@@ -10,7 +10,7 @@ import {
   TableRow,
 } from "../ui/Table";
 
-const invoices = [
+export const invoices = [
   {
     invoice: "INV001",
     paymentStatus: "Paid",

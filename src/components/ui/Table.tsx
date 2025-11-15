@@ -14,14 +14,11 @@ type TableFooterProps = React.ComponentPropsWithoutRef<"tfoot">;
 
 export const Table = React.forwardRef<HTMLTableElement, TableProps>(
   ({ children, className, ...props }, ref) => (
-    <div
-      data-slot="table-container"
-      className="relative w-full overflow-x-auto"
-    >
+    <div data-slot="table-container" className="relative w-fit">
       <table
         ref={ref}
         data-slot="table"
-        className={cn("px-10 py-7.5 w-full border-collapse", className)}
+        className={cn("px-10 py-7.5 w-fit border-collapse", className)}
         {...props}
       >
         {children}
@@ -53,7 +50,10 @@ export const TableHeader = React.forwardRef<
   <thead
     ref={ref}
     data-slot="table-header"
-    className={cn("border-[0.5] border-black/20 [&_tr]:border-b", className)}
+    className={cn(
+      "border-red-700/20 border-b-[0.5] [&_tr]:border-b",
+      className
+    )}
     {...props}
   >
     {children}
@@ -67,7 +67,7 @@ export const TableRow = React.forwardRef<HTMLTableRowElement, TableRowProps>(
       ref={ref}
       data-slot="table-row"
       className={cn(
-        "data-[state=selected]:bg-muted hover:bg-muted/50 border-t border-black/20 transition-colors",
+        "data-[state=selected]:bg-muted hover:bg-muted/50 border-black/20 border-t transition-colors",
         className
       )}
       {...props}
@@ -84,7 +84,7 @@ export const TableHead = React.forwardRef<HTMLTableCellElement, TableHeadProps>(
       ref={ref}
       data-slot="table-head"
       className={cn(
-        "py-3.5 font-semibold text-left px-2 align-middle whitespace-nowrap [&:has([role=checkbox])]:pr-0 [&>[role=checkbox]]:translate-y-[2px]",
+        "py-3.5 font-semibold text-left px-4 align-middle whitespace-nowrap [&:has([role=checkbox])]:pr-0 [&>[role=checkbox]]:translate-y-[2px]",
         className
       )}
       {...props}
@@ -116,7 +116,7 @@ export const TableCell = React.forwardRef<HTMLTableCellElement, TableCellProps>(
       ref={ref}
       data-slot="table-cell"
       className={cn(
-        "py-3.5 p-2 align-middle whitespace-nowrap [&:has([role=checkbox])]:pr-0 [&>[role=checkbox]]:translate-y-[2px]",
+        "py-3.5 p-4 align-middle whitespace-nowrap [&:has([role=checkbox])]:pr-0 [&>[role=checkbox]]:translate-y-[2px]",
         className
       )}
       {...props}

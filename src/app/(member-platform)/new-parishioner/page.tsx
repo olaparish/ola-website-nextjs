@@ -30,9 +30,9 @@ import { toast } from "sonner";
 import { CreateParishionerResponseType } from "../../../../types/parishioner";
 import { processFile } from "@/utils/fileUtils";
 import { useParishGroupStore } from "@/hooks/useParishGroups";
-import { parishGroupsService } from "@/services/parish-groups.service";
 import { useRouter } from "next/navigation";
 import { ErrorSpan } from "@/components/ui/errors";
+import { parishGroupService } from "@/services/parish-groups.service";
 
 const Page = () => {
   const { setGroups, ...parishGroups } = useParishGroupStore();
@@ -51,7 +51,7 @@ const Page = () => {
     isError,
   } = useQuery<ParishGroupResponse>({
     queryKey: ["parishGrous"],
-    queryFn: parishGroupsService.getGroups,
+    queryFn: parishGroupService.getGroups,
     retry: 2,
   });
 

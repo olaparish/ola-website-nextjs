@@ -2,8 +2,10 @@ import axios from "axios";
 import { toast } from "sonner";
 import { getSession } from "next-auth/react";
 
+export const BASE_URL =
+  process.env.NEXT_PUBLIC_API_URL || "http://localhost:3000/api";
 const api = axios.create({
-  baseURL: process.env.NEXT_PUBLIC_API_URL || "http://localhost:3000/api",
+  baseURL: BASE_URL,
   headers: {
     "Content-Type": "application/json",
   },

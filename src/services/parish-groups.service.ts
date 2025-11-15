@@ -1,5 +1,13 @@
-import api from "@/utils/axios";
-import { GetUserDetails, ParishGroup, ParishGroupResponse } from "../../types";
+import api, { BASE_URL } from "@/utils/axios";
+import {
+  GetUserDetails,
+  GroupMembersResponseType,
+  PaginateResult,
+  ParishGroup,
+  ParishGroupResponse,
+  Parishioner,
+  User,
+} from "../../types";
 
 export const parishGroupService = {
   async getGroups(): Promise<ParishGroupResponse> {
@@ -20,5 +28,26 @@ export const parishGroupService = {
     return api
       .patch<{ data: GetUserDetails<ParishGroup> }>("/parish-group", data)
       .then((res) => res.data.data);
+  },
+
+  async getGroupMembers(
+    page = 1,
+    limit = 20
+  ): Promise<PaginateResult<User<Parishioner>>> {
+    const url = new URL(BASE_URL + "/parish-group/members");
+
+    url.searchParams.append("limit", limit.toString());
+    url.searchParams.append("page", page.toString());
+
+    return api.get<GroupMembersResponseType>(url.toString()).then((res) => {
+      const result = res.data;
+      const parsed = result.docs.map((res) => {
+        return { ...res.user, userData: { ...res, user: undefined } };
+      });
+      return {
+        ...result,
+        docs: parsed,
+      } as unknown as PaginateResult<User<Parishioner>>;
+    });
   },
 };
