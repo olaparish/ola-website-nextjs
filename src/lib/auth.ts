@@ -82,27 +82,15 @@ export const { handlers, signIn, signOut, auth } = NextAuth({
         userType
       );
 
-      console.log("Inside authorised: ", {
-        pathname,
-        authName,
-        objectState,
-        userType: auth?.userType?.toLowerCase(),
-        isParishGroup,
-      });
-
       const isParishGroupRoute = authName === "parish-group";
       if (isParishGroup && isParishGroupRoute) {
-        console.log("returning true", authName);
         return true;
       }
       if (authName !== userType) {
-        console.log("Still here...");
         return Response.redirect(
           new URL(`/auth/${objectState.loginPathName}/login`, request.url)
         );
       }
-
-      console.log("Returning true");
 
       return true;
     },

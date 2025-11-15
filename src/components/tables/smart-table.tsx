@@ -92,7 +92,7 @@ function CustomTable<T>(props: CustomTableProps<T>) {
         </div>
       )}
       <div>
-        <div className={cn("w-fit")}>
+        <div className={cn("lg:w-fit")}>
           {isSuccess && (
             <div
               className={cn(

@@ -156,23 +156,23 @@ const Page = () => {
       <div className="flex justify-end-safe pt-4.75">
         <NavSelect
           name="Add"
-          items={[{ name: "Initation", href: "/society/new-initation" }]}
+          items={[{ name: "Initation", href: "/parish-group/new-initiation" }]}
         />
       </div>
 
-      <header>
+      <header className="mt-4 lg:mt-0">
         <h2 className="font-normal">{data?.user.firstName}</h2>
         <p className="text-secondary-900">All your details</p>
       </header>
 
-      <div className="gap-6 grid grid-cols-[auto_1fr] mt-10">
-        <div className="flex flex-col gap-4 w-20">
+      <div className="gap-6 md:grid md:grid-cols-[auto_1fr] mt-10">
+        <div className="flex md:flex-col gap-4 mb-4 md:mb-0 md:w-20">
           <span className="block bg-primary-100 py-2.75 pr-8 pl-5 w-fit font-medium">
             Bio
           </span>
           <button
             className={cn([
-              "flex justify-between hover:bg-primary-100 px-2 py-2.75 w-full cursor-pointer",
+              "flex justify-between hover:bg-primary-100 px-2 py-2.75 md:w-full w-fit cursor-pointer",
               isEditing ? "bg-primary-100" : "",
             ])}
             type="button"
