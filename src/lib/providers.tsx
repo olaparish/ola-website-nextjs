@@ -25,11 +25,8 @@ const Providers = ({ children }: { children: ReactNode }) => {
   return (
     <SessionProvider>
       <QueryClientProvider client={queryClient}>
-        {/* <PermissionProvider> */}
         <Toaster richColors />
-        {/* <RouteFeedbackProvider /> */}
         {children}
-        {/* </PermissionProvider> */}
       </QueryClientProvider>
     </SessionProvider>
   );
