@@ -41,7 +41,7 @@ const Page = () => {
           throw new Error("Failed to create initiatio");
         } else {
           toast.success("Initiation saved");
-          // router.back();
+          router.back();
         }
       } catch (error) {
         toast.error("Failed to save initiation");
