@@ -11,6 +11,7 @@ export function selectMinimalSessionUser(user: any) {
     lastName: user.lastName,
     avatar: user.avatar,
     role: user.role,
+    permissions: user.permissions,
   };
 }
 

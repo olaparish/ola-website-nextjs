@@ -21,5 +21,6 @@ export type SignInResponse<TUser = any> =
       requires2FA: false;
       tokenData: { access: TokenObj; refresh: TokenObj };
       user: User<TUser>;
+      permissions: string[];
     }
   | { requires2FA: true; token: string };

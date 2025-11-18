@@ -2,6 +2,13 @@ import axios from "axios";
 import { toast } from "sonner";
 import { getSession } from "next-auth/react";
 
+
+let accessToken: string | null = null;
+
+export const setAccessToken = (token: string | null) => {
+  accessToken = token;
+};
+
 export const BASE_URL =
   process.env.NEXT_PUBLIC_API_URL || "http://localhost:3000/api";
 const api = axios.create({
@@ -27,7 +34,7 @@ api.interceptors.request.use(
       config.headers = {};
     }
 
-    const token = session?.tokenData.access.token;
+    const token = session?.tokenData.access.token || accessToken;
     if (token) {
       config.headers.Authorization = `Bearer ${token}`;
     }

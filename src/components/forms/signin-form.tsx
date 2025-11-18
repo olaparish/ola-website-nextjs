@@ -15,6 +15,7 @@ import { toast } from "sonner";
 import { useRouter } from "next/navigation";
 import { UserLoginTypes } from "../../../types/auth.type";
 import { getLoginCallback } from "@/lib/helpers";
+import { setAccessToken } from "@/utils/axios";
 
 type Props = {
   type: UserLoginTypes;
@@ -62,24 +63,24 @@ const SigninForm = ({ type }: Props) => {
         toast.error("Incorrect username or password");
         throw new Error("username or password");
       }
-      console.log("here now...");
+
+      console.log("Res obj: ", res);
       if (!res.data.requires2FA) {
         try {
-          console.log("Signing in...", res.data.user);
-          const signResult = await signIn("credentials", {
-            user: JSON.stringify(res.data.user),
+          await signIn("credentials", {
+            user: JSON.stringify({
+              ...res.data.user,
+              permissions: res.data.permissions,
+            }),
             tokenData: JSON.stringify(res.data.tokenData),
             userType: JSON.stringify(res.data.user.role),
             redirect: false,
           });
-
-          console.log("signin result: ", signResult);
-
           const callbackUrl = getLoginCallback(res.data.user.role);
           if (!callbackUrl) {
             throw new Error("User dashboard not implemented");
           }
-          console.log("callback url: ", callbackUrl);
+          setAccessToken(res.data.tokenData.access.token);
           router.push(callbackUrl);
         } catch (error) {
           console.log("Sign in error: ", error);

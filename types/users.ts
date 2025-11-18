@@ -44,6 +44,7 @@ export type BaseUser = {
   createdAt: Date;
   updatedAt: Date;
   accountMeta?: UserAccountMeta;
+  permissions: string[];
 };
 
 export type UserTypes =
@@ -57,7 +58,7 @@ export type UserTypes =
   | "SOCIETY"
   | "OUTSTATION";
 
-export type UserDataType = Parishioner | ParishGroup;
+export type UserDataType = Parishioner | ParishGroup | null;
 
 export type ParishionerUser = User<Parishioner>;
 export type ParishGroupUser = User<ParishGroup>;
@@ -75,6 +76,7 @@ export type SessionUser = {
   lastName: string;
   avatar: string;
   role: string;
+  permissions: string[];
 };
 
 

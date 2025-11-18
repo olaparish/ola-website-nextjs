@@ -32,7 +32,6 @@ const Page = () => {
   const [text, setText] = useState("");
   const [expand, setExpand] = useState(false);
   const [isEditing, setIsEditing] = useState(false);
-  // const [pageNumber, setPageNumber] = useState(1);
 
   const { data, isLoading, isError } = useQuery<GetUserDetails<ParishGroup>>({
     queryKey: ["parish-group", session?.user?.id],
@@ -153,12 +152,16 @@ const Page = () => {
 
   return (
     <div className="">
-      <div className="flex justify-end-safe pt-4.75">
-        <NavSelect
-          name="Add"
-          items={[{ name: "Initation", href: "/parish-group/new-initiation" }]}
-        />
-      </div>
+      {session.user.permissions.includes("create:initiation") && (
+        <div className="flex justify-end-safe pt-4.75">
+          <NavSelect
+            name="Add"
+            items={[
+              { name: "Initation", href: "/parish-group/new-initiation" },
+            ]}
+          />
+        </div>
+      )}
 
       <header className="mt-4 lg:mt-0">
         <h2 className="font-normal">{data?.user.firstName}</h2>

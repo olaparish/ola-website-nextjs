@@ -50,4 +50,12 @@ export const parishGroupService = {
       } as unknown as PaginateResult<User<Parishioner>>;
     });
   },
+
+  async getUser(parishionerId: string): Promise<GetUserDetails<Parishioner>> {
+    return api
+      .get<{ data: GetUserDetails<Parishioner> }>(
+        `/parishioner/${parishionerId}`
+      )
+      .then((res) => res.data.data);
+  },
 };

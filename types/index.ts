@@ -7,6 +7,7 @@ export * from "./parishioner";
 export * from "./inputs";
 export * from "./users";
 export * from "./table.types";
+export * from "./group-initiation.types";
 export interface MobileDropDownProps {
   name: string;
   to?: string;
