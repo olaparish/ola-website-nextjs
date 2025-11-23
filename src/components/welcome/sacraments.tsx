@@ -22,14 +22,10 @@ const Sacraments = () => {
             The Seven Sacraments of The Catholic Church{" "}
           </h2>
           <p className="mt-7.5 lg:w-120 xl:w-153">
-            It has survived not only five centuries, but also the leap into
-            electronic typesetting, remaining essentially unchanged. It was
-            popularised in the 1960s with the release of Letraset sheets
-            containing Lorem Ipsum passages, and more recently with desktop
-            publishing software like Aldus PageMaker including versions of Lorem
-            Ipsum. Lorem Ipsum has been the industry&apos;s standard dummy text
-            ever since the 1500s, when an unknown printer took a galley of type
-            and scrambled it to make a type specimen book.{" "}
+            The sacraments are visible signs of invisible grace, instituted by Christ
+            and entrusted to the Church. Through them, divine life is dispensed to
+            us. There are seven sacraments in the Church: Baptism, Confirmation,
+            Eucharist, Penance, Anointing of the Sick, Holy Orders, and Matrimony.{" "}
           </p>
         </div>
       </div>
@@ -71,38 +67,38 @@ const sacraments = [
   {
     name: "Baptism",
     description:
-      "It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset",
+      "Baptism is the basis of the whole Christian life, the gateway to life in the Spirit, and the door which gives access to the other sacraments.",
   },
   {
     name: "Confirmation",
     description:
-      "It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset",
+      "Confirmation perfects Baptismal grace; it is the sacrament which gives the Holy Spirit in order to root us more deeply in the divine filiation.",
   },
   {
     name: "Holy Eucharist",
     description:
-      "It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing",
+      "The Holy Eucharist completes Christian initiation. Those who have been raised to the dignity of the royal priesthood by Baptism and configured more deeply to Christ by Confirmation participate with the whole community in the Lord's own sacrifice by means of the Eucharist.",
   },
   {
     name: "Reconcilisation",
     description:
-      "It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing",
+      "Those who approach the sacrament of Penance obtain pardon from God's mercy for the offense committed against Him, and are, at the same time, reconciled with the Church which they have wounded by their sins.",
   },
 
   {
     name: "Anointing of the Sick",
     description:
-      "It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset",
+      "By the sacred anointing of the sick and the prayer of the priests the whole Church commends those who are ill to the suffering and glorified Lord, that he may raise them up and save them.",
   },
   {
     name: "Holy Orders",
     description:
-      "It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing",
+      "Holy Orders is the sacrament through which the mission entrusted by Christ to his apostles continues to be exercised in the Church until the end of time.",
   },
   {
     name: "Holy Matrimony",
     description:
-      "It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing",
+      "The matrimonial covenant, by which a man and a woman establish between themselves a partnership of the whole of life, is by its nature ordered toward the good of the spouses and the procreation and education of offspring.",
   },
 ];
 

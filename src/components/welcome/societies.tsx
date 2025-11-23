@@ -9,14 +9,11 @@ const Societies = () => {
         <h5 className="text-primary-900">FELLOWSHIP</h5>
         <h2 className="mt-5 text-primary-900">Societies</h2>
         <p className="mt-7.5 lg:w-120 xl:w-153">
-          It has survived not only five centuries, but also the leap into
-          electronic typesetting, remaining essentially unchanged. It was
-          popularised in the 1960s with the release of Letraset sheets
-          containing Lorem Ipsum passages, and more recently with desktop
-          publishing software like Aldus PageMaker including versions of Lorem
-          Ipsum. Lorem Ipsum has been the industry&lsquo;s standard dummy text
-          ever since the 1500s, when an unknown printer took a galley of type
-          and scrambled it to make a type specimen book.{" "}
+          Our parish is home to a vibrant community with numerous societies and
+          groups that foster spiritual growth, fellowship, and service. From
+          prayer groups to charitable organizations, there is a place for
+          everyone to get involved and share their talents for the glory of God
+          and the benefit of our community.{" "}
         </p>
         <div className="mt-10 mb-7.5">
           <CustomLink to="about/societies">Learn More</CustomLink>

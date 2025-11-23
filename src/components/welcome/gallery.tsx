@@ -10,10 +10,9 @@ const Gallery = () => {
         Experience Ola Parish at A Glance
       </h2>
       <p className="mt-7.5 max-w-240">
-        It has survived not only five centuries, but also the leap into
-        electronic typesetting, remaining essentially unchanged. It was
-        popularised in the 1960s with the release of Letraset sheets containing
-        Lorem Ipsum passages, and more recently with desktop{" "}
+        Explore the vibrant life of our parish through our gallery. From liturgical
+        celebrations to community events, witness the joy and faith that define
+        Our Lady Queen of Africa Parish.{" "}
       </p>
       {/* <div className="lg:flex justify-center gap-2 lg:gap-4 grid grid-cols-2 mt-10 lg:mt-20">
         <img

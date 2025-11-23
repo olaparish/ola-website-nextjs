@@ -6,10 +6,9 @@ const JoinUs = () => {
     <div className="bg-gold-200 px-5 lg:px-25 pt-10 pb-20">
       <h2 className="text-primary-900 text-center">Join Us For Mass</h2>
       <p className="mx-auto mt-5 w-auto lg:w-200 text-center">
-        It has survived not only five centuries, but also the leap into
-        electronic typesetting, remaining essentially unchanged. It was
-        popularised in the 1960s with the release of Letraset sheets containing
-        Lorem Ipsum passages, and more recently with desktop{" "}
+        We invite you to join us in the celebration of the Eucharist. Whether you
+        are a long-time parishioner or visiting for the first time, you are
+        warmly welcome to share in our worship and community life.{" "}
       </p>
       <img
         className="mx-auto mt-10 w-full lg:w-200 h-75 lg:h-auto object-cover"

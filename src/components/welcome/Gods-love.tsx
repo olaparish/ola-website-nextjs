@@ -15,21 +15,16 @@ const GodsLove = () => {
       </div>
       <div className="mt-5 lg:w-153 lg:text-left text-center">
         <p>
-          Lorem Ipsum is simply dummy text of the printing and typesetting
-          industry. Lorem Ipsum has been the industry&apos;s standard dummy text
-          ever since the 1500s, when an unknown printer took a galley of type
-          and scrambled it to make a type specimen book. Lorem Ipsum has been
-          the industry&apos;s standard dummy text ever since the 1500s.
+          God&apos;s love is universal and unconditional. At Our Lady Queen of
+          Africa Parish, we strive to embody this love in everything we do. We
+          believe that everyone is created in the image and likeness of God, and
+          we welcome all who seek to know Him more deeply.
         </p>
         <p className="mt-7.5">
-          It has survived not only five centuries, but also the leap into
-          electronic typesetting, remaining essentially unchanged. It was
-          popularised in the 1960s with the release of Letraset sheets
-          containing Lorem Ipsum passages, and more recently with desktop
-          publishing software like Aldus PageMaker including versions of Lorem
-          Ipsum. Lorem Ipsum has been the industry&apos;s standard dummy text
-          ever since the 1500s, when an unknown printer took a galley of type
-          and scrambled it to make a type specimen book.{" "}
+          Our community is built on faith, hope, and charity. We come together
+          to celebrate the Eucharist, support one another in times of need, and
+          reach out to the wider community with acts of service. Join us as we
+          journey together in faith, growing closer to God and to one another.{" "}
         </p>
       </div>
     </div>
