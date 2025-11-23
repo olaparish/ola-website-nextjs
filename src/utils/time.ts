@@ -42,3 +42,15 @@ export function formatDateWithDuration(dateString: string | Date): ReturnType {
 
   return { formattedDate, duration };
 }
+
+
+export const getDateMaxValue = () => {
+  const today = new Date();
+
+  // Format the date to 'YYYY-MM-DD' for the max attribute
+  const year = today.getFullYear();
+  const month = String(today.getMonth() + 1).padStart(2, "0"); // Month is 0-indexed
+  const day = String(today.getDate()).padStart(2, "0");
+
+  return `${year}-${month}-${day}`;
+};

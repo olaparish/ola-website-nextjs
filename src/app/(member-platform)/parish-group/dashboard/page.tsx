@@ -121,7 +121,7 @@ const Page = () => {
       key: "actions",
       label: "",
       headerClassName: "w-10",
-      render: (item) => {
+      render: (_item) => {
         return (
           <div className="">
             <IconFluentDelete className="text-red-500" />

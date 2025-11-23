@@ -80,3 +80,5 @@ export type SessionUser = {
 };
 
 
+
+export type UpdateUserOmmissions = "id" | "role";

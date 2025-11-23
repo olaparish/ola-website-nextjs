@@ -55,11 +55,12 @@ export type NavElement = {
 };
 
 export type MARITAL_STATUS =
-  | "MARRIED"
   | "SINGLE"
-  | "DIVORCED"
+  | "MARRIED"
   | "SEPARATED"
-  | "WIDOWED";
+  | "WIDOWED"
+  | "DIVORCED"
+  | "RELIGIOUS";
 
 export interface GetUserDetails<T extends UserDataType> {
   user: BaseUser;

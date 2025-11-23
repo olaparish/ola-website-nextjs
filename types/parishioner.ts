@@ -63,3 +63,37 @@ export interface Parishioner {
   createdAt: Date;
   updatedAt: Date;
 }
+
+
+export type UpdateParishionerOmmissions =
+  | "id"
+  | "userId"
+  | "deletedAt"
+  | "createdAt"
+  | "updatedAt";
+
+export type UpdateParishionerDtoType = {
+  firstName?: string;
+  lastName?: string;
+  otherNames?: string;
+  email?: string;
+  avatar?: string;
+  phoneNumber?: string;
+  title?: string;
+  dateOfBirth?: string;
+  picture?: string;
+  maritalStatus?:
+    | "SINGLE"
+    | "MARRIED"
+    | "SEPARATED"
+    | "WIDOWED"
+    | "DIVORCED"
+    | "RELIGIOUS";
+  emergencyContactName?: string;
+  emergencyContact?: string;
+  residentialAddress?: string;
+  digitalAddress?: string;
+  occupation?: string;
+  placeOfWork?: string;
+  workDigitalAddress?: string;
+};

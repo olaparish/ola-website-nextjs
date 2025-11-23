@@ -11,18 +11,27 @@ type Props = {
   items: NavElement[];
   className?: string;
   variant?: NavigationVariant;
+  matcherType?: "ends-with" | "includes";
 };
 
-const MergedNavigation = ({ items, className, variant = "member" }: Props) => {
+const MergedNavigation = ({
+  items,
+  className,
+  variant = "member",
+  matcherType,
+}: Props) => {
   const pathname = usePathname();
 
   const isActiveElement = (href: string): boolean => {
     const matcherString = `${href}`;
+    if (matcherType === "ends-with") {
+      return pathname?.endsWith(matcherString);
+    }
     return pathname?.includes(matcherString);
   };
 
   const getNavClassName = () => {
-    const baseClasses = "flex gap-4";
+    const baseClasses = "flex lg:gap-4 overflow-x-auto";
     switch (variant) {
       case "parishioner":
         return cn(baseClasses, "bg-primary-100 w-fit", className);

@@ -48,9 +48,9 @@ const Page = () => {
         <TestForm />
       </div>
       <div className="flex flex-col gap-5 p-4">
-        <MemberNavigation items={navItems} />
-        <SecondaryNavigation items={navItems} />
-        <ParishionerNavigation items={navItems} />
+        <MemberNavigation matcherType="ends-with" items={navItems} />
+        <SecondaryNavigation matcherType="ends-with" items={navItems} />
+        <ParishionerNavigation matcherType="ends-with" items={navItems} />
       </div>
       <div className="flex flex-col gap-5 p-4 w-100">
         <DashboardCard title="Number of Baptisms" subtitle="500" />

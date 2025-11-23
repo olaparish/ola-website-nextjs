@@ -125,7 +125,7 @@ const Page = () => {
         setUploadingMessage("Submit");
         router.push(`/new-parishioner/success/${res.id.split("-")[0]}`);
         return res;
-      } catch (e) {
+      } catch (_e) {
         setUploadingMessage("submit");
         toast.error("Error creating parishioner");
       }

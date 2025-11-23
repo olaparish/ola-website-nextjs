@@ -28,11 +28,12 @@ export type FormFieldType = {
   type: InputType;
   name: string;
   label: string;
+  required?: boolean;
   placeholder?: string;
-  required: boolean;
   options?: SelectOption[];
   max?: number | number | string;
   accept?: string;
+  // parseFieldNames?: (fields: any) => any;
 };
 
 export type FormFieldsType = (FormFieldType | FormFieldType[])[];

@@ -1,5 +1,6 @@
 import { z } from "zod";
 import { FormFieldsType } from "../../../../types";
+import { getDateMaxValue } from "@/utils/time";
 
 export const MARITAL_STATUS_OBJ = [
   { name: "Single", value: "SINGLE" },
@@ -8,16 +9,7 @@ export const MARITAL_STATUS_OBJ = [
   { name: "Widowed", value: "WIDOWED" },
   { name: "Religious (Priest / Sister / Brother)", value: "RELIGIOUS" },
 ];
-const getDateMaxValue = () => {
-  const today = new Date();
 
-  // Format the date to 'YYYY-MM-DD' for the max attribute
-  const year = today.getFullYear();
-  const month = String(today.getMonth() + 1).padStart(2, "0"); // Month is 0-indexed
-  const day = String(today.getDate()).padStart(2, "0");
-
-  return `${year}-${month}-${day}`;
-};
 
 export const ProfileFields: FormFieldsType = [
   {
