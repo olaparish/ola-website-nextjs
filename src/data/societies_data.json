@@ -1,18 +1,15 @@
 [
   {
     "name": "Knights of St. John International and Ladies Auxiliary",
-    "email": "info@knights.org",
+    "email": "info@knsji.org",
     "heroImage": "https://example.com/images/knights-hero.jpg",
-    "otherImages": [
-      "https://example.com/images/knights1.jpg",
-      "https://example.com/images/knights2.jpg"
-    ],
+    "otherImages": ["https://example.com/images/knights1.jpg", "https://example.com/images/knights2.jpg"],
     "writeup": [
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum mattis augue justo, id dignissim sem volutpat eget. Sed sit amet nunc ultricies, malesuada urna at, tincidunt orci. Duis lorem elit, lacinia at dolor nec, sollicitudin pulvinar felis. Quisque tempus laoreet tellus. Nam at pretium odio, feugiat convallis mi. Mauris id odio eu turpis egestas maximus. Fusce quis lacinia metus. Nam mollis odio nisi, ut posuere felis interdum eleifend. Sed ullamcorper, est ut pellentesque blandit, odio dui suscipit odio, a consequat enim libero sit amet metus. Quisque viverra, neque ac vestibulum pulvinar, orci dui luctus diam, vel pretium mi nisi id augue. Quisque rhoncus rhoncus nulla vel condimentum. Proin sollicitudin lectus nec arcu maximus, et imperdiet sem rutrum. Etiam eu erat quis velit commodo molestie. Vivamus cursus molestie tincidunt. Proin aliquet nulla nibh, nec tempus lorem pretium vitae. Aliquam erat volutpat.",
-      "Integer faucibus tellus nibh, nec lacinia odio scelerisque et. Morbi ex est, maximus et odio pellentesque, tempor sagittis ligula. Donec eget nibh ornare, maximus urna et, congue lectus. Pellentesque lacus diam, commodo bibendum lobortis et, tristique vitae odio. Etiam risus lectus, ultricies sed odio eu, laoreet pellentesque leo. Nunc interdum tristique purus, eu hendrerit diam ornare sit amet. Vestibulum porttitor justo quis velit ultrices sagittis.",
-      "Ut vel venenatis tellus. Integer accumsan posuere pretium. Praesent faucibus odio quis urna tincidunt lobortis. Nullam vel arcu commodo, sagittis diam id, finibus lacus. Nam ac venenatis neque, sit amet gravida augue. Vivamus tempus semper turpis, sit amet gravida purus suscipit et. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; Fusce ut congue purus. Praesent quis pretium nibh. Morbi tempor ullamcorper neque et maximus. Maecenas sed orci purus. Maecenas pharetra purus sit amet tellus mattis ultrices. Mauris accumsan felis nec felis dictum mattis.",
-      "Proin molestie neque diam, nec dapibus est scelerisque et. Etiam dignissim purus sit amet ligula accumsan sodales. Fusce eget dolor viverra, volutpat mi vel, tincidunt metus. Quisque nunc dolor, tristique et sapien vitae, venenatis suscipit urna. Nam at felis augue. Cras commodo mollis metus vitae hendrerit. In sit amet ipsum risus. Nulla quis odio sollicitudin purus dapibus venenatis a at felis. Cras imperdiet maximus lacus id varius.",
-      "Ut mollis euismod augue, ac commodo quam suscipit vitae. Vestibulum pharetra ligula eros, sit amet pellentesque erat imperdiet at. Sed bibendum sollicitudin purus id dapibus. Etiam a auctor risus, ut scelerisque metus. Quisque aliquet nisi sed eros congue, eu cursus erat iaculis. Praesent dictum sed lacus id aliquet. Aenean vehicula vulputate tellus, ornare eleifend ligula vestibulum at."
+      "The Knights of St. John International (KSJI) is a semi-military fraternal organization of Catholic men, incorporated in 1886. In the OLA Parish Bolgatanga, the local commandery stands as a pillar of discipline and service. Members are dedicated to the defense of the Catholic faith and the promotion of moral values within the community. They are easily recognized by their distinctive uniforms and ceremonial drills during major church events.",
+      "The Ladies Auxiliary, the female wing of the order, works side-by-side with the Knights. They play a crucial role in the parish's social welfare programs, organizing charity drives and visiting the sick. Their motto of 'Faith, Hope, and Charity' is evident in their constant engagement with the marginalized in the Bolgatanga municipality.",
+      "Spiritual growth is central to the KSJI. The commandery and auxiliary hold regular meetings that include prayer, scripture study, and discussions on Catholic social teaching. They encourage members to lead exemplary lives in their families and workplaces, serving as beacons of the faith in the secular world.",
+      "In OLA Parish, the Knights and Ladies are instrumental in maintaining order during liturgical celebrations. They often serve as guards of honour during processions for the Blessed Sacrament, the Bishop's visits, and other solemn occasions. Their disciplined presence adds a sense of reverence and dignity to parish worship.",
+      "Beyond the parish, the local commandery is connected to the wider District and Grand Commanderies in Ghana. They participate in regional conventions and training programs, ensuring that members are well-versed in the principles of the order and the teachings of the Church. This connection fosters a strong sense of brotherhood and sisterhood across the region."
     ],
     "contactDetails": {
       "phone": "501.619.3858",
@@ -27,23 +24,20 @@
       "membershipType": "Catholic youth"
     },
     "slug": "knights-of-st-john-international-and-ladies-auxiliary",
-    "link": "/organizations/societies/knights-of-st-john-international-and-ladies-auxiliary"
+    "link": "/organizations/societies/knights-of-st-john-international-and-ladies-auxiliary",
+    "role": "SOCIETY"
   },
   {
     "name": "Knights and Ladies of Marshall",
-    "email": "info@knights.org",
+    "email": "info@marshall.org",
     "heroImage": "https://example.com/images/knights-hero.jpg",
-    "otherImages": [
-      "https://example.com/images/knights1.jpg",
-      "https://example.com/images/knights2.jpg",
-      "https://example.com/images/knights3.jpg"
-    ],
+    "otherImages": ["https://example.com/images/knights1.jpg", "https://example.com/images/knights2.jpg", "https://example.com/images/knights3.jpg"],
     "writeup": [
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum mattis augue justo, id dignissim sem volutpat eget. Sed sit amet nunc ultricies, malesuada urna at, tincidunt orci. Duis lorem elit, lacinia at dolor nec, sollicitudin pulvinar felis. Quisque tempus laoreet tellus. Nam at pretium odio, feugiat convallis mi. Mauris id odio eu turpis egestas maximus. Fusce quis lacinia metus. Nam mollis odio nisi, ut posuere felis interdum eleifend. Sed ullamcorper, est ut pellentesque blandit, odio dui suscipit odio, a consequat enim libero sit amet metus. Quisque viverra, neque ac vestibulum pulvinar, orci dui luctus diam, vel pretium mi nisi id augue. Quisque rhoncus rhoncus nulla vel condimentum. Proin sollicitudin lectus nec arcu maximus, et imperdiet sem rutrum. Etiam eu erat quis velit commodo molestie. Vivamus cursus molestie tincidunt. Proin aliquet nulla nibh, nec tempus lorem pretium vitae. Aliquam erat volutpat.",
-      "Integer faucibus tellus nibh, nec lacinia odio scelerisque et. Morbi ex est, maximus et odio pellentesque, tempor sagittis ligula. Donec eget nibh ornare, maximus urna et, congue lectus. Pellentesque lacus diam, commodo bibendum lobortis et, tristique vitae odio. Etiam risus lectus, ultricies sed odio eu, laoreet pellentesque leo. Nunc interdum tristique purus, eu hendrerit diam ornare sit amet. Vestibulum porttitor justo quis velit ultrices sagittis.",
-      "Ut vel venenatis tellus. Integer accumsan posuere pretium. Praesent faucibus odio quis urna tincidunt lobortis. Nullam vel arcu commodo, sagittis diam id, finibus lacus. Nam ac venenatis neque, sit amet gravida augue. Vivamus tempus semper turpis, sit amet gravida purus suscipit et. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; Fusce ut congue purus. Praesent quis pretium nibh. Morbi tempor ullamcorper neque et maximus. Maecenas sed orci purus. Maecenas pharetra purus sit amet tellus mattis ultrices. Mauris accumsan felis nec felis dictum mattis.",
-      "Proin molestie neque diam, nec dapibus est scelerisque et. Etiam dignissim purus sit amet ligula accumsan sodales. Fusce eget dolor viverra, volutpat mi vel, tincidunt metus. Quisque nunc dolor, tristique et sapien vitae, venenatis suscipit urna. Nam at felis augue. Cras commodo mollis metus vitae hendrerit. In sit amet ipsum risus. Nulla quis odio sollicitudin purus dapibus venenatis a at felis. Cras imperdiet maximus lacus id varius.",
-      "Ut mollis euismod augue, ac commodo quam suscipit vitae. Vestibulum pharetra ligula eros, sit amet pellentesque erat imperdiet at. Sed bibendum sollicitudin purus id dapibus. Etiam a auctor risus, ut scelerisque metus. Quisque aliquet nisi sed eros congue, eu cursus erat iaculis. Praesent dictum sed lacus id aliquet. Aenean vehicula vulputate tellus, ornare eleifend ligula vestibulum at."
+      "The Knights and Ladies of Marshall is a Catholic fraternal society founded in West Africa, named after Sir James Marshall. In OLA Parish Bolgatanga, Council and Court members are deeply rooted in the aim of uniting Catholic men and women for the promotion of the Catholic faith and the advancement of the welfare of members and the church.",
+      "The society is known for its strong emphasis on Unity, Charity, Fraternity, and Service. Members in Bolgatanga actively engage in charitable works, often donating to the poor, the sick, and local orphanages. They believe that faith without good works is dead, and thus strive to make a tangible difference in the lives of the less fortunate.",
+      "Education and youth development are also key priorities. The Marshallan Association in the parish often sponsors educational initiatives and mentors young people in the church. They organize talks and seminars to guide the youth on moral and career paths, ensuring the continuity of strong Catholic values in the next generation.",
+      "Liturgically, the Knights and Ladies of Marshall add colour and solemnity to church services. Dressed in their regalia, they participate fully in parish events, from Sunday Masses to harvest thanksgivings. Their choir and liturgical groups are active contributors to the vibrant worship life of OLA Parish.",
+      "The society also functions as a support system for its members. Through regular meetings and welfare schemes, they look out for one another's social and economic well-being. This bond of fraternity creates a close-knit community within the larger parish family, where every member feels valued and supported."
     ],
     "contactDetails": {
       "phone": "+1-573-104-4192x95744",
@@ -58,29 +52,27 @@
       "membershipType": "Catholic women"
     },
     "slug": "knights-and-ladies-of-marshall",
-    "link": "/organizations/societies/knights-and-ladies-of-marshall"
+    "link": "/organizations/societies/knights-and-ladies-of-marshall",
+    "role": "SOCIETY"
   },
   {
     "name": "St. Theresa of the Child Jesus Society",
-    "email": "info@st..org",
+    "email": "info@st.theresa.org",
     "heroImage": "https://example.com/images/st.-hero.jpg",
-    "otherImages": [
-      "https://example.com/images/st.1.jpg",
-      "https://example.com/images/st.2.jpg"
-    ],
+    "otherImages": ["https://example.com/images/st.1.jpg", "https://example.com/images/st.2.jpg"],
     "writeup": [
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum mattis augue justo, id dignissim sem volutpat eget. Sed sit amet nunc ultricies, malesuada urna at, tincidunt orci. Duis lorem elit, lacinia at dolor nec, sollicitudin pulvinar felis. Quisque tempus laoreet tellus. Nam at pretium odio, feugiat convallis mi. Mauris id odio eu turpis egestas maximus. Fusce quis lacinia metus. Nam mollis odio nisi, ut posuere felis interdum eleifend. Sed ullamcorper, est ut pellentesque blandit, odio dui suscipit odio, a consequat enim libero sit amet metus. Quisque viverra, neque ac vestibulum pulvinar, orci dui luctus diam, vel pretium mi nisi id augue. Quisque rhoncus rhoncus nulla vel condimentum. Proin sollicitudin lectus nec arcu maximus, et imperdiet sem rutrum. Etiam eu erat quis velit commodo molestie. Vivamus cursus molestie tincidunt. Proin aliquet nulla nibh, nec tempus lorem pretium vitae. Aliquam erat volutpat.",
-      "Integer faucibus tellus nibh, nec lacinia odio scelerisque et. Morbi ex est, maximus et odio pellentesque, tempor sagittis ligula. Donec eget nibh ornare, maximus urna et, congue lectus. Pellentesque lacus diam, commodo bibendum lobortis et, tristique vitae odio. Etiam risus lectus, ultricies sed odio eu, laoreet pellentesque leo. Nunc interdum tristique purus, eu hendrerit diam ornare sit amet. Vestibulum porttitor justo quis velit ultrices sagittis.",
-      "Ut vel venenatis tellus. Integer accumsan posuere pretium. Praesent faucibus odio quis urna tincidunt lobortis. Nullam vel arcu commodo, sagittis diam id, finibus lacus. Nam ac venenatis neque, sit amet gravida augue. Vivamus tempus semper turpis, sit amet gravida purus suscipit et. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; Fusce ut congue purus. Praesent quis pretium nibh. Morbi tempor ullamcorper neque et maximus. Maecenas sed orci purus. Maecenas pharetra purus sit amet tellus mattis ultrices. Mauris accumsan felis nec felis dictum mattis.",
-      "Proin molestie neque diam, nec dapibus est scelerisque et. Etiam dignissim purus sit amet ligula accumsan sodales. Fusce eget dolor viverra, volutpat mi vel, tincidunt metus. Quisque nunc dolor, tristique et sapien vitae, venenatis suscipit urna. Nam at felis augue. Cras commodo mollis metus vitae hendrerit. In sit amet ipsum risus. Nulla quis odio sollicitudin purus dapibus venenatis a at felis. Cras imperdiet maximus lacus id varius.",
-      "Ut mollis euismod augue, ac commodo quam suscipit vitae. Vestibulum pharetra ligula eros, sit amet pellentesque erat imperdiet at. Sed bibendum sollicitudin purus id dapibus. Etiam a auctor risus, ut scelerisque metus. Quisque aliquet nisi sed eros congue, eu cursus erat iaculis. Praesent dictum sed lacus id aliquet. Aenean vehicula vulputate tellus, ornare eleifend ligula vestibulum at."
+      "The St. Theresa of the Child Jesus Society is a vibrant women's group in OLA Parish, dedicated to the spirituality of the 'Little Way' of St. Theresa of Lisieux. Members strive to do small things with great love, focusing on humility, simplicity, and absolute trust in God in their daily lives.",
+      "One of the primary objectives of the society is to pray for priests and religious. In Bolgatanga, the members are known for their constant intercession for the clergy, ensuring that those who serve the altar are supported spiritually. They also assist in the maintenance of the sacristy and the decoration of the church.",
+      "Charity is at the heart of their mission. The society regularly visits the sick in hospitals and homes, bringing them comfort and prayer. They also extend a helping hand to the needy in the parish, providing food and clothing to widows and orphans, embodying the compassionate heart of their patron saint.",
+      "The society is also a place for the formation of Catholic women. Through weekly meetings, members are educated on the doctrines of the church and the role of women in the family and society. They encourage one another to be model Christian mothers and wives, building strong domestic churches.",
+      "Dressed in their distinctive uniforms, the members of St. Theresa's Society are a beautiful sight during parish celebrations. Their joy and dedication are infectious, often attracting new members who wish to serve God through the simple yet profound path of love and service."
     ],
     "contactDetails": {
       "phone": "001-074-877-6903",
       "address": "0259 Brittney Branch Apt. 484, Elizabethton, MI 20482",
       "social": {
         "facebook": "https://facebook.com/st.",
-        "website": "https://st..org"
+        "website": "https://st.theresa.org"
       }
     },
     "otherInfo": {
@@ -88,11 +80,12 @@
       "membershipType": "Catholic youth"
     },
     "slug": "st-theresa-of-the-child-jesus-society",
-    "link": "/organizations/societies/st-theresa-of-the-child-jesus-society"
+    "link": "/organizations/societies/st-theresa-of-the-child-jesus-society",
+    "role": "SOCIETY"
   },
   {
     "name": "Catholic Women Association",
-    "email": "info@catholic.org",
+    "email": "info@cwa.org",
     "heroImage": "https://example.com/images/catholic-hero.jpg",
     "otherImages": [
       "https://example.com/images/catholic1.jpg",
@@ -100,11 +93,11 @@
       "https://example.com/images/catholic3.jpg"
     ],
     "writeup": [
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum mattis augue justo, id dignissim sem volutpat eget. Sed sit amet nunc ultricies, malesuada urna at, tincidunt orci. Duis lorem elit, lacinia at dolor nec, sollicitudin pulvinar felis. Quisque tempus laoreet tellus. Nam at pretium odio, feugiat convallis mi. Mauris id odio eu turpis egestas maximus. Fusce quis lacinia metus. Nam mollis odio nisi, ut posuere felis interdum eleifend. Sed ullamcorper, est ut pellentesque blandit, odio dui suscipit odio, a consequat enim libero sit amet metus. Quisque viverra, neque ac vestibulum pulvinar, orci dui luctus diam, vel pretium mi nisi id augue. Quisque rhoncus rhoncus nulla vel condimentum. Proin sollicitudin lectus nec arcu maximus, et imperdiet sem rutrum. Etiam eu erat quis velit commodo molestie. Vivamus cursus molestie tincidunt. Proin aliquet nulla nibh, nec tempus lorem pretium vitae. Aliquam erat volutpat.",
-      "Integer faucibus tellus nibh, nec lacinia odio scelerisque et. Morbi ex est, maximus et odio pellentesque, tempor sagittis ligula. Donec eget nibh ornare, maximus urna et, congue lectus. Pellentesque lacus diam, commodo bibendum lobortis et, tristique vitae odio. Etiam risus lectus, ultricies sed odio eu, laoreet pellentesque leo. Nunc interdum tristique purus, eu hendrerit diam ornare sit amet. Vestibulum porttitor justo quis velit ultrices sagittis.",
-      "Ut vel venenatis tellus. Integer accumsan posuere pretium. Praesent faucibus odio quis urna tincidunt lobortis. Nullam vel arcu commodo, sagittis diam id, finibus lacus. Nam ac venenatis neque, sit amet gravida augue. Vivamus tempus semper turpis, sit amet gravida purus suscipit et. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; Fusce ut congue purus. Praesent quis pretium nibh. Morbi tempor ullamcorper neque et maximus. Maecenas sed orci purus. Maecenas pharetra purus sit amet tellus mattis ultrices. Mauris accumsan felis nec felis dictum mattis.",
-      "Proin molestie neque diam, nec dapibus est scelerisque et. Etiam dignissim purus sit amet ligula accumsan sodales. Fusce eget dolor viverra, volutpat mi vel, tincidunt metus. Quisque nunc dolor, tristique et sapien vitae, venenatis suscipit urna. Nam at felis augue. Cras commodo mollis metus vitae hendrerit. In sit amet ipsum risus. Nulla quis odio sollicitudin purus dapibus venenatis a at felis. Cras imperdiet maximus lacus id varius.",
-      "Ut mollis euismod augue, ac commodo quam suscipit vitae. Vestibulum pharetra ligula eros, sit amet pellentesque erat imperdiet at. Sed bibendum sollicitudin purus id dapibus. Etiam a auctor risus, ut scelerisque metus. Quisque aliquet nisi sed eros congue, eu cursus erat iaculis. Praesent dictum sed lacus id aliquet. Aenean vehicula vulputate tellus, ornare eleifend ligula vestibulum at."
+      "The Catholic Women Association (CWA) in OLA Parish Bolgatanga is an umbrella body that seeks to unite all Catholic women for the purpose of spiritual growth and active participation in the Church's mission. Their motto, 'She for God, She for King, She for Country,' reflects their commitment to faith, leadership, and nation-building.",
+      "The CWA focuses on the holistic development of women. They organize workshops and seminars on health, entrepreneurship, and family life, empowering women to be self-reliant and influential in their communities. In Bolgatanga, the CWA has been pivotal in promoting the education of the girl-child.",
+      "Spiritual formation is a cornerstone of the association. Members engage in regular Bible sharing, retreats, and prayer sessions. They are encouraged to deepen their relationship with God and to bring the light of the Gospel into their homes and workplaces.",
+      "The association plays a significant role in the liturgical and social life of the parish. They are often responsible for organizing parish feasts, receptions, and welfare activities. Their collective efforts ensure that the parish remains a warm and welcoming community for all.",
+      "Membership in the CWA is open to all Catholic women. It provides a platform for mentorship, where older women guide the younger ones in faith and life skills. This intergenerational bond strengthens the fabric of the parish community and ensures the transmission of values."
     ],
     "contactDetails": {
       "phone": "001-129-355-2851x5544",
@@ -119,7 +112,8 @@
       "membershipType": "Catholic youth"
     },
     "slug": "catholic-women-association",
-    "link": "/organizations/societies/catholic-women-association"
+    "link": "/organizations/societies/catholic-women-association",
+    "role": "SOCIETY"
   },
   {
     "name": "Christian Mothers Association",
@@ -127,11 +121,11 @@
     "heroImage": "https://example.com/images/christian-hero.jpg",
     "otherImages": ["https://example.com/images/christian1.jpg"],
     "writeup": [
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum mattis augue justo, id dignissim sem volutpat eget. Sed sit amet nunc ultricies, malesuada urna at, tincidunt orci. Duis lorem elit, lacinia at dolor nec, sollicitudin pulvinar felis. Quisque tempus laoreet tellus. Nam at pretium odio, feugiat convallis mi. Mauris id odio eu turpis egestas maximus. Fusce quis lacinia metus. Nam mollis odio nisi, ut posuere felis interdum eleifend. Sed ullamcorper, est ut pellentesque blandit, odio dui suscipit odio, a consequat enim libero sit amet metus. Quisque viverra, neque ac vestibulum pulvinar, orci dui luctus diam, vel pretium mi nisi id augue. Quisque rhoncus rhoncus nulla vel condimentum. Proin sollicitudin lectus nec arcu maximus, et imperdiet sem rutrum. Etiam eu erat quis velit commodo molestie. Vivamus cursus molestie tincidunt. Proin aliquet nulla nibh, nec tempus lorem pretium vitae. Aliquam erat volutpat.",
-      "Integer faucibus tellus nibh, nec lacinia odio scelerisque et. Morbi ex est, maximus et odio pellentesque, tempor sagittis ligula. Donec eget nibh ornare, maximus urna et, congue lectus. Pellentesque lacus diam, commodo bibendum lobortis et, tristique vitae odio. Etiam risus lectus, ultricies sed odio eu, laoreet pellentesque leo. Nunc interdum tristique purus, eu hendrerit diam ornare sit amet. Vestibulum porttitor justo quis velit ultrices sagittis.",
-      "Ut vel venenatis tellus. Integer accumsan posuere pretium. Praesent faucibus odio quis urna tincidunt lobortis. Nullam vel arcu commodo, sagittis diam id, finibus lacus. Nam ac venenatis neque, sit amet gravida augue. Vivamus tempus semper turpis, sit amet gravida purus suscipit et. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; Fusce ut congue purus. Praesent quis pretium nibh. Morbi tempor ullamcorper neque et maximus. Maecenas sed orci purus. Maecenas pharetra purus sit amet tellus mattis ultrices. Mauris accumsan felis nec felis dictum mattis.",
-      "Proin molestie neque diam, nec dapibus est scelerisque et. Etiam dignissim purus sit amet ligula accumsan sodales. Fusce eget dolor viverra, volutpat mi vel, tincidunt metus. Quisque nunc dolor, tristique et sapien vitae, venenatis suscipit urna. Nam at felis augue. Cras commodo mollis metus vitae hendrerit. In sit amet ipsum risus. Nulla quis odio sollicitudin purus dapibus venenatis a at felis. Cras imperdiet maximus lacus id varius.",
-      "Ut mollis euismod augue, ac commodo quam suscipit vitae. Vestibulum pharetra ligula eros, sit amet pellentesque erat imperdiet at. Sed bibendum sollicitudin purus id dapibus. Etiam a auctor risus, ut scelerisque metus. Quisque aliquet nisi sed eros congue, eu cursus erat iaculis. Praesent dictum sed lacus id aliquet. Aenean vehicula vulputate tellus, ornare eleifend ligula vestibulum at."
+      "The Christian Mothers Association (CMA) is dedicated to the spiritual and moral upbringing of children and the stability of the Christian family. In OLA Parish, the mothers look up to the Blessed Virgin Mary as their model, striving to emulate her virtues of humility, obedience, and love.",
+      "Members of the CMA are active in counseling and supporting families in distress. They provide a listening ear and practical advice to couples facing challenges, helping to preserve the sanctity of marriage. Their role as peacemakers in the domestic sphere is highly valued in the Bolgatanga community.",
+      "The association also focuses on the proper liturgical training of children. They encourage mothers to bring their children to church and to teach them their prayers. The CMA often organizes children's masses and catechism classes, ensuring that the faith is passed on to the younger generation.",
+      "Charitable works are a key part of their activities. The Christian Mothers frequently visit the maternity wards of local hospitals, donating items to new mothers and praying for the health of their babies. They also support the elderly and the lonely in the parish.",
+      "Through their distinctive white attire, the Christian Mothers symbolize purity and joy. Their presence in the church is a reminder of the vital role of mothers in the spiritual life of the family and the church. They remain a strong force for good in OLA Parish."
     ],
     "contactDetails": {
       "phone": "(995)800-2560",
@@ -146,23 +140,20 @@
       "membershipType": "Catholic women"
     },
     "slug": "christian-mothers-association",
-    "link": "/organizations/societies/christian-mothers-association"
+    "link": "/organizations/societies/christian-mothers-association",
+    "role": "SOCIETY"
   },
   {
     "name": "Council of Catholic Women",
     "email": "info@council.org",
     "heroImage": "https://example.com/images/council-hero.jpg",
-    "otherImages": [
-      "https://example.com/images/council1.jpg",
-      "https://example.com/images/council2.jpg",
-      "https://example.com/images/council3.jpg"
-    ],
+    "otherImages": ["https://example.com/images/council1.jpg", "https://example.com/images/council2.jpg", "https://example.com/images/council3.jpg"],
     "writeup": [
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum mattis augue justo, id dignissim sem volutpat eget. Sed sit amet nunc ultricies, malesuada urna at, tincidunt orci. Duis lorem elit, lacinia at dolor nec, sollicitudin pulvinar felis. Quisque tempus laoreet tellus. Nam at pretium odio, feugiat convallis mi. Mauris id odio eu turpis egestas maximus. Fusce quis lacinia metus. Nam mollis odio nisi, ut posuere felis interdum eleifend. Sed ullamcorper, est ut pellentesque blandit, odio dui suscipit odio, a consequat enim libero sit amet metus. Quisque viverra, neque ac vestibulum pulvinar, orci dui luctus diam, vel pretium mi nisi id augue. Quisque rhoncus rhoncus nulla vel condimentum. Proin sollicitudin lectus nec arcu maximus, et imperdiet sem rutrum. Etiam eu erat quis velit commodo molestie. Vivamus cursus molestie tincidunt. Proin aliquet nulla nibh, nec tempus lorem pretium vitae. Aliquam erat volutpat.",
-      "Integer faucibus tellus nibh, nec lacinia odio scelerisque et. Morbi ex est, maximus et odio pellentesque, tempor sagittis ligula. Donec eget nibh ornare, maximus urna et, congue lectus. Pellentesque lacus diam, commodo bibendum lobortis et, tristique vitae odio. Etiam risus lectus, ultricies sed odio eu, laoreet pellentesque leo. Nunc interdum tristique purus, eu hendrerit diam ornare sit amet. Vestibulum porttitor justo quis velit ultrices sagittis.",
-      "Ut vel venenatis tellus. Integer accumsan posuere pretium. Praesent faucibus odio quis urna tincidunt lobortis. Nullam vel arcu commodo, sagittis diam id, finibus lacus. Nam ac venenatis neque, sit amet gravida augue. Vivamus tempus semper turpis, sit amet gravida purus suscipit et. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; Fusce ut congue purus. Praesent quis pretium nibh. Morbi tempor ullamcorper neque et maximus. Maecenas sed orci purus. Maecenas pharetra purus sit amet tellus mattis ultrices. Mauris accumsan felis nec felis dictum mattis.",
-      "Proin molestie neque diam, nec dapibus est scelerisque et. Etiam dignissim purus sit amet ligula accumsan sodales. Fusce eget dolor viverra, volutpat mi vel, tincidunt metus. Quisque nunc dolor, tristique et sapien vitae, venenatis suscipit urna. Nam at felis augue. Cras commodo mollis metus vitae hendrerit. In sit amet ipsum risus. Nulla quis odio sollicitudin purus dapibus venenatis a at felis. Cras imperdiet maximus lacus id varius.",
-      "Ut mollis euismod augue, ac commodo quam suscipit vitae. Vestibulum pharetra ligula eros, sit amet pellentesque erat imperdiet at. Sed bibendum sollicitudin purus id dapibus. Etiam a auctor risus, ut scelerisque metus. Quisque aliquet nisi sed eros congue, eu cursus erat iaculis. Praesent dictum sed lacus id aliquet. Aenean vehicula vulputate tellus, ornare eleifend ligula vestibulum at."
+      "The Council of Catholic Women in OLA Parish serves as a coordinating body for all women's groups within the church. It provides a unified voice for Catholic women in Bolgatanga, representing their interests at the parish and diocesan levels. The Council ensures that the activities of various women's societies are harmonized for greater impact.",
+      "Empowerment is a central theme for the Council. They organize leadership training programs to equip women with the skills needed to take up roles in the church and society. They believe that an empowered woman is a catalyst for positive change in her family and community.",
+      "The Council also spearheads major parish projects. Whether it is fundraising for a new church building or organizing a diocesan conference, the Council of Catholic Women is often at the forefront, mobilizing resources and personnel. Their organizational capacity is a great asset to the parish.",
+      "Spiritual solidarity is fostered through joint retreats and prayer rallies. The Council brings women from different societies together to pray for the needs of the church and the nation. These gatherings strengthen the bonds of sisterhood and create a powerful spiritual network.",
+      "In addition to their internal activities, the Council engages with the wider community through advocacy. They speak out on issues affecting women and children, such as domestic violence and child labor, guided by the social teachings of the Catholic Church."
     ],
     "contactDetails": {
       "phone": "(545)799-5941",
@@ -177,29 +168,27 @@
       "membershipType": "Catholic men"
     },
     "slug": "council-of-catholic-women",
-    "link": "/organizations/societies/council-of-catholic-women"
+    "link": "/organizations/societies/council-of-catholic-women",
+    "role": "SOCIETY"
   },
   {
     "name": "St. Anthony Guild",
-    "email": "info@st..org",
+    "email": "info@st.anthony.org",
     "heroImage": "https://example.com/images/st.-hero.jpg",
-    "otherImages": [
-      "https://example.com/images/st.1.jpg",
-      "https://example.com/images/st.2.jpg"
-    ],
+    "otherImages": ["https://example.com/images/st.1.jpg", "https://example.com/images/st.2.jpg"],
     "writeup": [
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum mattis augue justo, id dignissim sem volutpat eget. Sed sit amet nunc ultricies, malesuada urna at, tincidunt orci. Duis lorem elit, lacinia at dolor nec, sollicitudin pulvinar felis. Quisque tempus laoreet tellus. Nam at pretium odio, feugiat convallis mi. Mauris id odio eu turpis egestas maximus. Fusce quis lacinia metus. Nam mollis odio nisi, ut posuere felis interdum eleifend. Sed ullamcorper, est ut pellentesque blandit, odio dui suscipit odio, a consequat enim libero sit amet metus. Quisque viverra, neque ac vestibulum pulvinar, orci dui luctus diam, vel pretium mi nisi id augue. Quisque rhoncus rhoncus nulla vel condimentum. Proin sollicitudin lectus nec arcu maximus, et imperdiet sem rutrum. Etiam eu erat quis velit commodo molestie. Vivamus cursus molestie tincidunt. Proin aliquet nulla nibh, nec tempus lorem pretium vitae. Aliquam erat volutpat.",
-      "Integer faucibus tellus nibh, nec lacinia odio scelerisque et. Morbi ex est, maximus et odio pellentesque, tempor sagittis ligula. Donec eget nibh ornare, maximus urna et, congue lectus. Pellentesque lacus diam, commodo bibendum lobortis et, tristique vitae odio. Etiam risus lectus, ultricies sed odio eu, laoreet pellentesque leo. Nunc interdum tristique purus, eu hendrerit diam ornare sit amet. Vestibulum porttitor justo quis velit ultrices sagittis.",
-      "Ut vel venenatis tellus. Integer accumsan posuere pretium. Praesent faucibus odio quis urna tincidunt lobortis. Nullam vel arcu commodo, sagittis diam id, finibus lacus. Nam ac venenatis neque, sit amet gravida augue. Vivamus tempus semper turpis, sit amet gravida purus suscipit et. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; Fusce ut congue purus. Praesent quis pretium nibh. Morbi tempor ullamcorper neque et maximus. Maecenas sed orci purus. Maecenas pharetra purus sit amet tellus mattis ultrices. Mauris accumsan felis nec felis dictum mattis.",
-      "Proin molestie neque diam, nec dapibus est scelerisque et. Etiam dignissim purus sit amet ligula accumsan sodales. Fusce eget dolor viverra, volutpat mi vel, tincidunt metus. Quisque nunc dolor, tristique et sapien vitae, venenatis suscipit urna. Nam at felis augue. Cras commodo mollis metus vitae hendrerit. In sit amet ipsum risus. Nulla quis odio sollicitudin purus dapibus venenatis a at felis. Cras imperdiet maximus lacus id varius.",
-      "Ut mollis euismod augue, ac commodo quam suscipit vitae. Vestibulum pharetra ligula eros, sit amet pellentesque erat imperdiet at. Sed bibendum sollicitudin purus id dapibus. Etiam a auctor risus, ut scelerisque metus. Quisque aliquet nisi sed eros congue, eu cursus erat iaculis. Praesent dictum sed lacus id aliquet. Aenean vehicula vulputate tellus, ornare eleifend ligula vestibulum at."
+      "The St. Anthony's Guild in OLA Parish is devoted to St. Anthony of Padua, the patron saint of lost items and the poor. Members of the Guild are known for their deep devotion and their commitment to charitable deeds. They meet regularly on Tuesdays, the traditional day dedicated to the saint, for prayers and novenas.",
+      "The Guild operates the 'St. Anthony's Bread' fund, which collects donations to feed the hungry and assist the destitute in Bolgatanga. This act of charity is performed in thanksgiving for favors received through the intercession of St. Anthony. It is a tangible expression of God's providence.",
+      "Members are encouraged to lead lives of holiness and simplicity. They study the life of St. Anthony, who was a great preacher and teacher of the faith. Inspired by his example, they strive to deepen their knowledge of the scriptures and to share the Good News with others.",
+      "The Guild also supports the education of seminarians. Recognizing the need for holy priests, they contribute financially and spiritually to the formation of future clergy. This support is vital for the growth of the church in the Navrongo-Bolgatanga Diocese.",
+      "In times of personal difficulty, many parishioners turn to the St. Anthony's Guild for prayer support. The Guild maintains a prayer request book and offers up the intentions of the faithful during their meetings. They are a source of hope and comfort to many in the parish."
     ],
     "contactDetails": {
       "phone": "+1-258-211-8801x43865",
       "address": "7035 Anderson Landing, Port Heatherburgh, AR 69691",
       "social": {
         "facebook": "https://facebook.com/st.",
-        "website": "https://st..org"
+        "website": "https://st.anthony.org"
       }
     },
     "otherInfo": {
@@ -207,22 +196,20 @@
       "membershipType": "Open to all Catholics"
     },
     "slug": "st-anthony-guild",
-    "link": "/organizations/societies/st-anthony-guild"
+    "link": "/organizations/societies/st-anthony-guild",
+    "role": "SOCIETY"
   },
   {
     "name": "Sacred Heart of Jesus Confraternity",
     "email": "info@sacred.org",
     "heroImage": "https://example.com/images/sacred-hero.jpg",
-    "otherImages": [
-      "https://example.com/images/sacred1.jpg",
-      "https://example.com/images/sacred2.jpg"
-    ],
+    "otherImages": ["https://example.com/images/sacred1.jpg", "https://example.com/images/sacred2.jpg"],
     "writeup": [
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum mattis augue justo, id dignissim sem volutpat eget. Sed sit amet nunc ultricies, malesuada urna at, tincidunt orci. Duis lorem elit, lacinia at dolor nec, sollicitudin pulvinar felis. Quisque tempus laoreet tellus. Nam at pretium odio, feugiat convallis mi. Mauris id odio eu turpis egestas maximus. Fusce quis lacinia metus. Nam mollis odio nisi, ut posuere felis interdum eleifend. Sed ullamcorper, est ut pellentesque blandit, odio dui suscipit odio, a consequat enim libero sit amet metus. Quisque viverra, neque ac vestibulum pulvinar, orci dui luctus diam, vel pretium mi nisi id augue. Quisque rhoncus rhoncus nulla vel condimentum. Proin sollicitudin lectus nec arcu maximus, et imperdiet sem rutrum. Etiam eu erat quis velit commodo molestie. Vivamus cursus molestie tincidunt. Proin aliquet nulla nibh, nec tempus lorem pretium vitae. Aliquam erat volutpat.",
-      "Integer faucibus tellus nibh, nec lacinia odio scelerisque et. Morbi ex est, maximus et odio pellentesque, tempor sagittis ligula. Donec eget nibh ornare, maximus urna et, congue lectus. Pellentesque lacus diam, commodo bibendum lobortis et, tristique vitae odio. Etiam risus lectus, ultricies sed odio eu, laoreet pellentesque leo. Nunc interdum tristique purus, eu hendrerit diam ornare sit amet. Vestibulum porttitor justo quis velit ultrices sagittis.",
-      "Ut vel venenatis tellus. Integer accumsan posuere pretium. Praesent faucibus odio quis urna tincidunt lobortis. Nullam vel arcu commodo, sagittis diam id, finibus lacus. Nam ac venenatis neque, sit amet gravida augue. Vivamus tempus semper turpis, sit amet gravida purus suscipit et. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; Fusce ut congue purus. Praesent quis pretium nibh. Morbi tempor ullamcorper neque et maximus. Maecenas sed orci purus. Maecenas pharetra purus sit amet tellus mattis ultrices. Mauris accumsan felis nec felis dictum mattis.",
-      "Proin molestie neque diam, nec dapibus est scelerisque et. Etiam dignissim purus sit amet ligula accumsan sodales. Fusce eget dolor viverra, volutpat mi vel, tincidunt metus. Quisque nunc dolor, tristique et sapien vitae, venenatis suscipit urna. Nam at felis augue. Cras commodo mollis metus vitae hendrerit. In sit amet ipsum risus. Nulla quis odio sollicitudin purus dapibus venenatis a at felis. Cras imperdiet maximus lacus id varius.",
-      "Ut mollis euismod augue, ac commodo quam suscipit vitae. Vestibulum pharetra ligula eros, sit amet pellentesque erat imperdiet at. Sed bibendum sollicitudin purus id dapibus. Etiam a auctor risus, ut scelerisque metus. Quisque aliquet nisi sed eros congue, eu cursus erat iaculis. Praesent dictum sed lacus id aliquet. Aenean vehicula vulputate tellus, ornare eleifend ligula vestibulum at."
+      "The Sacred Heart of Jesus Confraternity is a devotional society dedicated to the passionate love of Christ. In OLA Parish, members are committed to the practice of the First Friday devotions and the Holy Hour of Adoration. Their primary aim is to make reparation for the sins of the world and to console the Heart of Jesus.",
+      "Enthronement of the Sacred Heart in homes is a key activity. The Confraternity encourages families to consecrate their homes to the Sacred Heart, placing an image of Jesus in a prominent place. This practice reminds families of Christ's presence and kingship in their daily lives.",
+      "Members are known for their intense prayer life. They intercede for the conversion of sinners, the sanctification of priests, and the peace of the world. In Bolgatanga, they often organize prayer vigils and retreats to rekindle the spiritual fire of the parish.",
+      "The Confraternity also engages in works of mercy. Visiting the sick and the imprisoned are ways in which they show the compassionate love of Jesus to those on the margins. They believe that by serving the least of their brothers and sisters, they are serving Christ himself.",
+      "Wearing their red sashes and badges, members of the Sacred Heart Confraternity are a visible reminder of God's love. They strive to be apostles of love in their community, spreading the message of mercy and forgiveness wherever they go."
     ],
     "contactDetails": {
       "phone": "(982)227-9359x4665",
@@ -237,30 +224,27 @@
       "membershipType": "Catholic men"
     },
     "slug": "sacred-heart-of-jesus-confraternity",
-    "link": "/organizations/societies/sacred-heart-of-jesus-confraternity"
+    "link": "/organizations/societies/sacred-heart-of-jesus-confraternity",
+    "role": "SOCIETY"
   },
   {
     "name": "St. Joseph Society",
-    "email": "info@st..org",
+    "email": "info@st.joseph.org",
     "heroImage": "https://example.com/images/st.-hero.jpg",
-    "otherImages": [
-      "https://example.com/images/st.1.jpg",
-      "https://example.com/images/st.2.jpg",
-      "https://example.com/images/st.3.jpg"
-    ],
+    "otherImages": ["https://example.com/images/st.1.jpg", "https://example.com/images/st.2.jpg", "https://example.com/images/st.3.jpg"],
     "writeup": [
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum mattis augue justo, id dignissim sem volutpat eget. Sed sit amet nunc ultricies, malesuada urna at, tincidunt orci. Duis lorem elit, lacinia at dolor nec, sollicitudin pulvinar felis. Quisque tempus laoreet tellus. Nam at pretium odio, feugiat convallis mi. Mauris id odio eu turpis egestas maximus. Fusce quis lacinia metus. Nam mollis odio nisi, ut posuere felis interdum eleifend. Sed ullamcorper, est ut pellentesque blandit, odio dui suscipit odio, a consequat enim libero sit amet metus. Quisque viverra, neque ac vestibulum pulvinar, orci dui luctus diam, vel pretium mi nisi id augue. Quisque rhoncus rhoncus nulla vel condimentum. Proin sollicitudin lectus nec arcu maximus, et imperdiet sem rutrum. Etiam eu erat quis velit commodo molestie. Vivamus cursus molestie tincidunt. Proin aliquet nulla nibh, nec tempus lorem pretium vitae. Aliquam erat volutpat.",
-      "Integer faucibus tellus nibh, nec lacinia odio scelerisque et. Morbi ex est, maximus et odio pellentesque, tempor sagittis ligula. Donec eget nibh ornare, maximus urna et, congue lectus. Pellentesque lacus diam, commodo bibendum lobortis et, tristique vitae odio. Etiam risus lectus, ultricies sed odio eu, laoreet pellentesque leo. Nunc interdum tristique purus, eu hendrerit diam ornare sit amet. Vestibulum porttitor justo quis velit ultrices sagittis.",
-      "Ut vel venenatis tellus. Integer accumsan posuere pretium. Praesent faucibus odio quis urna tincidunt lobortis. Nullam vel arcu commodo, sagittis diam id, finibus lacus. Nam ac venenatis neque, sit amet gravida augue. Vivamus tempus semper turpis, sit amet gravida purus suscipit et. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; Fusce ut congue purus. Praesent quis pretium nibh. Morbi tempor ullamcorper neque et maximus. Maecenas sed orci purus. Maecenas pharetra purus sit amet tellus mattis ultrices. Mauris accumsan felis nec felis dictum mattis.",
-      "Proin molestie neque diam, nec dapibus est scelerisque et. Etiam dignissim purus sit amet ligula accumsan sodales. Fusce eget dolor viverra, volutpat mi vel, tincidunt metus. Quisque nunc dolor, tristique et sapien vitae, venenatis suscipit urna. Nam at felis augue. Cras commodo mollis metus vitae hendrerit. In sit amet ipsum risus. Nulla quis odio sollicitudin purus dapibus venenatis a at felis. Cras imperdiet maximus lacus id varius.",
-      "Ut mollis euismod augue, ac commodo quam suscipit vitae. Vestibulum pharetra ligula eros, sit amet pellentesque erat imperdiet at. Sed bibendum sollicitudin purus id dapibus. Etiam a auctor risus, ut scelerisque metus. Quisque aliquet nisi sed eros congue, eu cursus erat iaculis. Praesent dictum sed lacus id aliquet. Aenean vehicula vulputate tellus, ornare eleifend ligula vestibulum at."
+      "The St. Joseph Society is a men's group in OLA Parish that looks to St. Joseph, the foster father of Jesus, as their patron and model. They focus on the virtues of hard work, silence, and protection of the family. The society aims to help men fulfill their roles as responsible fathers and husbands.",
+      "Work is viewed as a means of sanctification. Members encourage one another to be diligent in their professions and trades, offering their labor as a sacrifice to God. In Bolgatanga, the society often organizes labor support for parish construction projects, following the example of St. Joseph the Worker.",
+      "The protection of the church is another key duty. Just as St. Joseph protected the Holy Family, members of the society see themselves as guardians of the parish community. They are often involved in security and maintenance, ensuring that the church environment is safe and conducive for worship.",
+      "Spiritual formation for men is prioritized. The society holds regular meetings where they discuss challenges facing men in the modern world and seek biblical solutions. They support each other in overcoming vices and growing in Christian maturity.",
+      "The St. Joseph Society also extends care to the dying. St. Joseph is the patron of a happy death, and members pray for the dying and visit the terminally ill, bringing them comfort and ensuring they receive the sacraments. Their quiet, steady presence is a pillar of strength in the parish."
     ],
     "contactDetails": {
       "phone": "+1-783-734-0801x432",
       "address": "173 Robert Glen Apt. 729, Lake Shelly, FL 63778",
       "social": {
         "facebook": "https://facebook.com/st.",
-        "website": "https://st..org"
+        "website": "https://st.joseph.org"
       }
     },
     "otherInfo": {
@@ -268,19 +252,20 @@
       "membershipType": "Catholic women"
     },
     "slug": "st-joseph-society",
-    "link": "/organizations/societies/st-joseph-society"
+    "link": "/organizations/societies/st-joseph-society",
+    "role": "SOCIETY"
   },
   {
     "name": "Catholic Youth Organization (CYO)",
-    "email": "info@catholic.org",
+    "email": "info@cyo.org",
     "heroImage": "https://example.com/images/catholic-hero.jpg",
     "otherImages": ["https://example.com/images/catholic1.jpg"],
     "writeup": [
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum mattis augue justo, id dignissim sem volutpat eget. Sed sit amet nunc ultricies, malesuada urna at, tincidunt orci. Duis lorem elit, lacinia at dolor nec, sollicitudin pulvinar felis. Quisque tempus laoreet tellus. Nam at pretium odio, feugiat convallis mi. Mauris id odio eu turpis egestas maximus. Fusce quis lacinia metus. Nam mollis odio nisi, ut posuere felis interdum eleifend. Sed ullamcorper, est ut pellentesque blandit, odio dui suscipit odio, a consequat enim libero sit amet metus. Quisque viverra, neque ac vestibulum pulvinar, orci dui luctus diam, vel pretium mi nisi id augue. Quisque rhoncus rhoncus nulla vel condimentum. Proin sollicitudin lectus nec arcu maximus, et imperdiet sem rutrum. Etiam eu erat quis velit commodo molestie. Vivamus cursus molestie tincidunt. Proin aliquet nulla nibh, nec tempus lorem pretium vitae. Aliquam erat volutpat.",
-      "Integer faucibus tellus nibh, nec lacinia odio scelerisque et. Morbi ex est, maximus et odio pellentesque, tempor sagittis ligula. Donec eget nibh ornare, maximus urna et, congue lectus. Pellentesque lacus diam, commodo bibendum lobortis et, tristique vitae odio. Etiam risus lectus, ultricies sed odio eu, laoreet pellentesque leo. Nunc interdum tristique purus, eu hendrerit diam ornare sit amet. Vestibulum porttitor justo quis velit ultrices sagittis.",
-      "Ut vel venenatis tellus. Integer accumsan posuere pretium. Praesent faucibus odio quis urna tincidunt lobortis. Nullam vel arcu commodo, sagittis diam id, finibus lacus. Nam ac venenatis neque, sit amet gravida augue. Vivamus tempus semper turpis, sit amet gravida purus suscipit et. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; Fusce ut congue purus. Praesent quis pretium nibh. Morbi tempor ullamcorper neque et maximus. Maecenas sed orci purus. Maecenas pharetra purus sit amet tellus mattis ultrices. Mauris accumsan felis nec felis dictum mattis.",
-      "Proin molestie neque diam, nec dapibus est scelerisque et. Etiam dignissim purus sit amet ligula accumsan sodales. Fusce eget dolor viverra, volutpat mi vel, tincidunt metus. Quisque nunc dolor, tristique et sapien vitae, venenatis suscipit urna. Nam at felis augue. Cras commodo mollis metus vitae hendrerit. In sit amet ipsum risus. Nulla quis odio sollicitudin purus dapibus venenatis a at felis. Cras imperdiet maximus lacus id varius.",
-      "Ut mollis euismod augue, ac commodo quam suscipit vitae. Vestibulum pharetra ligula eros, sit amet pellentesque erat imperdiet at. Sed bibendum sollicitudin purus id dapibus. Etiam a auctor risus, ut scelerisque metus. Quisque aliquet nisi sed eros congue, eu cursus erat iaculis. Praesent dictum sed lacus id aliquet. Aenean vehicula vulputate tellus, ornare eleifend ligula vestibulum at."
+      "The Catholic Youth Organization (CYO) in OLA Parish is the vibrant heartbeat of the church's youth. It serves as a platform for the holistic development of young people, blending spiritual growth with social, cultural, and physical activities. The CYO aims to raise responsible Catholic citizens for the nation.",
+      "Sports and games are a popular way the CYO engages the youth in Bolgatanga. Through football matches and other recreational activities, they foster teamwork, discipline, and healthy living. These events also serve as evangelization tools, attracting non-Catholic youth to the community.",
+      "Cultural performance is another hallmark of the CYO. They are often the custodians of local traditions within the church, performing traditional dances and drumming during liturgical celebrations. This inculturation helps the youth appreciate their heritage while expressing their faith.",
+      "Spiritual activities include Bible quizzes, retreats, and choir ministrations. The CYO encourages its members to study the faith deeply and to take active roles in the liturgy. Many vocations to the priesthood and religious life in the diocese have been nurtured within the ranks of the CYO.",
+      "The organization also emphasizes community service. CYO members regularly organize clean-up exercises in the parish and the surrounding Bolgatanga municipality. They visit the sick and the elderly, learning the value of service and compassion from a young age."
     ],
     "contactDetails": {
       "phone": "427-666-7556",
@@ -295,23 +280,20 @@
       "membershipType": "Catholic men"
     },
     "slug": "catholic-youth-organization-cyo",
-    "link": "/organizations/societies/catholic-youth-organization-cyo"
+    "link": "/organizations/societies/catholic-youth-organization-cyo",
+    "role": "SOCIETY"
   },
   {
     "name": "COSRA",
     "email": "info@cosra.org",
     "heroImage": "https://example.com/images/cosra-hero.jpg",
-    "otherImages": [
-      "https://example.com/images/cosra1.jpg",
-      "https://example.com/images/cosra2.jpg",
-      "https://example.com/images/cosra3.jpg"
-    ],
+    "otherImages": ["https://example.com/images/cosra1.jpg", "https://example.com/images/cosra2.jpg", "https://example.com/images/cosra3.jpg"],
     "writeup": [
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum mattis augue justo, id dignissim sem volutpat eget. Sed sit amet nunc ultricies, malesuada urna at, tincidunt orci. Duis lorem elit, lacinia at dolor nec, sollicitudin pulvinar felis. Quisque tempus laoreet tellus. Nam at pretium odio, feugiat convallis mi. Mauris id odio eu turpis egestas maximus. Fusce quis lacinia metus. Nam mollis odio nisi, ut posuere felis interdum eleifend. Sed ullamcorper, est ut pellentesque blandit, odio dui suscipit odio, a consequat enim libero sit amet metus. Quisque viverra, neque ac vestibulum pulvinar, orci dui luctus diam, vel pretium mi nisi id augue. Quisque rhoncus rhoncus nulla vel condimentum. Proin sollicitudin lectus nec arcu maximus, et imperdiet sem rutrum. Etiam eu erat quis velit commodo molestie. Vivamus cursus molestie tincidunt. Proin aliquet nulla nibh, nec tempus lorem pretium vitae. Aliquam erat volutpat.",
-      "Integer faucibus tellus nibh, nec lacinia odio scelerisque et. Morbi ex est, maximus et odio pellentesque, tempor sagittis ligula. Donec eget nibh ornare, maximus urna et, congue lectus. Pellentesque lacus diam, commodo bibendum lobortis et, tristique vitae odio. Etiam risus lectus, ultricies sed odio eu, laoreet pellentesque leo. Nunc interdum tristique purus, eu hendrerit diam ornare sit amet. Vestibulum porttitor justo quis velit ultrices sagittis.",
-      "Ut vel venenatis tellus. Integer accumsan posuere pretium. Praesent faucibus odio quis urna tincidunt lobortis. Nullam vel arcu commodo, sagittis diam id, finibus lacus. Nam ac venenatis neque, sit amet gravida augue. Vivamus tempus semper turpis, sit amet gravida purus suscipit et. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; Fusce ut congue purus. Praesent quis pretium nibh. Morbi tempor ullamcorper neque et maximus. Maecenas sed orci purus. Maecenas pharetra purus sit amet tellus mattis ultrices. Mauris accumsan felis nec felis dictum mattis.",
-      "Proin molestie neque diam, nec dapibus est scelerisque et. Etiam dignissim purus sit amet ligula accumsan sodales. Fusce eget dolor viverra, volutpat mi vel, tincidunt metus. Quisque nunc dolor, tristique et sapien vitae, venenatis suscipit urna. Nam at felis augue. Cras commodo mollis metus vitae hendrerit. In sit amet ipsum risus. Nulla quis odio sollicitudin purus dapibus venenatis a at felis. Cras imperdiet maximus lacus id varius.",
-      "Ut mollis euismod augue, ac commodo quam suscipit vitae. Vestibulum pharetra ligula eros, sit amet pellentesque erat imperdiet at. Sed bibendum sollicitudin purus id dapibus. Etiam a auctor risus, ut scelerisque metus. Quisque aliquet nisi sed eros congue, eu cursus erat iaculis. Praesent dictum sed lacus id aliquet. Aenean vehicula vulputate tellus, ornare eleifend ligula vestibulum at."
+      "The Catholic Organization for Social and Religious Advancement (COSRA) is a society for young adults in OLA Parish. It bridges the gap between the youth and the adult societies, catering to the needs of those in tertiary institutions and the early working class. Their motto, 'Action for Christ,' drives their activities.",
+      "COSRA places a strong emphasis on social action. In Bolgatanga, members are involved in advocacy for social justice and community development. They organize seminars on civic rights and responsibilities, encouraging members to be active participants in the democratic process.",
+      "Religious advancement is pursued through deep scriptural study and liturgical participation. COSRA members are often lectors, choir members, and catechists. They strive to integrate their faith with their professional lives, bearing witness to Christ in their workplaces.",
+      "Fellowship is a key component of COSRA. They organize excursions, picnics, and social nights to foster bonding among members. This support network is crucial for young adults navigating the challenges of career and family life.",
+      "The society also engages in evangelization. They organize outreach programs to rural outstations, sharing the gospel and supporting the growth of the church in remote areas. Their dynamism and zeal make them a vital force for mission in the parish."
     ],
     "contactDetails": {
       "phone": "850-813-7304x28320",
@@ -326,7 +308,8 @@
       "membershipType": "Catholic youth"
     },
     "slug": "cosra",
-    "link": "/organizations/societies/cosra"
+    "link": "/organizations/societies/cosra",
+    "role": "SOCIETY"
   },
   {
     "name": "League of Tarcisians",
@@ -334,11 +317,11 @@
     "heroImage": "https://example.com/images/league-hero.jpg",
     "otherImages": ["https://example.com/images/league1.jpg"],
     "writeup": [
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum mattis augue justo, id dignissim sem volutpat eget. Sed sit amet nunc ultricies, malesuada urna at, tincidunt orci. Duis lorem elit, lacinia at dolor nec, sollicitudin pulvinar felis. Quisque tempus laoreet tellus. Nam at pretium odio, feugiat convallis mi. Mauris id odio eu turpis egestas maximus. Fusce quis lacinia metus. Nam mollis odio nisi, ut posuere felis interdum eleifend. Sed ullamcorper, est ut pellentesque blandit, odio dui suscipit odio, a consequat enim libero sit amet metus. Quisque viverra, neque ac vestibulum pulvinar, orci dui luctus diam, vel pretium mi nisi id augue. Quisque rhoncus rhoncus nulla vel condimentum. Proin sollicitudin lectus nec arcu maximus, et imperdiet sem rutrum. Etiam eu erat quis velit commodo molestie. Vivamus cursus molestie tincidunt. Proin aliquet nulla nibh, nec tempus lorem pretium vitae. Aliquam erat volutpat.",
-      "Integer faucibus tellus nibh, nec lacinia odio scelerisque et. Morbi ex est, maximus et odio pellentesque, tempor sagittis ligula. Donec eget nibh ornare, maximus urna et, congue lectus. Pellentesque lacus diam, commodo bibendum lobortis et, tristique vitae odio. Etiam risus lectus, ultricies sed odio eu, laoreet pellentesque leo. Nunc interdum tristique purus, eu hendrerit diam ornare sit amet. Vestibulum porttitor justo quis velit ultrices sagittis.",
-      "Ut vel venenatis tellus. Integer accumsan posuere pretium. Praesent faucibus odio quis urna tincidunt lobortis. Nullam vel arcu commodo, sagittis diam id, finibus lacus. Nam ac venenatis neque, sit amet gravida augue. Vivamus tempus semper turpis, sit amet gravida purus suscipit et. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; Fusce ut congue purus. Praesent quis pretium nibh. Morbi tempor ullamcorper neque et maximus. Maecenas sed orci purus. Maecenas pharetra purus sit amet tellus mattis ultrices. Mauris accumsan felis nec felis dictum mattis.",
-      "Proin molestie neque diam, nec dapibus est scelerisque et. Etiam dignissim purus sit amet ligula accumsan sodales. Fusce eget dolor viverra, volutpat mi vel, tincidunt metus. Quisque nunc dolor, tristique et sapien vitae, venenatis suscipit urna. Nam at felis augue. Cras commodo mollis metus vitae hendrerit. In sit amet ipsum risus. Nulla quis odio sollicitudin purus dapibus venenatis a at felis. Cras imperdiet maximus lacus id varius.",
-      "Ut mollis euismod augue, ac commodo quam suscipit vitae. Vestibulum pharetra ligula eros, sit amet pellentesque erat imperdiet at. Sed bibendum sollicitudin purus id dapibus. Etiam a auctor risus, ut scelerisque metus. Quisque aliquet nisi sed eros congue, eu cursus erat iaculis. Praesent dictum sed lacus id aliquet. Aenean vehicula vulputate tellus, ornare eleifend ligula vestibulum at."
+      "The League of Tarcisians in OLA Parish is a society for children and junior youth, dedicated to St. Tarcisius, the martyr of the Eucharist. The primary focus of the league is to instill a deep love and reverence for the Holy Eucharist in the hearts of the young.",
+      "Members are taught the importance of the Mass and Adoration. They are encouraged to visit the Blessed Sacrament frequently and to prepare themselves worthily for Holy Communion. In Bolgatanga, the Tarcisians are often seen leading prayers before the Blessed Sacrament during children's masses.",
+      "The league also serves as a nursery for vocations. By staying close to the altar and the Eucharist, many young boys and girls hear the call to serve God as priests or religious. The society provides a supportive environment for discerning these calls.",
+      "Discipline and purity are emphasized. St. Tarcisius gave his life to protect the Eucharist, and members are taught to protect the purity of their souls. They are guided to live virtuous lives, avoiding the negative influences of the world.",
+      "Activities include catechism classes, singing, and acting out biblical stories. These fun yet educational activities help the children understand their faith better. The League of Tarcisians ensures that the future of the church in OLA Parish is built on a solid Eucharistic foundation."
     ],
     "contactDetails": {
       "phone": "+1-344-117-9985",
@@ -353,23 +336,20 @@
       "membershipType": "Catholic women"
     },
     "slug": "league-of-tarcisians",
-    "link": "/organizations/societies/league-of-tarcisians"
+    "link": "/organizations/societies/league-of-tarcisians",
+    "role": "SOCIETY"
   },
   {
     "name": "Mass Servers Association",
     "email": "info@mass.org",
     "heroImage": "https://example.com/images/mass-hero.jpg",
-    "otherImages": [
-      "https://example.com/images/mass1.jpg",
-      "https://example.com/images/mass2.jpg",
-      "https://example.com/images/mass3.jpg"
-    ],
+    "otherImages": ["https://example.com/images/mass1.jpg", "https://example.com/images/mass2.jpg", "https://example.com/images/mass3.jpg"],
     "writeup": [
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum mattis augue justo, id dignissim sem volutpat eget. Sed sit amet nunc ultricies, malesuada urna at, tincidunt orci. Duis lorem elit, lacinia at dolor nec, sollicitudin pulvinar felis. Quisque tempus laoreet tellus. Nam at pretium odio, feugiat convallis mi. Mauris id odio eu turpis egestas maximus. Fusce quis lacinia metus. Nam mollis odio nisi, ut posuere felis interdum eleifend. Sed ullamcorper, est ut pellentesque blandit, odio dui suscipit odio, a consequat enim libero sit amet metus. Quisque viverra, neque ac vestibulum pulvinar, orci dui luctus diam, vel pretium mi nisi id augue. Quisque rhoncus rhoncus nulla vel condimentum. Proin sollicitudin lectus nec arcu maximus, et imperdiet sem rutrum. Etiam eu erat quis velit commodo molestie. Vivamus cursus molestie tincidunt. Proin aliquet nulla nibh, nec tempus lorem pretium vitae. Aliquam erat volutpat.",
-      "Integer faucibus tellus nibh, nec lacinia odio scelerisque et. Morbi ex est, maximus et odio pellentesque, tempor sagittis ligula. Donec eget nibh ornare, maximus urna et, congue lectus. Pellentesque lacus diam, commodo bibendum lobortis et, tristique vitae odio. Etiam risus lectus, ultricies sed odio eu, laoreet pellentesque leo. Nunc interdum tristique purus, eu hendrerit diam ornare sit amet. Vestibulum porttitor justo quis velit ultrices sagittis.",
-      "Ut vel venenatis tellus. Integer accumsan posuere pretium. Praesent faucibus odio quis urna tincidunt lobortis. Nullam vel arcu commodo, sagittis diam id, finibus lacus. Nam ac venenatis neque, sit amet gravida augue. Vivamus tempus semper turpis, sit amet gravida purus suscipit et. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; Fusce ut congue purus. Praesent quis pretium nibh. Morbi tempor ullamcorper neque et maximus. Maecenas sed orci purus. Maecenas pharetra purus sit amet tellus mattis ultrices. Mauris accumsan felis nec felis dictum mattis.",
-      "Proin molestie neque diam, nec dapibus est scelerisque et. Etiam dignissim purus sit amet ligula accumsan sodales. Fusce eget dolor viverra, volutpat mi vel, tincidunt metus. Quisque nunc dolor, tristique et sapien vitae, venenatis suscipit urna. Nam at felis augue. Cras commodo mollis metus vitae hendrerit. In sit amet ipsum risus. Nulla quis odio sollicitudin purus dapibus venenatis a at felis. Cras imperdiet maximus lacus id varius.",
-      "Ut mollis euismod augue, ac commodo quam suscipit vitae. Vestibulum pharetra ligula eros, sit amet pellentesque erat imperdiet at. Sed bibendum sollicitudin purus id dapibus. Etiam a auctor risus, ut scelerisque metus. Quisque aliquet nisi sed eros congue, eu cursus erat iaculis. Praesent dictum sed lacus id aliquet. Aenean vehicula vulputate tellus, ornare eleifend ligula vestibulum at."
+      "The Mass Servers Association (Altar Servers) plays a critical role in the liturgical life of OLA Parish. Composed mostly of young boys and girls, they assist the priest at the altar during Mass and other religious ceremonies. Their service adds dignity and smooth flow to the worship.",
+      "Training is rigorous and continuous. New servers are taught the names and uses of liturgical vessels, vestments, and the structure of the Mass. In Bolgatanga, the servers are known for their precision and reverence, moving with grace and attentiveness around the sanctuary.",
+      "The association is also a vocational ground. Many priests in the diocese began their journey as altar servers. The proximity to the sacred mysteries inspires a desire in many to dedicate their lives to God. The parish priest often mentors the servers, guiding them in their spiritual growth.",
+      "Discipline and punctuality are core values. Servers are expected to arrive early for Mass to prepare the altar and themselves. This training in responsibility serves them well in their academic and personal lives.",
+      "Beyond the altar, the Mass Servers engage in sports and social activities. They have a football team that competes with other societies, fostering camaraderie and team spirit. The association provides a wholesome environment for young people to grow in faith and friendship."
     ],
     "contactDetails": {
       "phone": "852.014.5141",
@@ -384,22 +364,20 @@
       "membershipType": "Catholic men"
     },
     "slug": "mass-servers-association",
-    "link": "/organizations/societies/mass-servers-association"
+    "link": "/organizations/societies/mass-servers-association",
+    "role": "SOCIETY"
   },
   {
     "name": "Ushers",
     "email": "info@ushers.org",
     "heroImage": "/images/organisations/ushers.jpg",
-    "otherImages": [
-      "https://example.com/images/ushers1.jpg",
-      "https://example.com/images/ushers2.jpg"
-    ],
+    "otherImages": ["https://example.com/images/ushers1.jpg", "https://example.com/images/ushers2.jpg"],
     "writeup": [
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum mattis augue justo, id dignissim sem volutpat eget. Sed sit amet nunc ultricies, malesuada urna at, tincidunt orci. Duis lorem elit, lacinia at dolor nec, sollicitudin pulvinar felis. Quisque tempus laoreet tellus. Nam at pretium odio, feugiat convallis mi. Mauris id odio eu turpis egestas maximus. Fusce quis lacinia metus. Nam mollis odio nisi, ut posuere felis interdum eleifend. Sed ullamcorper, est ut pellentesque blandit, odio dui suscipit odio, a consequat enim libero sit amet metus. Quisque viverra, neque ac vestibulum pulvinar, orci dui luctus diam, vel pretium mi nisi id augue. Quisque rhoncus rhoncus nulla vel condimentum. Proin sollicitudin lectus nec arcu maximus, et imperdiet sem rutrum. Etiam eu erat quis velit commodo molestie. Vivamus cursus molestie tincidunt. Proin aliquet nulla nibh, nec tempus lorem pretium vitae. Aliquam erat volutpat.",
-      "Integer faucibus tellus nibh, nec lacinia odio scelerisque et. Morbi ex est, maximus et odio pellentesque, tempor sagittis ligula. Donec eget nibh ornare, maximus urna et, congue lectus. Pellentesque lacus diam, commodo bibendum lobortis et, tristique vitae odio. Etiam risus lectus, ultricies sed odio eu, laoreet pellentesque leo. Nunc interdum tristique purus, eu hendrerit diam ornare sit amet. Vestibulum porttitor justo quis velit ultrices sagittis.",
-      "Ut vel venenatis tellus. Integer accumsan posuere pretium. Praesent faucibus odio quis urna tincidunt lobortis. Nullam vel arcu commodo, sagittis diam id, finibus lacus. Nam ac venenatis neque, sit amet gravida augue. Vivamus tempus semper turpis, sit amet gravida purus suscipit et. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; Fusce ut congue purus. Praesent quis pretium nibh. Morbi tempor ullamcorper neque et maximus. Maecenas sed orci purus. Maecenas pharetra purus sit amet tellus mattis ultrices. Mauris accumsan felis nec felis dictum mattis.",
-      "Proin molestie neque diam, nec dapibus est scelerisque et. Etiam dignissim purus sit amet ligula accumsan sodales. Fusce eget dolor viverra, volutpat mi vel, tincidunt metus. Quisque nunc dolor, tristique et sapien vitae, venenatis suscipit urna. Nam at felis augue. Cras commodo mollis metus vitae hendrerit. In sit amet ipsum risus. Nulla quis odio sollicitudin purus dapibus venenatis a at felis. Cras imperdiet maximus lacus id varius.",
-      "Ut mollis euismod augue, ac commodo quam suscipit vitae. Vestibulum pharetra ligula eros, sit amet pellentesque erat imperdiet at. Sed bibendum sollicitudin purus id dapibus. Etiam a auctor risus, ut scelerisque metus. Quisque aliquet nisi sed eros congue, eu cursus erat iaculis. Praesent dictum sed lacus id aliquet. Aenean vehicula vulputate tellus, ornare eleifend ligula vestibulum at."
+      "The Ushers Ministry in OLA Parish is the face of hospitality. They are the first people parishioners and visitors encounter when they enter the church. Their warm smiles and helpful guidance set the tone for the liturgical celebration. In Bolgatanga, they are dedicated to making everyone feel welcome and comfortable.",
+      "Their primary duty is to maintain order during Mass. They help people find seats, organize the offertory procession, and ensure a smooth flow during Communion. Their vigilant presence minimizes distractions and allows the congregation to focus on worship.",
+      "Ushers also care for the church environment. They often stay behind after Mass to ensure the pews are tidy and lost items are secured. They assist in the distribution of parish bulletins and other materials, acting as a communication link between the clergy and the laity.",
+      "Training in conflict resolution and emergency response is part of their preparation. They are equipped to handle medical emergencies or security situations that may arise during large gatherings. This readiness ensures the safety of the congregation.",
+      "Spiritually, ushers are reminded that they are doorkeepers in the house of the Lord. They begin their duties with prayer and strive to serve with humility and patience. Their ministry is seen as a direct service to God by serving His people."
     ],
     "contactDetails": {
       "phone": "1210648195",
@@ -414,23 +392,20 @@
       "membershipType": "Catholic youth"
     },
     "slug": "ushers",
-    "link": "/organizations/societies/ushers"
+    "link": "/organizations/societies/ushers",
+    "role": "SOCIETY"
   },
   {
     "name": "Lectors",
     "email": "info@lectors.org",
     "heroImage": "https://example.com/images/lectors-hero.jpg",
-    "otherImages": [
-      "https://example.com/images/lectors1.jpg",
-      "https://example.com/images/lectors2.jpg",
-      "https://example.com/images/lectors3.jpg"
-    ],
+    "otherImages": ["https://example.com/images/lectors1.jpg", "https://example.com/images/lectors2.jpg", "https://example.com/images/lectors3.jpg"],
     "writeup": [
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum mattis augue justo, id dignissim sem volutpat eget. Sed sit amet nunc ultricies, malesuada urna at, tincidunt orci. Duis lorem elit, lacinia at dolor nec, sollicitudin pulvinar felis. Quisque tempus laoreet tellus. Nam at pretium odio, feugiat convallis mi. Mauris id odio eu turpis egestas maximus. Fusce quis lacinia metus. Nam mollis odio nisi, ut posuere felis interdum eleifend. Sed ullamcorper, est ut pellentesque blandit, odio dui suscipit odio, a consequat enim libero sit amet metus. Quisque viverra, neque ac vestibulum pulvinar, orci dui luctus diam, vel pretium mi nisi id augue. Quisque rhoncus rhoncus nulla vel condimentum. Proin sollicitudin lectus nec arcu maximus, et imperdiet sem rutrum. Etiam eu erat quis velit commodo molestie. Vivamus cursus molestie tincidunt. Proin aliquet nulla nibh, nec tempus lorem pretium vitae. Aliquam erat volutpat.",
-      "Integer faucibus tellus nibh, nec lacinia odio scelerisque et. Morbi ex est, maximus et odio pellentesque, tempor sagittis ligula. Donec eget nibh ornare, maximus urna et, congue lectus. Pellentesque lacus diam, commodo bibendum lobortis et, tristique vitae odio. Etiam risus lectus, ultricies sed odio eu, laoreet pellentesque leo. Nunc interdum tristique purus, eu hendrerit diam ornare sit amet. Vestibulum porttitor justo quis velit ultrices sagittis.",
-      "Ut vel venenatis tellus. Integer accumsan posuere pretium. Praesent faucibus odio quis urna tincidunt lobortis. Nullam vel arcu commodo, sagittis diam id, finibus lacus. Nam ac venenatis neque, sit amet gravida augue. Vivamus tempus semper turpis, sit amet gravida purus suscipit et. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; Fusce ut congue purus. Praesent quis pretium nibh. Morbi tempor ullamcorper neque et maximus. Maecenas sed orci purus. Maecenas pharetra purus sit amet tellus mattis ultrices. Mauris accumsan felis nec felis dictum mattis.",
-      "Proin molestie neque diam, nec dapibus est scelerisque et. Etiam dignissim purus sit amet ligula accumsan sodales. Fusce eget dolor viverra, volutpat mi vel, tincidunt metus. Quisque nunc dolor, tristique et sapien vitae, venenatis suscipit urna. Nam at felis augue. Cras commodo mollis metus vitae hendrerit. In sit amet ipsum risus. Nulla quis odio sollicitudin purus dapibus venenatis a at felis. Cras imperdiet maximus lacus id varius.",
-      "Ut mollis euismod augue, ac commodo quam suscipit vitae. Vestibulum pharetra ligula eros, sit amet pellentesque erat imperdiet at. Sed bibendum sollicitudin purus id dapibus. Etiam a auctor risus, ut scelerisque metus. Quisque aliquet nisi sed eros congue, eu cursus erat iaculis. Praesent dictum sed lacus id aliquet. Aenean vehicula vulputate tellus, ornare eleifend ligula vestibulum at."
+      "The Lectors Ministry is charged with the proclamation of the Word of God during liturgical celebrations. In OLA Parish, lectors are carefully selected and trained to read the scriptures with clarity, understanding, and conviction. They believe that when they read, God himself speaks to his people.",
+      "Preparation is key for every lector. They meet weekly to study the upcoming Sunday readings, discussing the historical context and theological meaning. This deep dive into scripture ensures that they proclaim the message effectively, not just as words on a page, but as a living truth.",
+      "Lectors in Bolgatanga are also encouraged to be students of the Bible. They often lead Bible study groups in the parish, helping others to understand and love the scriptures. Their ministry extends beyond the ambo into the daily lives of the parishioners.",
+      "The ministry is open to both men and women, young and old, who have a gift for public speaking and a love for God's word. Junior lectors are also trained to read during children's masses, ensuring a succession of capable proclaimers.",
+      "Spiritual retreats are held regularly to renew their zeal. Lectors pray for the grace to live out what they proclaim, striving to be 'doers of the word and not hearers only.' Their reverent service enriches the liturgy and feeds the spiritual hunger of the congregation."
     ],
     "contactDetails": {
       "phone": "511-939-2324x94040",
@@ -445,6 +420,7 @@
       "membershipType": "Catholic women"
     },
     "slug": "lectors",
-    "link": "/organizations/societies/lectors"
+    "link": "/organizations/societies/lectors",
+    "role": "SOCIETY"
   }
 ]

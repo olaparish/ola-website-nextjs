@@ -12,4 +12,3 @@ const Page = () => {
 };
 
 export default Page;
-// { id: 'aa399151', password: '1992-04-03' }
