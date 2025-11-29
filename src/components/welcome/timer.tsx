@@ -58,44 +58,44 @@ const CountdownTimer = () => {
 
   if (!isClient) {
     return (
-      <div className="flex justify-between md:gap-15 bg-primary-900 mt-4 px-15 py-4.5 w-full md:w-auto text-white">
+      <div className="flex justify-between md:gap-15 bg-primary-900 mt-4 px-5 py-4.5 w-full md:w-auto text-white">
         <p className="flex flex-col text-center">
           <span className="font-semibold text-xl">--</span>
-          <span className="font-medium">Days</span>
         </p>
         <p className="flex flex-col text-center">
           <span className="font-semibold text-xl">--</span>
-          <span className="font-medium">Hours</span>
         </p>
         <p className="flex flex-col text-center">
           <span className="font-semibold text-xl">--</span>
-          <span className="font-medium">Minutes</span>
         </p>
         <p className="flex flex-col text-center">
           <span className="font-semibold text-xl">--</span>
-          <span className="font-medium">Seconds</span>
         </p>
       </div>
     );
   }
 
   return (
-    <div className="flex justify-between md:gap-15 bg-primary-900 mt-4 px-15 py-4.5 w-full md:w-auto text-white">
+    <div className="flex justify-between md:gap-15 bg-primary-900 mt-4 px-5 py-4.5 w-full md:w-auto text-white">
       <p className="flex flex-col text-center">
         <span className="font-semibold text-xl">{timeLeft.days}</span>
-        <span className="font-medium">Days</span>
+        <span className="hidden sm:block font-medium">Days</span>
+        <span className="sm:hidden font-medium">D</span>
       </p>
       <p className="flex flex-col text-center">
         <span className="font-semibold text-xl">{timeLeft.hours}</span>
-        <span className="font-medium">Hours</span>
+        <span className="hidden sm:block font-medium">Hours</span>
+        <span className="sm:hidden font-medium">H</span>
       </p>
       <p className="flex flex-col text-center">
         <span className="font-semibold text-xl">{timeLeft.minutes}</span>
-        <span className="font-medium">Minutes</span>
+        <span className="hidden sm:block font-medium">Minutes</span>
+        <span className="sm:hidden font-medium">M</span>{" "}
       </p>
       <p className="flex flex-col text-center">
         <span className="font-semibold text-xl">{timeLeft.seconds}</span>
-        <span className="font-medium">Seconds</span>
+        <span className="hidden sm:block font-medium">Seconds</span>
+        <span className="sm:hidden font-medium">S</span>{" "}
       </p>
     </div>
   );

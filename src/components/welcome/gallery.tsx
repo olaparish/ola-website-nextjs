@@ -10,53 +10,53 @@ const Gallery = () => {
         Experience Ola Parish at A Glance
       </h2>
       <p className="mt-7.5 max-w-240">
-        Explore the vibrant life of our parish through our gallery. From liturgical
-        celebrations to community events, witness the joy and faith that define
-        Our Lady Queen of Africa Parish.{" "}
+        Explore the vibrant life of our parish through our gallery. From
+        liturgical celebrations to community events, witness the joy and faith
+        that define Our Lady Queen of Africa Parish.{" "}
       </p>
+      <div className="lg:flex flex-wrap justify-center gap-2 lg:gap-4 grid grid-cols-2 mt-10 lg:mt-20">
+        <img
+          className=""
+          src="/images/gallery/img_1.png"
+          alt="ola parish youth"
+        />
+        <img
+          className=""
+          src="/images/gallery/img_2.png"
+          alt="ola parish youth"
+        />
+        <img
+          className=""
+          src="/images/gallery/img_3.png"
+          alt="ola parish youth"
+        />
+        <img
+          className=""
+          src="/images/gallery/img_1.png"
+          alt="ola parish youth"
+        />
+        <img
+          className=""
+          src="/images/gallery/img_1.png"
+          alt="ola parish youth"
+        />
+        <img
+          className=""
+          src="/images/gallery/img_2.png"
+          alt="ola parish youth"
+        />
+        <img
+          className=""
+          src="/images/gallery/img_3.png"
+          alt="ola parish youth"
+        />
+        <img
+          className=""
+          src="/images/gallery/img_1.png"
+          alt="ola parish youth"
+        />
+      </div>
       {/* <div className="lg:flex justify-center gap-2 lg:gap-4 grid grid-cols-2 mt-10 lg:mt-20">
-        <img
-          className=""
-          src="/images/gallery/img_1.png"
-          alt="ola parish youth"
-        />
-        <img
-          className=""
-          src="/images/gallery/img_2.png"
-          alt="ola parish youth"
-        />
-        <img
-          className=""
-          src="/images/gallery/img_3.png"
-          alt="ola parish youth"
-        />
-        <img
-          className=""
-          src="/images/gallery/img_1.png"
-          alt="ola parish youth"
-        />
-        <img
-          className=""
-          src="/images/gallery/img_1.png"
-          alt="ola parish youth"
-        />
-        <img
-          className=""
-          src="/images/gallery/img_2.png"
-          alt="ola parish youth"
-        />
-        <img
-          className=""
-          src="/images/gallery/img_3.png"
-          alt="ola parish youth"
-        />
-        <img
-          className=""
-          src="/images/gallery/img_1.png"
-          alt="ola parish youth"
-        />
-      </div> */}
-      <div className="lg:flex justify-center gap-2 lg:gap-4 grid grid-cols-2 mt-10 lg:mt-20">
         <img
           className=""
           src="/images/gallery/img_1.png"
@@ -99,7 +99,7 @@ const Gallery = () => {
           src="/images/gallery/img_1.png"
           alt="ola parish youth"
         />
-      </div>
+      </div> */}
       <div className="mt-10 mb-7.5 text-center">
         <CustomLink to="gallery">Go to Gallery</CustomLink>
       </div>
