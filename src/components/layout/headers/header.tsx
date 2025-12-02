@@ -34,8 +34,10 @@ const Header = () => {
             onClick={() => setShowMobileMenu(true)}
           />
         </div>
-        <nav className="hidden md:flex items-center gap-8">
-          <NavItem href="/home">Home</NavItem>
+        <nav className="hidden md:flex items-center gap-2 xl:gap-8">
+          <NavItem className="xl:text-[16px] text-xs" href="/home">
+            Home
+          </NavItem>
           <DropDown {...aboutDropdownData} />
           <MultiDropDown
             matcher="/organizations"
@@ -46,7 +48,7 @@ const Header = () => {
           <NavItem href="about/contact-us"> Contact Us</NavItem>
 
           <Link
-            href="about/contact-us"
+            href="/auth"
             className="flex justify-center items-center bg-primary-900 w-33 h-8 text-white"
           >
             Member Area

@@ -1,6 +1,7 @@
 import React from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
+import { cn } from "@/lib/utils";
 
 type Props = {
   children: React.ReactNode;
@@ -37,7 +38,7 @@ const NavItem = ({
   ].join(" ");
 
   return (
-    <Link href={href} className={classNames}>
+    <Link href={href} className={cn("xl:text-[16px] text-xs", classNames)}>
       {children}
     </Link>
   );
