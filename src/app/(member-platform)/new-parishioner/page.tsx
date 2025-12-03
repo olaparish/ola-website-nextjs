@@ -66,7 +66,6 @@ const Page = () => {
       toast.success(
         "Fetched all parish communities, societies, and outstations"
       );
-      console.log("Parish groups fetched: ", fetchedParishGroups);
       setGroups(fetchedParishGroups);
     } else if (isError) {
       toast.error(

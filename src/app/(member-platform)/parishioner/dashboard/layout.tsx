@@ -38,7 +38,7 @@ const subPages: NavElement[] = [
   },
   {
     name: "Other",
-    href: "Other",
+    href: "other",
   },
 ];
 
@@ -54,12 +54,12 @@ export default function Layout({ children }: Readonly<Props>) {
         <div>
           <div className="">
             <SignoutBtn />
-            <div className="flex justify-end-safe pt-4.75">
+            {/* <div className="flex justify-end-safe pt-4.75">
               <NavSelect
                 name="Add"
                 items={[{ name: "Initation", href: "/society/new-initation" }]}
               />
-            </div>
+            </div> */}
 
             <header>
               <h2 className="font-normal">Overview</h2>
