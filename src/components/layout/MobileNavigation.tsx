@@ -30,13 +30,19 @@ const MobileNavigation = ({ closeHandler }: Props) => {
             Home
           </Link>
           <MobileDropDown {...aboutDropdownData} onCloseMenu={closeHandler} />
-          <MobileMultiDropDown name={"organizations"} data={[societiesData, communitiesData, outstationsData]} />
+          <MobileMultiDropDown
+            name={"organizations"}
+            data={[societiesData, communitiesData, outstationsData]}
+          />
           <Link className="text-2xl" href="/the-catholic-faith">
             The Catholic Faith
           </Link>
 
           <Link className="text-2xl" href="about/contact-us">
             Contact Us
+          </Link>
+          <Link className="text-2xl" href="/auth">
+            Member Area
           </Link>
         </nav>
       </div>

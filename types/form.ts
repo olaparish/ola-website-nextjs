@@ -31,8 +31,10 @@ export type FormFieldType = {
   required?: boolean;
   placeholder?: string;
   options?: SelectOption[];
+  multiSelectValues?: SelectOption[];
   max?: number | number | string;
   accept?: string;
+  isEditable?: boolean;
   // parseFieldNames?: (fields: any) => any;
 };
 

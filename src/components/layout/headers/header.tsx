@@ -22,18 +22,36 @@ const Header = () => {
     <Fragment>
       <header className="flex justify-between items-center mt-8 mb-5 px-5 lg:px-25">
         <Link href={"/home"}>
-          <img className="w-22.5 h-9.75" src="/logo.webp" alt="ola parish logo" />
+          <img
+            className="w-22.5 h-9.75"
+            src="/logo.webp"
+            alt="ola parish logo"
+          />
         </Link>
         <div className="md:hidden">
-          <IconMenu className="fill-primary-900 size-6" onClick={() => setShowMobileMenu(true)} />
+          <IconMenu
+            className="fill-primary-900 size-6"
+            onClick={() => setShowMobileMenu(true)}
+          />
         </div>
-        <nav className="hidden md:flex items-center gap-8">
-          <NavItem href="/home">Home</NavItem>
+        <nav className="hidden md:flex items-center gap-2 xl:gap-8">
+          <NavItem className="xl:text-[16px] text-xs" href="/home">
+            Home
+          </NavItem>
           <DropDown {...aboutDropdownData} />
-          <MultiDropDown matcher="/organizations" name={"organizations"} data={[societiesData, communitiesData, outstationsData]} />
+          <MultiDropDown
+            matcher="/organizations"
+            name={"organizations"}
+            data={[societiesData, communitiesData, outstationsData]}
+          />
           <NavItem href="/the-catholic-faith">The Catholic Faith</NavItem>
-          <Link href="about/contact-us" className="flex justify-center items-center bg-primary-900 w-33 h-8 text-white">
-            Contact Us
+          <NavItem href="about/contact-us"> Contact Us</NavItem>
+
+          <Link
+            href="/auth"
+            className="flex justify-center items-center bg-primary-900 w-33 h-8 text-white"
+          >
+            Member Area
           </Link>
         </nav>
       </header>

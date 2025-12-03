@@ -1,16 +1,19 @@
 /* eslint-disable @next/next/no-img-element */
 import SigninForm from "@/components/forms/signin-form";
+import Link from "next/link";
 import React from "react";
 
 const Page = () => {
   return (
     <div className="flex justify-center items-center lg:gap-15 xl:gap-28.5 h-full">
       <div className="w-100">
-        <img
-          className="mx-auto w-39 h-16.75"
-          src="/logo.webp"
-          alt="ola parish logo"
-        />
+        <Link href="/">
+          <img
+            className="mx-auto w-39 h-16.75"
+            src="/logo.webp"
+            alt="ola parish logo"
+          />
+        </Link>
         <h2 className="mt-15 text-primary-900 text-center">
           Sign In to Your Account
         </h2>
@@ -20,10 +23,19 @@ const Page = () => {
           <span className="font-bold text-secondary-900">Parishioner</span>.
         </p>
         <SigninForm type="parishioner" />
-        <div className="mt-15 text-sm text-center">
+        <div className="mt-10 text-sm text-center">
           <p>Do you have issues</p>
           <p>
             Call us: <span className="font-semibold">+233 55 822 8479</span>
+          </p>
+          <p className="block pt-2 text-xs">
+            Don&apos;t have an account?{" "}
+            <Link
+              href="/new-parishioner"
+              className="font-bold text-primary-900"
+            >
+              register
+            </Link>
           </p>
         </div>
       </div>

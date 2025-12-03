@@ -22,14 +22,15 @@ const Sacraments = () => {
             The Seven Sacraments of The Catholic Church{" "}
           </h2>
           <p className="mt-7.5 lg:w-120 xl:w-153">
-            The sacraments are visible signs of invisible grace, instituted by Christ
-            and entrusted to the Church. Through them, divine life is dispensed to
-            us. There are seven sacraments in the Church: Baptism, Confirmation,
-            Eucharist, Penance, Anointing of the Sick, Holy Orders, and Matrimony.{" "}
+            The sacraments are visible signs of invisible grace, instituted by
+            Christ and entrusted to the Church. Through them, divine life is
+            dispensed to us. There are seven sacraments in the Church: Baptism,
+            Confirmation, Eucharist, Penance, Anointing of the Sick, Holy
+            Orders, and Matrimony.{" "}
           </p>
         </div>
       </div>
-      <ul className="flex justify-center items-center gap-5 md:gap-11.25 mt-10 px-5 lg:px-25">
+      <ul className="flex justify-center items-center gap-5 md:gap-11.25 mt-10 lg:px-25">
         <div
           className={`flex justify-center shadow-[0px_2px_2px_0px_rgba(0,0,0,0.2)] items-center bg-white rounded-full size-10 md:size-13.5 cursor-pointer ${
             valuesToRender.length === sacraments.length ? "hidden" : ""
@@ -41,11 +42,11 @@ const Sacraments = () => {
         {valuesToRender.map((val, indx) => {
           return (
             <li
-              className="flex flex-col justify-center items-center bg-white shadow-[0px_2px_2px_0px_rgba(0,0,0,0.1)] hover:shadow-[0px_4px_4px_0px_rgba(0,0,0,0.25)] px-11 w-68.75 h-103.25 text-center"
+              className="flex flex-col justify-center items-center bg-white shadow-[0px_2px_2px_0px_rgba(0,0,0,0.1)] hover:shadow-[0px_4px_4px_0px_rgba(0,0,0,0.25)] px-2 md:px-11 w-68.75 min-h-103.25 text-center"
               key={indx}
             >
               <h5>{val.name}</h5>
-              <p className="mt-4.5">{val.description}</p>
+              <p className="mt-4.5 md:text-[16px] text-sm">{val.description}</p>
             </li>
           );
         })}

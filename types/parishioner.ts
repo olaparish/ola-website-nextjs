@@ -1,5 +1,5 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
-import { MARITAL_STATUS } from ".";
+import { MARITAL_STATUS, ParishGroup } from ".";
 
 export type CreateParishionerResponseType = { token: string; id: string };
 
@@ -31,7 +31,7 @@ export interface Parishioner {
   // Parish details
   communityId: string;
   stationId: string;
-  societies: Record<string, any>; // or string[] if applicable
+  societies: ParishGroup[]; // or string[] if applicable
 
   // Sacramental details
   isBaptised?: boolean;
@@ -64,7 +64,6 @@ export interface Parishioner {
   updatedAt: Date;
 }
 
-
 export type UpdateParishionerOmmissions =
   | "id"
   | "userId"
@@ -96,4 +95,18 @@ export type UpdateParishionerDtoType = {
   occupation?: string;
   placeOfWork?: string;
   workDigitalAddress?: string;
+
+  // Parents
+  motherFirstName?: string;
+  motherLastName?: string;
+  motherOtherNames?: string;
+  motherPhoneNumber?: string;
+  motherResidentialAddress?: string;
+  motherIsParishioner?: boolean;
+  fatherFirstName?: string;
+  fatherLastName?: string;
+  fatherOtherNames?: string;
+  fatherPhoneNumber?: string;
+  fatherResidentialAddress?: string;
+  fatherIsParishioner?: boolean;
 };

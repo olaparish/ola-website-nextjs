@@ -18,13 +18,13 @@ const Hero = () => {
           alt="ola parish"
           className="absolute w-full h-full object-cover"
         />
-        <div className="top-1/2 left-1/2 absolute justify-between items-center grid grid-cols-[40px_auto_40px] px-5 lg:px-25 w-full text-white text-center -translate-1/2 transform">
+        <div className="top-1/2 left-1/2 absolute justify-between items-center grid grid-cols-[40px_auto_40px] px-2 lg:px-25 w-full text-white text-center -translate-1/2 transform">
           <div className="flex justify-center items-center bg-gold-200/50 md:bg-gold-200/30 rounded-full size-10 md:size-13.5 cursor-pointer">
             <ArrowLeft className="size-6" />
           </div>
           <div className="md:w-150 text-center">
             <p className="text-lg">OLA CATHOLIC CHURCH</p>
-            <h1 className="mt-8">
+            <h1 className="mt-8 md:text-auto text-3xl">
               Discover God&apos;s Love And Develop Your Faith
             </h1>
             <CustomLink to="/about" className="inline-block mt-10">

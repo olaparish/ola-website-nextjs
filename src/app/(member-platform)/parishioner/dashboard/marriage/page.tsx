@@ -13,6 +13,7 @@ import { toast } from "sonner";
 import z from "zod";
 import { FormFieldType } from "../../../../../../types";
 import { MARITAL_STATUS_OBJ } from "@/app/(member-platform)/new-parishioner/form-fields";
+import DataFetchSpinner from "@/components/ui/data-fetch-spinner";
 
 type UpdateFieldNames =
   | "maritalStatus"
@@ -48,7 +49,7 @@ const Page = () => {
   });
   const [isEditing, setIsEditing] = useState(false);
 
-  const { mutate: updateUserMutation } = useMutation({
+  const { mutate: updateUserMutation, isPending } = useMutation({
     mutationKey: ["update user", user?.id],
     mutationFn: async (data: UserUpdateType) => {
       if (!user || !parishioner) {
@@ -122,7 +123,6 @@ const Page = () => {
   ];
 
   const formSubmitHandler = (formData: UserUpdateType) => {
-    console.log("formData: ", formData);
     const submitData = { ...formData };
 
     Object.keys(formData).forEach((d) => {
@@ -130,15 +130,18 @@ const Page = () => {
         delete submitData[d as keyof typeof formData];
       }
     });
-    console.log("Submit Data: ", submitData);
     if (Object.keys(submitData).length > 0) {
-      console.log("Here...");
-      updateUserMutation(submitData);
-      setIsEditing(false);
+      // updateUserMutation(submitData);
+      // setIsEditing(false);
     }
   };
   return (
     <div>
+      {isPending && (
+        <div className="top-1/2 left-1/2 absolute bg-secondary-900/10 w-full h-full -translate-1/2">
+          <DataFetchSpinner message="Updating data" />
+        </div>
+      )}
       <Button
         onClick={() => setIsEditing((prev) => !prev)}
         className="bg-primary-900 hover:bg-primary-900/90 cursor-pointer"

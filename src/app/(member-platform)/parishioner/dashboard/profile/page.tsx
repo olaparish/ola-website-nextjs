@@ -16,6 +16,7 @@ import { useForm } from "react-hook-form";
 import z from "zod";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { getDateMaxValue } from "@/utils/time";
+import DataFetchSpinner from "@/components/ui/data-fetch-spinner";
 
 type UpdateFieldNames =
   | "firstName"
@@ -81,7 +82,7 @@ const Page = () => {
     onError: () => toast.error("Error uploading file"),
   });
 
-  const { mutate: updateUserMutation } = useMutation({
+  const { mutate: updateUserMutation, isPending } = useMutation({
     mutationKey: ["update user", user?.id],
     mutationFn: async (data: UserUpdateType) => {
       if (!user || !parishioner) {
@@ -162,6 +163,11 @@ const Page = () => {
   };
   return (
     <div>
+      {isPending && (
+        <div className="top-1/2 left-1/2 absolute bg-secondary-900/10 w-full h-full -translate-1/2">
+          <DataFetchSpinner message="Updating data" />
+        </div>
+      )}
       <Button
         onClick={() => setIsEditing((prev) => !prev)}
         className="bg-primary-900 hover:bg-primary-900/90 cursor-pointer"

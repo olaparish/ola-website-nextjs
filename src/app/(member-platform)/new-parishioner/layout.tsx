@@ -13,11 +13,9 @@ export default function Layout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
-      <body className="antialiased">
-        <NewParishionerHeader />
-        <main>{children}</main>
-      </body>
-    </html>
+    <div className="antialiased">
+      <NewParishionerHeader />
+      <main>{children}</main>
+    </div>
   );
 }

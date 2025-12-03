@@ -24,6 +24,7 @@ export default function Layout({ children }: Readonly<Props>) {
 
   useEffect(() => {
     if (!data) return;
+    console.log("Data received: ", data);
     setData(data);
   }, [data, setData]);
 

@@ -6,13 +6,18 @@ import TagInput from "./TagInput";
 
 interface MultiSelectProps {
   options: SelectOption[];
+  initialValues?: SelectOption[];
   setValue: (values: SelectOption[]) => void;
 }
 
 type Props = React.ComponentProps<"select"> & MultiSelectProps;
 
-const MultiSelect = ({ options: inputOptions, setValue }: Props) => {
-  const [selected, setSelected] = useState<SelectOption[]>([]);
+const MultiSelect = ({
+  options: inputOptions,
+  initialValues = [],
+  setValue,
+}: Props) => {
+  const [selected, setSelected] = useState<SelectOption[]>(initialValues);
   const [options, setOptions] = useState(inputOptions);
   const [selectValue, setSelectValue] = useState("");
 
