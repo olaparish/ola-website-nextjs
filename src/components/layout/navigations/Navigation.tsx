@@ -31,7 +31,7 @@ const MergedNavigation = ({
   };
 
   const getNavClassName = () => {
-    const baseClasses = "flex lg:gap-4 overflow-x-auto";
+    const baseClasses = "flex lg:gap-4 overflow-x-auto no-scrollbar";
     switch (variant) {
       case "parishioner":
         return cn(baseClasses, "bg-primary-100 w-fit", className);

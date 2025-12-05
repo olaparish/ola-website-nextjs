@@ -194,15 +194,18 @@ const Page = () => {
           onChange={onChangeFile}
         />
         <div className="flex space-x-4 mt-4">
-          <Button onClick={() => fileRef.current?.click()} className="">
-            Change Profile Picture
+          <Button
+            onClick={() => fileRef.current?.click()}
+            className="w-fit sm:text-[16px] text-xs"
+          >
+            Change <span className="hidden sm:block">Profile Picture</span>
           </Button>
           {/* <Button variant="outline">Remove Profile Picture</Button> */}
         </div>
       </DashboardSectionCard>
       <DashboardSectionCard className="mt-5">
         <form className="" onSubmit={handleSubmit(formSubmitHandler)}>
-          <div className="gap-x-10 gap-y-9.5 grid grid-cols-3">
+          <div className="flex flex-col gap-10 gap-x-10 gap-y-10 md:grid md:grid-cols-2 lg:grid-cols-3">
             {fields.map((field, index) => (
               <div key={index}>
                 <EditableTextInput

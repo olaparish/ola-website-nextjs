@@ -70,7 +70,9 @@ const EditableTextInput = ({
         </ul>
       )}
       {!showInputs && type !== "multi-select" && (
-        <p className="font-light text-sm">{fields.placeholder || "null"}</p>
+        <p className="font-light text-sm truncate text-ellipsis">
+          {fields.placeholder || "null"}
+        </p>
       )}
     </div>
   );
