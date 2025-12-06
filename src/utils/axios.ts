@@ -9,7 +9,7 @@ export const setAccessToken = (token: string | null) => {
   accessToken = token;
 };
 
-export const BASE_URL = process.env.NEXT_PUBLIC_API_URL || "http://localhost:3005/api";
+export const BASE_URL = process.env.NEXT_PUBLIC_API_URL;
 const api = axios.create({
   baseURL: BASE_URL,
   headers: {

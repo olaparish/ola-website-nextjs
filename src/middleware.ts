@@ -7,5 +7,7 @@ export const config = {
     "/parish-group/:path*",
     "/accountant/:path*",
     "/parish-council-chairman/:path*",
+    "/parish-priest/:path*",
+    "/priest/:path*",
   ],
 };

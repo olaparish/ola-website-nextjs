@@ -82,6 +82,7 @@ const SigninForm = ({ type }: Props) => {
           }
           setAccessToken(res.data.tokenData.access.token);
           router.push(callbackUrl);
+          toast.success("Sign in success");
         } catch (error) {
           console.log("Sign in error: ", error);
           signOut();

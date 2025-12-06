@@ -18,6 +18,14 @@ const UserStates = {
     route: "/catechist",
     loginPathName: "leader",
   },
+  "parish-priest": {
+    route: "/parish-priest",
+    loginPathName: "leader",
+  },
+  priest: {
+    route: "/priest",
+    loginPathName: "leader",
+  },
 };
 export const { handlers, signIn, signOut, auth } = NextAuth({
   providers: [
@@ -69,10 +77,12 @@ export const { handlers, signIn, signOut, auth } = NextAuth({
       const isLoggedIn = !!auth?.user;
 
       const pathname = request.nextUrl.pathname;
+      console.log("pathname: ", pathname);
       const authName = pathname.split("/")[1];
       const objectState = UserStates[authName as keyof typeof UserStates];
 
       if (objectState && !isLoggedIn) {
+        console.log("Is not logged in");
         return Response.redirect(
           new URL(`/auth/${objectState.loginPathName}/login`, request.url)
         );
@@ -87,9 +97,13 @@ export const { handlers, signIn, signOut, auth } = NextAuth({
         return true;
       }
       if (authName !== userType) {
-        return Response.redirect(
-          new URL(`/auth/${objectState.loginPathName}/login`, request.url)
-        );
+        console.log("Here, auth name not = user type: ", {
+          authName,
+          userType,
+        });
+        // return Response.redirect(
+        //   new URL(`/auth/${objectState.loginPathName}/login`, request.url)
+        // );
       }
 
       return true;

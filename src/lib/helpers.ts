@@ -29,6 +29,8 @@ export function getLoginCallback(userType: UserTypes) {
     catechist: "/catechist/dashboard",
     accountant: "/accountant/dashboard",
     chairman: "/parish-council-chairman/dashboard",
+    priest: "/priest/dashboard",
+    "parish-priest": "/parish-priest/dashboard",
   };
 
   if (["COMMUNITY", "SOCIETY", "OUTSTATION"].includes(userType))
