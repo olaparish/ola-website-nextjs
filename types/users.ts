@@ -1,5 +1,6 @@
 import { ParishGroup } from "./parish-groups.types";
 import { Parishioner } from "./parishioner";
+import { ParishPriestGetType } from "./priest.type";
 
 export const Roles = {
   PARISHIONER: "PARISHIONER",
@@ -58,7 +59,11 @@ export type UserTypes =
   | "SOCIETY"
   | "OUTSTATION";
 
-export type UserDataType = Parishioner | ParishGroup | null;
+export type UserDataType =
+  | Parishioner
+  | ParishGroup
+  | ParishPriestGetType
+  | null;
 
 export type ParishionerUser = User<Parishioner>;
 export type ParishGroupUser = User<ParishGroup>;
