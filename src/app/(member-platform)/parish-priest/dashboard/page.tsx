@@ -1,28 +1,14 @@
 "use client";
 import PopoverSelect from "@/components/ui/popover";
 import Image from "next/image";
-import {
-  Accountant,
-  AccountantUser,
-  Catechist,
-  CatechistUser,
-  ColumnDef,
-  CustomTableProps,
-  NavElement,
-  PaginateResult,
-  User,
-} from "../../../../../types";
+import { NavElement } from "../../../../../types";
 import Link from "next/link";
-import { useRouter } from "next/navigation";
 import DashboardCard from "@/components/ui/DashboardCard";
 import { Fragment, useState } from "react";
 import MainModal from "@/components/common/modal-main";
 import { cn } from "@/lib/utils";
-import TableText from "@/components/tables/ui/normal-text";
-import { accountantService } from "@/services/accountant.service";
-import CustomTable from "@/components/tables/smart-table";
-import { catechistService } from "@/services/catechist.service";
-import CatechistAccountantDetails from "@/components/pages/CatechistAccountantDetails";
+import AccountantTable from "@/components/tables/sample-tables/accountant";
+import CatechistTable from "@/components/tables/sample-tables/catechists";
 
 const newOptions: NavElement[] = [
   { name: "Resident Priest", href: "/new/forms/resident-priest" },
@@ -44,22 +30,10 @@ const rangeOptions = [
 
 const miniRoutes = [{ name: "Catechists" }, { name: "Accountants" }];
 const Page = () => {
-  // const data = useParishPriestStore(
-  //   useShallow((state) => {
-  //     return {
-  //       user: state.user,
-  //       priest: state.priest,
-  //       parishPriest: state.parishPriest,
-  //     };
-  //   })
-  // );
   const [showAmountBreakdown, setShowAmountBreakdown] =
     useState<boolean>(false);
   const [miniRoute, setMiniRoute] =
     useState<(typeof miniRoutes)[number]["name"]>("Catechists");
-  const [userDetails, setUserDetails] = useState<
-    CatechistUser | AccountantUser | null
-  >(null);
 
   const metrics = [
     { name: "Baptisms", value: "500" },
@@ -68,103 +42,14 @@ const Page = () => {
     { name: "Marriages", value: "300" },
   ];
 
-  const payments = [
-    { "FIRST MASS": 2700.0 },
-    { "SECOND MASS": 2000.0 },
-    { DUES: 100.0 },
-    { "MASS REQUESTS": 2000.0 },
-  ];
-
-  const tableColumns: ColumnDef<AccountantUser | CatechistUser>[] = [
-    {
-      key: "id",
-      label: "ID",
-      headerClassName: "w-30",
-      render: (item) => {
-        return <TableText className="block w-30" text={item.id.slice(0, 8)} />;
-      },
-    },
-    {
-      key: "firstName",
-      label: "First Name",
-      headerClassName: "w-40",
-      render: (item) => {
-        return <TableText className="block w-40" text={item.user.firstName} />;
-      },
-    },
-    {
-      key: "lastName",
-      label: "Last Name",
-      headerClassName: "w-40",
-      render: (item) => {
-        return <TableText className="block w-40" text={item.user.lastName} />;
-      },
-    },
-    {
-      key: "otherNames",
-      label: "Other Names",
-      headerClassName: "w-40",
-      render: (item) => {
-        return (
-          <TableText className="block w-40" text={item.user.otherNames || ""} />
-        );
-      },
-    },
-    {
-      key: "phoneNumber",
-      label: "Phone Number",
-      headerClassName: "w-40",
-      render: (item) => {
-        return (
-          <TableText
-            className="block w-40"
-            text={item.user.phoneNumber || ""}
-          />
-        );
-      },
-    },
-  ];
-
-  if (miniRoute === "Catechists") {
-    tableColumns.push({
-      key: "name",
-      label: "Parish",
-      headerClassName: "w-auto",
-      render: (item) => {
-        if ("groups" in item && item.groups[0]) {
-          return (
-            <TableText
-              className="block w-auto"
-              text={item.groups[0].name || ""}
-            />
-          );
-        }
-      },
-    });
-  }
-
-  console.log("tableColumns", tableColumns);
-
-  const tableProps: CustomTableProps<AccountantUser | CatechistUser> = {
-    tableName: `List of ${miniRoute}`,
-    queryKey: [miniRoute],
-    columns: tableColumns,
-    tableWrapperClassName: "h-auto bg-primary-100/30 no-scrollbar-y w-auto",
-    index: true,
-    pagination: true,
-    paginationClassName: "mt-12.5",
-    fetchData: async (
-      pageNumber: number = 1,
-    ): Promise<PaginateResult<AccountantUser | CatechistUser>> => {
-      const api =
-        miniRoute === "Catechists"
-          ? catechistService.getAll
-          : accountantService.getAll;
-      const members: PaginateResult<AccountantUser | CatechistUser> =
-        await api(pageNumber);
-      return members;
-    },
-  };
+  // const payments = [
+  //   { "FIRST MASS": 2700.0 },
+  //   { "SECOND MASS": 2000.0 },
+  //   { DUES: 100.0 },
+  //   { "MASS REQUESTS": 2000.0 },
+  // ];
+  const TableName =
+    miniRoute === "Catechists" ? CatechistTable : AccountantTable;
 
   return (
     <Fragment>
@@ -174,15 +59,7 @@ const Page = () => {
       >
         <div>I am here</div>
       </MainModal>
-      {!!userDetails && (
-        <MainModal
-          wrapperClassName="bg-transparent"
-          isOpen={!!userDetails}
-          onClose={() => setUserDetails(null)}
-        >
-          <CatechistAccountantDetails user={userDetails} />
-        </MainModal>
-      )}
+
       <div className="mt-20">
         <div className="flex justify-end-safe mt-4 mb-5.5">
           <PopoverSelect
@@ -252,17 +129,12 @@ const Page = () => {
               </div>
             ))}
           </div>
-          <div className="mt-5 w-full overflow-scroll">
-            <CustomTable<AccountantUser | CatechistUser>
-              {...tableProps}
-              onRowClick={(item) => setUserDetails(item)}
-            />
-          </div>
+          <TableName wrapperClassName="mt-5" />
         </div>
       </div>
     </Fragment>
   );
-};
+};;;;
 
 const renderAddPopover = ({ name, href }: NavElement) => {
   return (
