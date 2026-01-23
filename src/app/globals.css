@@ -77,6 +77,13 @@ body {
     -ms-overflow-style: none;
     scrollbar-width: none;
   }
+   .no-scrollbar-x::-webkit-scrollbar:horizontal {
+    display: none;
+  }
+
+  .no-scrollbar-y::-webkit-scrollbar:vertical {
+    display: none;
+  }
   .hero-h {
     @apply h-[calc(100svh-91px)]
   }

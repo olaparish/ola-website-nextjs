@@ -1,7 +1,6 @@
 import axios from "axios";
 import { toast } from "sonner";
-import { getSession } from "next-auth/react";
-
+import { getSession, signOut } from "next-auth/react";
 
 let accessToken: string | null = null;
 
@@ -42,18 +41,18 @@ api.interceptors.request.use(
   (error) => Promise.reject(error)
 );
 
-// ❌ Response interceptor — Catch & Parse Errors
+// ✅ Response interceptor — Catch & Parse Errors
 api.interceptors.response.use(
   (response) => response,
   (error) => {
     let errorMessage = "An unexpected error occurred.";
     let statusCode = 0;
 
-    if (error.response) {
-      // Server responded with an error status code
+    if ((axios as any).isAxiosError(error) && error.response) {
       statusCode = error.response.status;
 
-      const data = error.response.data;
+      // Prefer backend-provided message
+      const data = error.response.data as any;
       if (typeof data === "string") {
         errorMessage = data;
       } else if (data?.message) {
@@ -61,30 +60,34 @@ api.interceptors.response.use(
       } else if (data?.error) {
         errorMessage = data.error;
       } else {
-        errorMessage = `Error ${statusCode}: ${error.response.statusText}`;
+        errorMessage = error.response.statusText || errorMessage;
+      }
+
+      // 🔐 Unauthorized → log out user
+      if (statusCode === 401 && errorMessage === "Please authenticate") {
+        signOut({ callbackUrl: "/auth" });
       }
     } else if (error.request) {
-      // No response received from server
-      errorMessage =
-        "No response from server. Please check your network connection.";
+      errorMessage = "No response from server. Check your connection.";
     } else {
-      // Something else happened
       errorMessage = error.message;
     }
 
-    console.error("Axios Error:", {
-      status: statusCode,
-      message: errorMessage,
-      details: error,
-    });
+    // Only show toast if it's not a 401 (optional decision, but usually good to avoid spamming if redirecting)
+    // or you can show it. For now keeping existing behavior of showing error.
+    if (statusCode !== 401) {
+     console.error("Axios Error:", {
+         status: statusCode,
+         message: errorMessage,
+         details: error,
+       });
+      toast.error(errorMessage);
+    }
 
-    toast.error("Error fetching data");
-
-    // You can standardize the error before throwing
     return Promise.reject({
-      status: statusCode,
       message: errorMessage,
-      original: error,
+      statusCode,
+      raw: error,
     });
   }
 );

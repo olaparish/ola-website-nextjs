@@ -9,6 +9,8 @@ export * from "./users";
 export * from "./table.types";
 export * from "./group-initiation.types";
 export * from "./priest.type";
+export * from "./accountant.type";
+export * from "./catechist.type";
 export interface MobileDropDownProps {
   name: string;
   to?: string;
@@ -67,3 +69,5 @@ export interface GetUserDetails<T extends UserDataType> {
   user: BaseUser;
   userData: T;
 }
+
+export type SuccessResponse = { status: string; message: string };

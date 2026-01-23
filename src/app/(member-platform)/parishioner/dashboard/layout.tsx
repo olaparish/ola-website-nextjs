@@ -1,7 +1,6 @@
 import SignoutBtn from "@/components/common/signout-btn";
 import ParishionerHeader from "@/components/layout/headers/parishioner.header";
 import { ParishionerNavigation } from "@/components/layout/navigations/Navigation";
-import NavSelect from "@/components/ui/NavSelect";
 import type { Metadata } from "next";
 import React from "react";
 import { NavElement } from "../../../../../types";
@@ -54,12 +53,6 @@ export default function Layout({ children }: Readonly<Props>) {
         <div>
           <div className="">
             <SignoutBtn />
-            {/* <div className="flex justify-end-safe pt-4.75">
-              <NavSelect
-                name="Add"
-                items={[{ name: "Initation", href: "/society/new-initation" }]}
-              />
-            </div> */}
 
             <header>
               <h2 className="font-normal">Overview</h2>

@@ -21,4 +21,5 @@ export interface CustomTableProps<T> {
   footer?: React.ReactNode;
   fetchData: (pageNumber?: number) => Promise<PaginateResult<T>>;
   actions?: (items: T) => React.ReactNode;
+  onRowClick?: (item: T) => void;
 }

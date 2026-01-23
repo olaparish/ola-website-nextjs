@@ -66,6 +66,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className="bg-transparent antialiased">
+        <div id="modal-root" />
         <Providers>
           <main>{children}</main>
         </Providers>

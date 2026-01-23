@@ -4,15 +4,15 @@ import Link from "next/link";
 import { GetParishPriestType } from "../../../../../types";
 import { toast } from "sonner";
 import { useQuery } from "@tanstack/react-query";
-import { priestService } from "@/services/priest.service";
 import { Spinner } from "@/components/ui/spinner";
 import { ErrorSpan } from "@/components/ui/errors";
+import { parishPriestService } from "@/services/parish-priest.service";
 
 const Page = () => {
   const { data, isLoading, isError } = useQuery<GetParishPriestType>({
     queryKey: ["parish-priest"],
     queryFn: async () => {
-      const pp = await priestService.getParishPriest();
+      const pp = await parishPriestService.getPublicParishPriest();
       if (!pp) {
         toast.error("Parish priest not found");
       }

@@ -6,7 +6,7 @@ import { signOut } from 'next-auth/react';
 const SignoutBtn = () => {
   return (
     <button
-      className="bottom-10 left-10 fixed flex gap-2.25 cursor-pointer"
+      className="right-10 bottom-10 fixed flex gap-2.25 cursor-pointer"
       type="button"
       onClick={() => signOut()}
     >

@@ -23,6 +23,7 @@ export function selectMinimalTokenData(tokenData: any) {
 }
 
 export function getLoginCallback(userType: UserTypes) {
+  console.log("Callback for: ", userType);
   const callbackUrls = {
     parishioner: "/parishioner/dashboard",
     groups: "/parish-group/dashboard",
@@ -30,7 +31,7 @@ export function getLoginCallback(userType: UserTypes) {
     accountant: "/accountant/dashboard",
     chairman: "/parish-council-chairman/dashboard",
     priest: "/priest/dashboard",
-    "parish-priest": "/parish-priest/dashboard",
+    parish_priest: "/parish-priest/dashboard",
   };
 
   if (["COMMUNITY", "SOCIETY", "OUTSTATION"].includes(userType))

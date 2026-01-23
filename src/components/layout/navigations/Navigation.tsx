@@ -68,14 +68,14 @@ type NavItemProps = {
 const NavItem = ({ item, isActive, variant }: NavItemProps) => {
   const getItemClassName = () => {
     const baseClasses =
-      "flex justify-center items-center w-45 h-10.5 font-medium text-sm";
+      "flex justify-center items-center w-45 h-10.5 font-medium text-sm border-2 border-transparent";
 
     switch (variant) {
       case "member":
         return [
           baseClasses,
           "shadow-[0_2px_6px_0_rgba(0,0,0,0.1)]",
-          !isActive ? "bg-gold-200" : "",
+          !isActive ? "bg-gold-200 hover:border-primary-900" : "",
           isActive ? "bg-secondary-900 text-white" : "",
         ].join(" ");
 

@@ -40,3 +40,20 @@ export type GetParishPriestType = {
   priest: Priest;
   user: User;
 };
+
+export type CreateResidentPristDto = {
+  firstName: string;
+  lastName: string;
+  otherNames: string;
+  email: string;
+  phoneNumber: string;
+  avatar?: string;
+  title: string;
+  designation: string;
+  arrivalDate: string;
+};
+
+export type CreateVisitingPristDto = CreateResidentPristDto & {
+  parish: string;
+  diocese: string;
+};

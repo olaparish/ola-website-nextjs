@@ -48,6 +48,8 @@ function CustomTable<T>(props: CustomTableProps<T>) {
     setPageNumber(newPage);
   };
 
+  console.log("Data fetched: ", data);
+
   const paginationControlsProps: PaginationControlsType = {
     totalDocs: data?.totalDocs || 0,
     limit: data?.limit || 0,
@@ -116,7 +118,17 @@ function CustomTable<T>(props: CustomTableProps<T>) {
                 <TableBody>
                   {data.docs.map((row, index) => {
                     return (
-                      <TableRow key={index}>
+                      <TableRow
+                        key={index}
+                        onClick={() => {
+                          if (props.onRowClick) {
+                            props.onRowClick(row);
+                          }
+                        }}
+                        className={cn(
+                          props.onRowClick && "cursor-pointer hover:bg-muted/50"
+                        )}
+                      >
                         {props.index && (
                           <TableCell>{index + data.pagingCounter}</TableCell>
                         )}

@@ -50,7 +50,7 @@ const Page = () => {
     isSuccess,
     isError,
   } = useQuery<ParishGroupResponse>({
-    queryKey: ["parishGrous"],
+    queryKey: ["parishGroups"],
     queryFn: parishGroupService.getGroups,
     retry: 2,
   });

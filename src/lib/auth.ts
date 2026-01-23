@@ -41,6 +41,7 @@ export const { handlers, signIn, signOut, auth } = NextAuth({
 
         if (credentials.user && credentials.tokenData) {
           const user = JSON.parse(credentials.user as string);
+          console.log("User: ", user);
           const tokenData = JSON.parse(credentials.tokenData as string);
           const userType = JSON.parse(credentials.userType as string);
           return { ...user, tokenData, userType };
@@ -74,6 +75,7 @@ export const { handlers, signIn, signOut, auth } = NextAuth({
     },
 
     async authorized({ request, auth }) {
+      console.log("I am here");
       const isLoggedIn = !!auth?.user;
 
       const pathname = request.nextUrl.pathname;
