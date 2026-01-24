@@ -1,3 +1,4 @@
+import { rangeOptions } from "@/app/(member-platform)/dashboard/data";
 import { BaseUser, UserDataType } from "./users";
 
 export * from "./form";
@@ -59,7 +60,6 @@ export type NavElement = {
 
 export type NavElementWithPems = NavElement & { permission?: string };
 
-
 export type MARITAL_STATUS =
   | "SINGLE"
   | "MARRIED"
@@ -74,3 +74,5 @@ export interface GetUserDetails<T extends UserDataType> {
 }
 
 export type SuccessResponse = { status: string; message: string };
+
+export type RangeOptionId = (typeof rangeOptions)[number]["id"];

@@ -1,6 +1,5 @@
 "use client";
-import { MemberNavigation } from "@/components/layout/navigations/Navigation";
-import { NavElement, NavElementWithPems } from "../../../../types";
+import { NavElement } from "../../../../types";
 import SignoutBtn from "@/components/common/signout-btn";
 import Image from "next/image";
 import Link from "next/link";
@@ -14,81 +13,11 @@ import { ValidateRights } from "@/utils/validatePermissions";
 import { usePathname, useRouter } from "next/navigation";
 import { cn } from "@/lib/utils";
 import { IconGear } from "@/components/icons/icon-gear";
+import { newOptions, subPages } from "./data";
 
 type Props = {
   children: React.ReactNode;
 };
-
-const newOptions: NavElementWithPems[] = [
-  {
-    name: "Resident Priest",
-    href: "/new/forms/resident-priest",
-    permission: "create:priest",
-  },
-  {
-    name: "Visiting Priest",
-    href: "/new/forms/visiting-priest",
-    permission: "create:priest",
-  },
-  {
-    name: "Catechist",
-    href: "/new/forms/catechist",
-    permission: "manage:catechist",
-  },
-  {
-    name: "Accountant",
-    href: "/new/forms/accountant",
-    permission: "manage:accountant",
-  },
-  {
-    name: "Parishioner",
-    href: "/new/forms/parishioner",
-    permission: "*",
-  },
-];
-
-const subPages: NavElementWithPems[] = [
-  {
-    name: "Dashboard",
-    href: "dashboard",
-    permission: "*",
-  },
-  {
-    name: "Parishioners",
-    href: "parishioners",
-    permission: "get:parishioner",
-  },
-  {
-    name: "Baptisms",
-    href: "baptisms",
-    permission: "get:baptism",
-  },
-  {
-    name: "Confirmations",
-    href: "confirmations",
-    permission: "get:confirmation",
-  },
-  {
-    name: "Marriages",
-    href: "Marriages",
-    permission: "get:marriage",
-  },
-  {
-    name: "Catechists",
-    href: "catechists",
-    permission: "get:catechist",
-  },
-  {
-    name: "Accountants",
-    href: "accountants",
-    permission: "get:accountant",
-  },
-  {
-    name: "Payments",
-    href: "payments",
-    permission: "get:payment",
-  },
-];
 
 const renderAddPopover = ({ name, href }: NavElement) => {
   return (
@@ -189,7 +118,7 @@ const Layout = ({ children }: Readonly<Props>) => {
             })}
           </nav>
         </div>
-        {children}
+        <div className="w-full overflow-y-scroll">{children}</div>
       </div>
     </div>
   );
