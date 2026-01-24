@@ -6,7 +6,6 @@ import {
   PaginateResult,
 } from "../../../../types";
 import TableText from "../ui/normal-text";
-import { catechistService } from "@/services/catechist.service";
 import CustomTable from "../smart-table";
 import { Fragment, useState } from "react";
 import MainModal from "@/components/common/modal-main";
@@ -69,22 +68,6 @@ const AccountantTable = (props: Props) => {
         );
       },
     },
-    // {
-    //   key: "name",
-    //   label: "Parish",
-    //   headerClassName: "w-auto",
-    //   render: (item) => {
-    //     console.log("Item: ", item);
-    //     if ("groups" in item && item.groups[0]) {
-    //       return (
-    //         <TableText
-    //           className="block w-auto"
-    //           text={item.groups[0].name || ""}
-    //         />
-    //       );
-    //     }
-    //   },
-    // },
   ];
 
   const tableProps: CustomTableProps<AccountantUser> = {

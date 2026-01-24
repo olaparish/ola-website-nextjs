@@ -134,7 +134,7 @@ const Page = () => {
       </div>
     </Fragment>
   );
-};;;;
+};
 
 const renderAddPopover = ({ name, href }: NavElement) => {
   return (

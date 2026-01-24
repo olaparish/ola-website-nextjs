@@ -4,6 +4,7 @@ export const ValidateRights = (
 ): boolean => {
   // console.log("Required Rights: ", requiredRights);
   // console.log("User Rights: ", userRights);
+  if (requiredRights[0] === "*") return true;
 
   const hasWildcard = userRights.includes("*") || userRights.includes("*:*");
   const canPass =

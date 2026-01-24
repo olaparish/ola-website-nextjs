@@ -1,17 +1,24 @@
 "use client";
 import React, { useEffect, useRef, useState } from "react";
-import { NavElement } from "../../../types";
+import { NavElement, NavElementWithPems } from "../../../types";
 import { RiArrowDropDownLine } from "react-icons/ri";
 import { cn } from "@/lib/utils";
 import Link from "next/link";
 
+
 type Props = {
   name: string;
-  items: NavElement[];
+  items: NavElementWithPems[];
   render?: (item: NavElement) => React.ReactNode;
+  btnClassName?: string;
 };
 
-const PopoverSelect = ({ name, items, render = SelectNavItem }: Props) => {
+const PopoverSelect = ({
+  name,
+  items,
+  render = SelectNavItem,
+  btnClassName,
+}: Props) => {
   const [open, setOpen] = useState(false);
   const containerRef = useRef<HTMLDivElement>(null);
   const dropdownRef = useRef<HTMLElement>(null);
@@ -51,7 +58,10 @@ const PopoverSelect = ({ name, items, render = SelectNavItem }: Props) => {
       {/* Trigger */}
       <button
         type="button"
-        className="flex items-center gap-3 bg-secondary-900 px-5.5 py-3 text-white cursor-pointer"
+        className={cn(
+          "flex items-center gap-3 bg-secondary-900 px-5.5 py-3 text-white cursor-pointer",
+          btnClassName,
+        )}
         onClick={() => setOpen((v) => !v)}
       >
         <p className="text-sm">{name}</p>
@@ -68,7 +78,7 @@ const PopoverSelect = ({ name, items, render = SelectNavItem }: Props) => {
             "z-50 absolute mt-2",
             "left-1/2 -translate-x-1/2",
             "w-44 max-w-[90vw]",
-            "rounded-md bg-primary-100 py-2 shadow-lg"
+            "rounded-md bg-primary-100 py-2 shadow-lg",
           )}
         >
           {items.map((it, index) => (
