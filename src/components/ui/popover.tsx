@@ -7,7 +7,7 @@ import Link from "next/link";
 
 
 type Props = {
-  name: string;
+  name: React.ReactNode;
   items: NavElementWithPems[];
   render?: (item: NavElement) => React.ReactNode;
   btnClassName?: string;
@@ -64,7 +64,7 @@ const PopoverSelect = ({
         )}
         onClick={() => setOpen((v) => !v)}
       >
-        <p className="text-sm">{name}</p>
+        {name}
         <RiArrowDropDownLine
           className={cn("size-7 transition-transform", open && "rotate-180")}
         />

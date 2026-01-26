@@ -27,98 +27,51 @@ const renderAddPopover = ({ name, href }: NavElement) => {
   );
 };
 
+import DashboardSidebar from "@/components/layout/DashboardSidebar";
+import DashboardHeader from "@/components/layout/DashboardHeader";
+import { useState } from "react";
+
 const Layout = ({ children }: Readonly<Props>) => {
   const { data: session, status } = useSession();
   const router = useRouter();
   const pathname = usePathname();
-  const setData = useParishPriestStore((state) => state.setAll);
+  const [isSidebarOpen, setIsSidebarOpen] = useState(false);
 
   useEffect(() => {
     if (status === "unauthenticated") {
       router.replace("/auth");
     }
-  }, [setData, router, status]);
-
-  const userPermissions = session?.user?.permissions || [];
-
-  const parsedSubPages = subPages.filter((li) =>
-    ValidateRights([li.permission as string], userPermissions),
-  );
-  const parsedPopoverLinks = newOptions.filter((li) =>
-    ValidateRights([li.permission as string], userPermissions),
-  );
-
-  const isActiveRoute = (href: string) => {
-    const [, first, second] = pathname.split("/");
-
-    return (
-      (href === "dashboard" && first === "dashboard" && !second) ||
-      second === href
-    );
-  };
+  }, [router, status]);
 
   if (status === "loading") return <DataFetchSpinner />;
 
   return (
-    <div className="p-5 lg:px-17.5">
-      <SignoutBtn />
+    <div className="flex h-screen bg-gray-50 overflow-hidden font-montserrat">
+      {/* Sidebar - Desktop */}
+      <div className="hidden md:block">
+        <DashboardSidebar />
+      </div>
 
-      <header className="flex justify-between mt-7.5">
-        <Link href={"/dashboard"} className="hidden sm:block">
-          <Image
-            width={225}
-            height={97.5}
-            className="w-22.5 h-9.75"
-            src="/logo.webp"
-            alt="ola parish logo"
+      {/* Sidebar - Mobile Overlay */}
+      {isSidebarOpen && (
+        <div className="fixed inset-0 z-50 flex md:hidden">
+          <div
+            className="fixed inset-0 bg-black/50"
+            onClick={() => setIsSidebarOpen(false)}
           />
-        </Link>
+          <DashboardSidebar />
+        </div>
+      )}
 
-        {/* <MemberNavigation matcherType="ends-with" items={subPages} /> */}
-        <div className="flex items-center">
-          <div className="hidden sm:flex items-center gap-2 bg-secondary-900 px-5 py-3 text-white">
-            {status === "authenticated" ? (
-              `${session?.user?.firstName}`
-            ) : (
-              <Spinner />
-            )}
-            <Link href="dashboard/settings">
-              <IconGear />
-            </Link>
+      {/* Main Content Area */}
+      <div className="relative flex flex-1 flex-col overflow-y-auto overflow-x-hidden md:ml-64">
+        <DashboardHeader onMenuClick={() => setIsSidebarOpen(true)} />
+        
+        <main className="flex-1 p-4 md:p-8">
+          <div className="mx-auto max-w-7xl h-full">
+            {children}
           </div>
-
-          <PopoverSelect
-            name="New"
-            items={parsedPopoverLinks}
-            render={renderAddPopover}
-            btnClassName="bg-transparent text-normal py-2"
-          />
-        </div>
-      </header>
-      <div></div>
-      <div className="flex gap-2 mt-10 w-full h-full">
-        <div>
-          <nav className="flex flex-col pr-12.5 pb-20 w-full lg:w-60.5 h-fit">
-            {parsedSubPages.map((sub, index) => {
-              const isActive = isActiveRoute(sub.href);
-              return (
-                <Link
-                  key={index}
-                  href={sub.href}
-                  className={cn(
-                    "pt-5 pb-4 border-b-[0.5px] xl:text-[16px] text-xs curser-pointer",
-                    isActive
-                      ? "bg-primary-900 text-white font-semibold pl-2 rounded-sm"
-                      : "",
-                  )}
-                >
-                  {sub.name}
-                </Link>
-              );
-            })}
-          </nav>
-        </div>
-        <div className="w-full overflow-y-scroll">{children}</div>
+        </main>
       </div>
     </div>
   );

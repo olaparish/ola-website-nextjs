@@ -61,7 +61,11 @@ export type UserTypes =
 
 export type UserDataType = Parishioner | ParishGroup | GetParishPriestType | null;
 
-export type ParishionerUser = User<Parishioner>;
+export interface ParishionerUser extends User<Parishioner> {
+  societies: ParishGroup[];
+  community: ParishGroup[];
+  station: ParishGroup[];
+};
 export type ParishGroupUser = User<ParishGroup>;
 
 export type AppUser = ParishionerUser | ParishGroupUser;

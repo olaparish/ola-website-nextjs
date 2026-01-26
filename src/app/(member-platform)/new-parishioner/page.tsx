@@ -93,7 +93,6 @@ const Page = () => {
 
           const processedFile = await processFile(files[0].file);
           const fileRes = await configService.uploadFile(processedFile.file);
-          console.log("Uploaded File: ", fileRes);
           if (fileRes.error || !fileRes.data?.url) {
             toast.error(
               fileRes.error || "Failed to upload image. Please try again."

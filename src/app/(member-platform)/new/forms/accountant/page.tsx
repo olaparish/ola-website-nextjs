@@ -30,7 +30,6 @@ const Page = () => {
       phoneNumber: formData.get("phoneNumber") as string,
     };
 
-    console.log("DTO: ", dto);
 
     mutate(dto);
   };

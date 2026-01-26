@@ -1,9 +1,9 @@
-import ParishionersTable from "@/components/tables/sample-tables/parishioners";
+import BaptismsTable from "@/components/tables/sample-tables/baptisms";
 
 const Page = () => {
   return (
     <div className="">
-      <ParishionersTable
+      <BaptismsTable
         wrapperClassName="h-[calc(100vh-290px)]"
         paginationClassname="flex justify-end"
       />

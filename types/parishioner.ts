@@ -1,5 +1,5 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
-import { MARITAL_STATUS, ParishGroup } from ".";
+import { BaseUser, MARITAL_STATUS, ParishGroup } from ".";
 
 export type CreateParishionerResponseType = { token: string; id: string };
 
@@ -110,3 +110,89 @@ export type UpdateParishionerDtoType = {
   fatherResidentialAddress?: string;
   fatherIsParishioner?: boolean;
 };
+
+export interface ParishionerWitUser extends Parishioner {
+  user: BaseUser;
+}
+
+export interface DetailedParishioner extends Parishioner {
+  baptism?: any;
+  confirmation?: any;
+  marriage?: any;
+  groups?: ParishGroup[];
+}
+
+export interface DetailedParishionerUser {
+  user:BaseUser,
+  userData: DetailedParishioner;
+}
+
+export type PaginateResult<T> = {
+  docs: T[];
+  totalDocs: number;
+  limit: number;
+  totalPages: number;
+  page: number;
+  pagingCounter: number;
+  hasPrevPage: boolean;
+  hasNextPage: boolean;
+  prevPage: number | null;
+  nextPage: number | null;
+};
+
+export interface ReceiptItem {
+  id: string;
+  receiptId: string;
+  parishionerId?: string;
+  amount: number;
+  createdAt: string;
+  updatedAt: string;
+  parishioner?: any;
+  receipt?: any;
+}
+
+export interface Receipt {
+  id: string;
+  categoryId: string;
+  description?: string;
+  totalAmount: number;
+  date: string;
+  createdById: string;
+  deletedAt?: string;
+  createdAt: string;
+  updatedAt: string;
+  category?: any;
+  items?: ReceiptItem[];
+}
+
+export interface DebitRequest {
+  id: string;
+  title: string;
+  description: string;
+  amount: number;
+  recipientId?: string;
+  status: 'PENDING' | 'APPROVED' | 'REJECTED' | 'DISBURSED';
+  createdById: string;
+  reviewedById?: string;
+  rejectionReason?: string;
+  disbursedAt?: string;
+  deletedAt?: string;
+  createdAt: string;
+  updatedAt: string;
+  recipient?: any;
+  creator?: any;
+  reviewer?: any;
+}
+
+export interface FinancialReport {
+  summary: {
+    totalReceipts: number;
+    totalExpenditures: number;
+  };
+  data: PaginateResult<Receipt | DebitRequest>;
+}
+
+// const GetDetailedParishionerDetails = {
+//   user: User,
+//   userData: DetailedParishioner,
+// };

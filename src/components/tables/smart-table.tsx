@@ -1,5 +1,5 @@
 import { useQuery } from '@tanstack/react-query';
-import React, { useState } from "react";
+import { useState } from "react";
 import {
   CustomTableProps,
   PaginateResult,
@@ -71,7 +71,7 @@ function CustomTable<T>(props: CustomTableProps<T>) {
         <div
           className={cn(
             "relative flex flex-col justify-center items-center gap-2 h-50",
-            props.tableClassName
+            props.tableClassName,
           )}
         >
           <ErrorSpan message="Error fetching data" />
@@ -87,7 +87,7 @@ function CustomTable<T>(props: CustomTableProps<T>) {
         <div
           className={cn(
             "relative flex flex-col justify-center items-center gap-2 h-50",
-            props.tableClassName
+            props.tableClassName,
           )}
         >
           <DataFetchSpinner />
@@ -99,7 +99,7 @@ function CustomTable<T>(props: CustomTableProps<T>) {
             <div
               className={cn(
                 "h-125 overflow-scroll",
-                props.tableWrapperClassName
+                props.tableWrapperClassName,
               )}
             >
               <Table className={props.tableClassName}>
@@ -126,7 +126,8 @@ function CustomTable<T>(props: CustomTableProps<T>) {
                           }
                         }}
                         className={cn(
-                          props.onRowClick && "cursor-pointer hover:bg-muted/50"
+                          props.onRowClick &&
+                            "cursor-pointer hover:bg-muted/50",
                         )}
                       >
                         {props.index && (

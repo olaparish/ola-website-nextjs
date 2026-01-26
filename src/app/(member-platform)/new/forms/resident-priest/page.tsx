@@ -33,7 +33,6 @@ const Page = () => {
       arrivalDate: formData.get("arrivalDate") as string,
     };
 
-    console.log("DTO: ", dto);
 
     mutate(dto);
   };

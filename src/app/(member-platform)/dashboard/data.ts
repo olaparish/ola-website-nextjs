@@ -31,52 +31,52 @@ export const newOptions: NavElementWithPems[] = [
 export const subPages: NavElementWithPems[] = [
   {
     name: "Dashboard",
-    href: "dashboard",
+    href: "/dashboard",
     permission: "*",
   },
   {
     name: "Parishioners",
-    href: "dashboard/parishioners",
+    href: "/dashboard/parishioners",
     permission: "get:parishioner",
   },
   {
     name: "Baptisms",
-    href: "dashboard/baptisms",
+    href: "/dashboard/baptisms",
     permission: "get:baptism",
   },
   {
     name: "Confirmations",
-    href: "dashboard/confirmations",
+    href: "/dashboard/confirmations",
     permission: "get:confirmation",
   },
   {
     name: "Marriages",
-    href: "dashboard/marriages",
+    href: "/dashboard/marriages",
     permission: "get:marriage",
   },
   {
     name: "Catechists",
-    href: "dashboard/catechists",
+    href: "/dashboard/catechists",
     permission: "get:catechist",
   },
   {
     name: "Accountants",
-    href: "dashboard/accountants",
+    href: "/dashboard/accountants",
     permission: "get:accountant",
   },
   {
     name: "Groups",
-    href: "dashboard/groups",
+    href: "/dashboard/groups",
     permission: "get:parish-groups",
   },
   {
     name: "Outstations",
-    href: "dashboard/outstations",
+    href: "/dashboard/outstations",
     permission: "get:parish-groups",
   },
   {
     name: "Payments",
-    href: "dashboard/payments",
+    href: "/dashboard/payments",
     permission: "get:payment",
   },
 ];
