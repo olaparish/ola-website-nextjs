@@ -17,3 +17,9 @@ export type Marriage = {
   husband?: User;
   wife?: User;
 };
+
+export type MarriageDetailed = Marriage & {
+  husband: User;
+  wife: User;
+  officiatingPriest: PriestUser;
+};

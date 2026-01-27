@@ -18,11 +18,11 @@ export const marriageService = {
     });
   },
 
-  async getMarriage(parishionerId: string): Promise<DataGetType<Marriage>> {
+  async getMarriage(marriageId: string): Promise<DataGetType<Marriage>> {
     return api
       .get<{
         data: DataGetType<Marriage>;
-      }>("/parishioner/" + parishionerId)
+      }>("/marriages/" + marriageId)
       .then((res) => res.data.data);
   },
 };

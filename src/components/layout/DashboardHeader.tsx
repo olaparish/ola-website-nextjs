@@ -77,8 +77,12 @@ const DashboardHeader = ({ onMenuClick }: DashboardHeaderProps) => {
               {session?.user?.role || "Member"}
             </span>
           </div>
-          <div className="flex h-9 w-9 items-center justify-center rounded-full bg-secondary-900 text-white font-bold">
-             {session?.user?.firstName?.charAt(0)}
+          <div className="flex h-9 w-9 items-center justify-center rounded-full bg-secondary-900 text-white font-bold overflow-hidden">
+             {session?.user?.avatar ? (
+                <img src={session.user.avatar} alt="Profile" className="h-full w-full object-cover" />
+             ) : (
+                session?.user?.firstName?.charAt(0)
+             )}
           </div>
           <SignoutBtn />
         </div>
