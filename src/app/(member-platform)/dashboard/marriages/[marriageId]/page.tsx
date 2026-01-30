@@ -8,6 +8,7 @@ import { DetailCard, DetailItem } from "@/components/common/DetailDisplay";
 import { Heart, Calendar, User, Info, ArrowLeft } from "lucide-react";
 import DataFetchSpinner from "@/components/ui/data-fetch-spinner";
 import { Button } from "@/components/ui/button";
+import Image from "next/image";
 
 const Page = () => {
   const { marriageId } = useParams();
@@ -73,8 +74,18 @@ const Page = () => {
             <DetailCard title="Husband" icon={User}>
               <div className="space-y-4">
                 <div className="flex items-center gap-3 mb-4">
-                  <div className="flex justify-center items-center bg-blue-100 rounded-full w-12 h-12 font-bold text-blue-600 text-lg">
-                    {marriage.husband?.firstName?.charAt(0)}
+                  <div className="flex justify-center items-center bg-blue-100 rounded-full w-12 h-12 overflow-hidden font-bold text-blue-600 text-lg">
+                    {!marriage.husband?.avatar &&
+                      marriage.husband?.firstName?.charAt(0)}
+                    {marriage.husband?.avatar && (
+                      <Image
+                        src={marriage.husband.avatar}
+                        height={48}
+                        width={48}
+                        className="size-12"
+                        alt={marriage.husband.firstName}
+                      />
+                    )}
                   </div>
                   <div>
                     <h4 className="font-bold text-gray-900">
@@ -104,8 +115,18 @@ const Page = () => {
             <DetailCard title="Wife" icon={User}>
               <div className="space-y-4">
                 <div className="flex items-center gap-3 mb-4">
-                  <div className="flex justify-center items-center bg-pink-100 rounded-full w-12 h-12 font-bold text-pink-600 text-lg">
-                    {marriage.wife?.firstName?.charAt(0)}
+                  <div className="flex justify-center items-center bg-pink-100 rounded-full w-12 h-12 overflow-hidden font-bold text-pink-600 text-lg">
+                    {!marriage.wife?.avatar &&
+                      marriage.wife?.firstName?.charAt(0)}
+                    {marriage.wife?.avatar && (
+                      <Image
+                        src={marriage.wife.avatar}
+                        height={48}
+                        width={48}
+                        className="size-12"
+                        alt={marriage.wife.firstName}
+                      />
+                    )}
                   </div>
                   <div>
                     <h4 className="font-bold text-gray-900">

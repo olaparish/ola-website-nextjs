@@ -135,12 +135,12 @@ const Page = () => {
             </div>
           </DetailCard>
 
-          <div className="bg-primary-50 p-6 border border-primary-100 rounded-xl">
+          {/* <div className="bg-primary-50 p-6 border border-primary-100 rounded-xl">
             <h4 className="mb-2 font-bold text-primary-900">Management</h4>
             <div className="space-y-3">
-              {/* <Button className="hover:bg-primary-100 border-primary-200 w-full text-primary-900">
+              <Button className="hover:bg-primary-100 border-primary-200 w-full text-primary-900">
                 Edit Permissions
-              </Button> */}
+              </Button>
               <Button
                 variant="outline"
                 className="bg-primary-900 hover:bg-primary-800 w-full text-white"
@@ -148,7 +148,7 @@ const Page = () => {
                 View Financial Activity
               </Button>
             </div>
-          </div>
+          </div> */}
         </div>
       </div>
     </div>

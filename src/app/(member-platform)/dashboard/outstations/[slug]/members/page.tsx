@@ -24,7 +24,8 @@ const OutstationMembersPage = () => {
     isError: isMembersError,
   } = useQuery({
     queryKey: ["outstation-members", slug, page],
-    queryFn: () => parishGroupService.getGroupMembersBySlug(slug as string, page),
+    queryFn: () =>
+      parishGroupService.getGroupMembersBySlug(slug as string, page),
   });
 
   const { data: outstation, isLoading: isOutstationLoading } = useQuery({
@@ -40,15 +41,17 @@ const OutstationMembersPage = () => {
       </div>
     );
 
-  const filteredMembers = membersData?.docs.filter((member) => {
-    const fullName = `${member.firstName} ${member.lastName}`.toLowerCase();
-    return (
-      fullName.includes(searchTerm.toLowerCase()) ||
-      member.email?.toLowerCase().includes(searchTerm.toLowerCase()) ||
-      member.phoneNumber?.includes(searchTerm)
-    );
-  }) || [];
+  const filteredMembers =
+    membersData?.docs.filter((member) => {
+      const fullName = `${member.firstName} ${member.lastName}`.toLowerCase();
+      return (
+        fullName.includes(searchTerm.toLowerCase()) ||
+        member.email?.toLowerCase().includes(searchTerm.toLowerCase()) ||
+        member.phoneNumber?.includes(searchTerm)
+      );
+    }) || [];
 
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
   const columns: DashboardColumn<any>[] = [
     {
       header: "Name",
@@ -151,7 +154,11 @@ const OutstationMembersPage = () => {
         onSearchChange={setSearchTerm}
         searchPlaceholder="Search by name, email or phone..."
         actions={
-          <Button variant="outline" size="sm" className="h-10 gap-2 border-gray-200">
+          <Button
+            variant="outline"
+            size="sm"
+            className="gap-2 border-gray-200 h-10"
+          >
             <Filter className="w-4 h-4" />
             Filter
           </Button>
@@ -169,6 +176,6 @@ const OutstationMembersPage = () => {
       />
     </div>
   );
-};
+};;
 
 export default OutstationMembersPage;
