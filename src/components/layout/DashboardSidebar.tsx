@@ -21,6 +21,7 @@ import { NavElementWithPems } from "../../../types";
 import { subPages } from "@/app/(member-platform)/dashboard/data";
 import { ValidateRights } from "@/utils/validatePermissions";
 import { useSession } from "next-auth/react";
+import SignoutBtn from "../common/signout-btn";
 
 const iconMap: Record<string, any> = {
   Dashboard: LayoutDashboard,
@@ -85,7 +86,7 @@ const DashboardSidebar = () => {
           })}
         </nav>
 
-        <div className="mt-auto pt-4 border-t">
+        <div className="mt-auto pt-4 border-t space-y-1">
           <Link
             href="/dashboard/settings"
             className={cn(
@@ -98,6 +99,7 @@ const DashboardSidebar = () => {
             <Settings className={cn("h-5 w-5", isActive("/dashboard/settings") ? "text-white" : "text-gray-500")} />
             Settings
           </Link>
+          <SignoutBtn className="px-3 py-2 text-sm font-medium transition-colors text-gray-600 hover:bg-gray-100 hover:text-gray-900 rounded-lg w-full flex items-center gap-3" />
         </div>
       </div>
     </aside>

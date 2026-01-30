@@ -1,10 +1,5 @@
 import api, { BASE_URL } from "@/utils/axios";
-import {
-  PaginateResult,
-  Marriage,
-  GetUserDetails,
-  DataGetType,
-} from "../../types";
+import { PaginateResult, Marriage, DataGetType } from "../../types";
 
 export const marriageService = {
   async getAll(page = 1, limit = 20): Promise<PaginateResult<Marriage>> {
@@ -18,10 +13,10 @@ export const marriageService = {
     });
   },
 
-  async getMarriage(marriageId: string): Promise<DataGetType<Marriage>> {
+  async getMarriage(marriageId: string): Promise<Marriage> {
     return api
       .get<{
-        data: DataGetType<Marriage>;
+        data: Marriage;
       }>("/marriages/" + marriageId)
       .then((res) => res.data.data);
   },

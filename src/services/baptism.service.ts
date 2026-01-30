@@ -28,4 +28,12 @@ export const baptismService = {
         return res.data as unknown as PaginateResult<ParishionerWitUser>;
       });
   },
+  async getById(baptismId: string): Promise<Baptism> {
+    return api
+      .get<{ data: Baptism }>(`${BASE_URL}/baptisms/${baptismId}`)
+      .then((res) => {
+        console.log("Response data: ", res.data);
+        return res.data.data;
+      });
+  },
 };

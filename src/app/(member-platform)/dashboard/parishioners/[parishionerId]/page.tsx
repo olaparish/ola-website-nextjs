@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 "use client";
 
 import { useEffect, useState } from "react";
@@ -168,7 +169,7 @@ const FinancialView = ({ userId }: { userId: string }) => {
 
   return (
     <div>
-      <div className="flex border-b mb-6">
+      <div className="flex mb-6 border-b">
         <button
           className={`px-4 py-2 font-medium ${
             type === "receipts"
@@ -177,7 +178,7 @@ const FinancialView = ({ userId }: { userId: string }) => {
           }`}
           onClick={() => setType("receipts")}
         >
-          Receipts
+          Contributions
         </button>
         <button
           className={`px-4 py-2 font-medium ${
@@ -187,21 +188,21 @@ const FinancialView = ({ userId }: { userId: string }) => {
           }`}
           onClick={() => setType("expenditures")}
         >
-          Expenditures
+          Support
         </button>
       </div>
 
       <div className="gap-4 grid grid-cols-1 md:grid-cols-2 mb-6">
         <div className="bg-green-50 p-4 border border-green-100 rounded text-green-800">
-          <h4 className="font-semibold text-sm uppercase">Total Receipts</h4>
+          <h4 className="font-semibold text-sm uppercase">
+            Total Contributions
+          </h4>
           <p className="font-bold text-2xl">
             GHS {report.summary.totalReceipts.toFixed(2)}
           </p>
         </div>
         <div className="bg-red-50 p-4 border border-red-100 rounded text-red-800">
-          <h4 className="font-semibold text-sm uppercase">
-            Total Expenditures
-          </h4>
+          <h4 className="font-semibold text-sm uppercase">Total Received</h4>
           <p className="font-bold text-2xl">
             GHS {report.summary.totalExpenditures.toFixed(2)}
           </p>
@@ -209,7 +210,7 @@ const FinancialView = ({ userId }: { userId: string }) => {
       </div>
 
       <h4 className="mb-2 font-semibold">
-        {type === "receipts" ? "All Receipts" : "All Expenditures"}
+        {type === "receipts" ? "All Contributions" : "All Support"}
       </h4>
       <div className="overflow-x-auto">
         <table className="min-w-full text-sm text-left">
@@ -219,9 +220,7 @@ const FinancialView = ({ userId }: { userId: string }) => {
               <th className="px-4 py-2">
                 {type === "receipts" ? "Description" : "Title"}
               </th>
-              {type === "expenditures" && (
-                <th className="px-4 py-2">Status</th>
-              )}
+              {type === "expenditures" && <th className="px-4 py-2">Status</th>}
               <th className="px-4 py-2 text-right">Amount (GHS)</th>
             </tr>
           </thead>
@@ -241,8 +240,8 @@ const FinancialView = ({ userId }: { userId: string }) => {
                         item.status === "DISBURSED"
                           ? "bg-green-100 text-green-800"
                           : item.status === "REJECTED"
-                          ? "bg-red-100 text-red-800"
-                          : "bg-yellow-100 text-yellow-800"
+                            ? "bg-red-100 text-red-800"
+                            : "bg-yellow-100 text-yellow-800"
                       }`}
                     >
                       {item.status}
@@ -250,7 +249,7 @@ const FinancialView = ({ userId }: { userId: string }) => {
                   </td>
                 )}
                 <td className="px-4 py-2 text-right">
-                  {(item.totalAmount || item.amount).toFixed(2)}
+                  {item.totalAmount || item.amount || 0}
                 </td>
               </tr>
             ))}
@@ -258,7 +257,7 @@ const FinancialView = ({ userId }: { userId: string }) => {
               <tr>
                 <td
                   colSpan={type === "expenditures" ? 4 : 3}
-                  className="px-4 py-8 text-center text-gray-500"
+                  className="px-4 py-8 text-gray-500 text-center"
                 >
                   No {type} found.
                 </td>

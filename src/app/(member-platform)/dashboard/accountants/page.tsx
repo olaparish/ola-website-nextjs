@@ -1,28 +1,32 @@
 "use client";
 
 import { useState } from "react";
-import BaptismsTable from "@/components/tables/sample-tables/baptisms";
+import AccountantTable from "@/components/tables/sample-tables/accountant";
 import { PageHeader } from "@/components/common/PageHeader";
-import { Droplets } from "lucide-react";
+import { Landmark, UserPlus } from "lucide-react";
+import { useRouter } from "next/navigation";
 
 const Page = () => {
   const [search, setSearch] = useState("");
+  const router = useRouter();
 
   return (
     <div className="space-y-6">
       <PageHeader
-        title="Baptisms"
-        subtitle="View and manage baptismal records"
-        icon={Droplets}
+        title="Accountants"
+        subtitle="Manage and view all parish accountants"
+        icon={Landmark}
         searchValue={search}
         onSearchChange={setSearch}
-        searchPlaceholder="Search baptism records..."
+        searchPlaceholder="Search accountants..."
+        actionLabel="Add Accountant"
+        onAction={() => router.push("/dashboard/accountants/new")}
+        actionIcon={UserPlus}
       />
 
       <div className="bg-white rounded-xl shadow-sm border border-gray-100 overflow-hidden">
-        <BaptismsTable
+        <AccountantTable
           wrapperClassName="h-[calc(100vh-320px)] border-none bg-transparent"
-          paginationClassname="flex justify-end p-4 border-t border-gray-50"
         />
       </div>
     </div>

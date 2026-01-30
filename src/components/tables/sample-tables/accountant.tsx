@@ -7,18 +7,16 @@ import {
 } from "../../../../types";
 import TableText from "../ui/normal-text";
 import CustomTable from "../smart-table";
-import { Fragment, useState } from "react";
-import MainModal from "@/components/common/modal-main";
-import CatechistAccountantDetails from "@/components/pages/CatechistAccountantDetails";
 import { cn } from "@/lib/utils";
 import { accountantService } from "@/services/accountant.service";
+import { useRouter } from "next/navigation";
 
 type Props = {
   wrapperClassName?: string;
 };
 
 const AccountantTable = (props: Props) => {
-  const [userDetails, setUserDetails] = useState<AccountantUser | null>(null);
+    const router = useRouter();
 
   const tableColumns: ColumnDef<AccountantUser>[] = [
     {
@@ -86,26 +84,15 @@ const AccountantTable = (props: Props) => {
       const members: PaginateResult<AccountantUser> = await api(pageNumber);
       return members;
     },
+    onRowClick: (item) => {
+      router.push("/dashboard/accountants/" + item.id);
+    },
   };
 
   return (
-    <Fragment>
-      {!!userDetails && (
-        <MainModal
-          wrapperClassName="bg-transparent"
-          isOpen={!!userDetails}
-          onClose={() => setUserDetails(null)}
-        >
-          <CatechistAccountantDetails user={userDetails} />
-        </MainModal>
-      )}
-      <div className={cn("w-full overflow-scroll", props.wrapperClassName)}>
-        <CustomTable<AccountantUser>
-          {...tableProps}
-          onRowClick={(item) => setUserDetails(item)}
-        />
-      </div>
-    </Fragment>
+    <div className={cn("w-full overflow-scroll", props.wrapperClassName)}>
+      <CustomTable<AccountantUser> {...tableProps} />
+    </div>
   );
 };
 

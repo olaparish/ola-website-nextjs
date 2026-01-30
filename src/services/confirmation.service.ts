@@ -30,4 +30,9 @@ export const confirmationService = {
         return res.data as unknown as PaginateResult<ParishionerWitUser>;
       });
   },
+  async getById(confirmationId: string): Promise<Confirmation> {
+    return api.get<{ data: Confirmation }>(`${BASE_URL}/confirmations/${confirmationId}`).then((res) => {
+      return res.data.data;
+    });
+  },
 };

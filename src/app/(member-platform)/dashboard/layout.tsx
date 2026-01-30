@@ -1,19 +1,11 @@
 "use client";
 import { NavElement } from "../../../../types";
-import SignoutBtn from "@/components/common/signout-btn";
-import Image from "next/image";
 import Link from "next/link";
 import { useSession } from "next-auth/react";
-import { useParishPriestStore } from "@/stores/useParishPriestStore";
 import { useEffect } from "react";
-import { Spinner } from "@/components/ui/spinner";
 import DataFetchSpinner from "@/components/ui/data-fetch-spinner";
-import PopoverSelect from "@/components/ui/popover";
-import { ValidateRights } from "@/utils/validatePermissions";
 import { usePathname, useRouter } from "next/navigation";
-import { cn } from "@/lib/utils";
-import { IconGear } from "@/components/icons/icon-gear";
-import { newOptions, subPages } from "./data";
+
 
 type Props = {
   children: React.ReactNode;

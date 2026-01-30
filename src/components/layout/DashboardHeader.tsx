@@ -7,7 +7,6 @@ import PopoverSelect from "@/components/ui/popover";
 import { newOptions } from "@/app/(member-platform)/dashboard/data";
 import { ValidateRights } from "@/utils/validatePermissions";
 import Link from "next/link";
-import SignoutBtn from "../common/signout-btn";
 import { NavElement } from "../../../types";
 
 const renderAddPopover = ({ name, href }: NavElement) => {
@@ -84,7 +83,6 @@ const DashboardHeader = ({ onMenuClick }: DashboardHeaderProps) => {
                 session?.user?.firstName?.charAt(0)
              )}
           </div>
-          <SignoutBtn />
         </div>
       </div>
     </header>

@@ -19,6 +19,12 @@ export const accountantService = {
     });
   },
 
+  async getAccountant(accountantId: string): Promise<AccountantUser> {
+    return api
+      .get<{ data: AccountantUser }>(`/accountants/${accountantId}`)
+      .then((res) => res.data.data);
+  },
+
   async createAccountant(data: CreateAccountantDto): Promise<SuccessResponse> {
     return api
       .post<{ data: SuccessResponse }>("/accountants", data)

@@ -8,17 +8,15 @@ import {
 import TableText from "../ui/normal-text";
 import { catechistService } from "@/services/catechist.service";
 import CustomTable from "../smart-table";
-import { Fragment, useState } from "react";
-import MainModal from "@/components/common/modal-main";
-import CatechistAccountantDetails from "@/components/pages/CatechistAccountantDetails";
 import { cn } from "@/lib/utils";
+import { useRouter } from "next/navigation";
 
 type Props = {
   wrapperClassName?: string;
 };
 
 const CatechistTable = (props: Props) => {
-  const [userDetails, setUserDetails] = useState<CatechistUser | null>(null);
+    const router = useRouter();
 
   const tableColumns: ColumnDef<CatechistUser>[] = [
     {
@@ -89,10 +87,13 @@ const CatechistTable = (props: Props) => {
     tableName: "List of Catechists",
     queryKey: ["catechists"],
     columns: tableColumns,
-    tableWrapperClassName: "h-auto bg-primary-100/30 no-scrollbar-y w-auto",
+    tableWrapperClassName: "bg-primary-100/30 w-auto",
     index: true,
     pagination: true,
     paginationClassName: "mt-12.5",
+    onRowClick: (item) => {
+      router.push("/dashboard/catechists/" + item.id);
+    },
     fetchData: async (
       pageNumber: number = 1,
     ): Promise<PaginateResult<CatechistUser>> => {
@@ -104,23 +105,9 @@ const CatechistTable = (props: Props) => {
   };
 
   return (
-    <Fragment>
-      {!!userDetails && (
-        <MainModal
-          wrapperClassName="bg-transparent"
-          isOpen={!!userDetails}
-          onClose={() => setUserDetails(null)}
-        >
-          <CatechistAccountantDetails user={userDetails} />
-        </MainModal>
-      )}
-      <div className={cn("w-full overflow-scroll", props.wrapperClassName)}>
-        <CustomTable<CatechistUser>
-          {...tableProps}
-          onRowClick={(item) => setUserDetails(item)}
-        />
-      </div>
-    </Fragment>
+    <div className={cn("w-full", props.wrapperClassName)}>
+      <CustomTable<CatechistUser> {...tableProps} />
+    </div>
   );
 };
 
