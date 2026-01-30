@@ -24,12 +24,10 @@ const Page = () => {
         actionIcon={UserPlus}
       />
 
-      <div className="bg-white rounded-xl shadow-sm border border-gray-100 overflow-hidden">
-        <ParishionersTable
-          wrapperClassName="h-[calc(100vh-320px)] border-none bg-transparent"
-          paginationClassname="flex justify-end p-4 border-t border-gray-50"
-        />
-      </div>
+      <ParishionersTable
+        wrapperClassName="border-none"
+        paginationClassname="flex justify-end p-4"
+      />
     </div>
   );
 };

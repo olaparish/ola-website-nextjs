@@ -24,11 +24,9 @@ const Page = () => {
         actionIcon={UserPlus}
       />
 
-      <div className="bg-white rounded-xl shadow-sm border border-gray-100 overflow-hidden">
-        <AccountantTable
-          wrapperClassName="h-[calc(100vh-320px)] border-none bg-transparent"
-        />
-      </div>
+      <AccountantTable
+        wrapperClassName="border-none"
+      />
     </div>
   );
 };

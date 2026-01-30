@@ -24,9 +24,7 @@ const Page = () => {
         actionIcon={UserPlus}
       />
 
-      <div className="bg-white shadow-sm border border-gray-100 overflow-hidden">
-        <CatechistTable wrapperClassName="min-h-[calc(100vh-320px)] border-none bg-transparent" />
-      </div>
+      <CatechistTable wrapperClassName="border-none" />
     </div>
   );
 };

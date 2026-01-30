@@ -19,12 +19,10 @@ const Page = () => {
         searchPlaceholder="Search baptism records..."
       />
 
-      <div className="bg-white rounded-xl shadow-sm border border-gray-100 overflow-hidden">
-        <BaptismsTable
-          wrapperClassName="h-[calc(100vh-320px)] border-none bg-transparent"
-          paginationClassname="flex justify-end p-4 border-t border-gray-50"
-        />
-      </div>
+      <BaptismsTable
+        wrapperClassName="border-none"
+        paginationClassname="flex justify-end p-4"
+      />
     </div>
   );
 };

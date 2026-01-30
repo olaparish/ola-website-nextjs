@@ -1,53 +1,64 @@
-"use client";
-
-// import { TableHeader } from "@/components/ui/Table";
-import { ParishGroup, ColumnDef } from "../../../../types";
+import { useState } from "react";
+import { ParishGroup } from "../../../../types";
 import TableText from "../ui/normal-text";
 import { useRouter } from "next/navigation";
-import {
-  Table,
-  TableBody,
-  TableCell,
-  TableHead,
-  TableHeader,
-  TableRow,
-} from "@/components/ui/Table";
+import { Search, Filter } from "lucide-react";
+import { Button } from "@/components/ui/button";
+import { DataTable, DashboardColumn } from "@/components/common/DataTable";
 
 type Props = {
   groups: ParishGroup[];
   title: string;
   onRowClick?: (group: ParishGroup) => void;
+  showSearch?: boolean;
 };
 
-const GroupsListTable = ({ groups, title, onRowClick }: Props) => {
+const GroupsListTable = ({ groups, title, onRowClick, showSearch = false }: Props) => {
   const router = useRouter();
+  const [searchTerm, setSearchTerm] = useState("");
+  const [page, setPage] = useState(1);
+  const itemsPerPage = 5;
 
-  const columns: ColumnDef<ParishGroup>[] = [
+  const filteredGroups = groups.filter((g) =>
+    g.name.toLowerCase().includes(searchTerm.toLowerCase())
+  );
+
+  const totalPages = Math.ceil(filteredGroups.length / itemsPerPage);
+  const paginatedGroups = filteredGroups.slice(
+    (page - 1) * itemsPerPage,
+    page * itemsPerPage
+  );
+
+  const columns: DashboardColumn<ParishGroup>[] = [
     {
-      key: "name",
-      label: "Group Name",
+      header: "Group Name",
       render: (item) => (
-        <TableText text={item.name} className="font-semibold text-gray-900" />
+        <div className="flex items-center gap-3">
+          <div className="flex justify-center items-center bg-secondary-100 rounded-full w-10 h-10 font-bold text-secondary-700">
+            {item.name
+              .split(" ")
+              .map((n) => n[0])
+              .join("")
+              .slice(0, 2)}
+          </div>
+          <TableText text={item.name} className="font-semibold text-gray-900" />
+        </div>
       ),
     },
     {
-      key: "type",
-      label: "Type",
+      header: "Type",
       render: (item) => <TableText text={item.type} className="capitalize" />,
     },
     {
-      key: "email",
-      label: "Email",
+      header: "Email",
       render: (item) => <TableText text={item.email || "N/A"} />,
     },
     {
-      key: "phone",
-      label: "Phone",
+      header: "Phone",
       render: (item) => <TableText text={item.phone || "N/A"} />,
     },
     {
-      key: "dateFounded",
-      label: "Founded",
+      header: "Founded",
       render: (item) => (
         <TableText
           text={
@@ -61,50 +72,44 @@ const GroupsListTable = ({ groups, title, onRowClick }: Props) => {
   ];
 
   return (
-    <div className="bg-white shadow-sm border border-gray-100 rounded-xl overflow-hidden">
-      <div className="bg-gray-50/50 px-6 py-4 border-gray-50 border-b">
-        <h3 className="font-bold text-gray-900">{title}</h3>
-      </div>
-      <div className="overflow-x-auto">
-        <Table>
-          <TableHeader>
-            <TableRow>
-              {columns.map((col, idx) => (
-                <TableHead key={idx}>{col.label}</TableHead>
-              ))}
-            </TableRow>
-          </TableHeader>
-          <TableBody>
-            {groups.length === 0 ? (
-              <TableRow>
-                <TableCell
-                  colSpan={columns.length}
-                  className="py-8 text-gray-500 text-center"
-                >
-                  No records found.
-                </TableCell>
-              </TableRow>
-            ) : (
-              groups.map((group, idx) => (
-                <TableRow
-                  key={idx}
-                  onClick={() =>
-                    onRowClick
-                      ? onRowClick(group)
-                      : router.push(`/dashboard/groups/${group.slug}`)
-                  }
-                  className="hover:bg-gray-50 transition-colors cursor-pointer"
-                >
-                  {columns.map((col, cIdx) => (
-                    <TableCell key={cIdx}>{col.render(group)}</TableCell>
-                  ))}
-                </TableRow>
-              ))
-            )}
-          </TableBody>
-        </Table>
-      </div>
-    </div>
+    <DataTable
+      title={title}
+      data={paginatedGroups}
+      columns={columns}
+      onRowClick={(group) =>
+        onRowClick
+          ? onRowClick(group)
+          : router.push(`/dashboard/groups/${group.slug}`)
+      }
+      searchTerm={showSearch ? searchTerm : undefined}
+      onSearchChange={
+        showSearch
+          ? (val) => {
+              setSearchTerm(val);
+              setPage(1);
+            }
+          : undefined
+      }
+      searchPlaceholder={`Search ${title.toLowerCase()}...`}
+      actions={
+        showSearch ? (
+          <Button
+            variant="outline"
+            size="sm"
+            className="h-10 gap-2 border-gray-200"
+          >
+            <Filter className="w-4 h-4" />
+            Filter
+          </Button>
+        ) : undefined
+      }
+      pagination={{
+        page,
+        totalPages: totalPages || 1,
+        totalDocs: filteredGroups.length,
+        onPageChange: (newPage) => setPage(newPage),
+      }}
+    />
   );
 };
 

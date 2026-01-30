@@ -7,31 +7,24 @@ import { PageHeader } from "@/components/common/PageHeader";
 import { Users, ArrowLeft, Mail, Phone, Search, Filter } from "lucide-react";
 import DataFetchSpinner from "@/components/ui/data-fetch-spinner";
 import { Button } from "@/components/ui/button";
-import {
-  Table,
-  TableBody,
-  TableCell,
-  TableHead,
-  TableHeader,
-  TableRow,
-} from "@/components/ui/Table";
-import { Input } from "@/components/ui/input";
 import { useState } from "react";
 import Link from "next/link";
 import Image from "next/image";
+import { DataTable, DashboardColumn } from "@/components/common/DataTable";
 
 const OutstationMembersPage = () => {
   const { slug } = useParams();
   const router = useRouter();
   const [searchTerm, setSearchTerm] = useState("");
+  const [page, setPage] = useState(1);
 
   const {
     data: membersData,
     isLoading: isMembersLoading,
     isError: isMembersError,
   } = useQuery({
-    queryKey: ["outstation-members", slug],
-    queryFn: () => parishGroupService.getGroupMembersBySlug(slug as string),
+    queryKey: ["outstation-members", slug, page],
+    queryFn: () => parishGroupService.getGroupMembersBySlug(slug as string, page),
   });
 
   const { data: outstation, isLoading: isOutstationLoading } = useQuery({
@@ -54,7 +47,83 @@ const OutstationMembersPage = () => {
       member.email?.toLowerCase().includes(searchTerm.toLowerCase()) ||
       member.phoneNumber?.includes(searchTerm)
     );
-  });
+  }) || [];
+
+  const columns: DashboardColumn<any>[] = [
+    {
+      header: "Name",
+      render: (member) => (
+        <div className="flex items-center gap-3">
+          <div className="flex justify-center items-center bg-primary-100 rounded-full w-10 h-10 overflow-hidden font-bold text-primary-700">
+            {member.avatar && (
+              <Image
+                width={40}
+                height={40}
+                className="size-10"
+                src={member.avatar}
+                alt={
+                  member.firstName +
+                  " " +
+                  member.lastName +
+                  " " +
+                  member.otherNames
+                }
+              />
+            )}
+            {!member.avatar && (
+              <>
+                {member.firstName[0]}
+                {member.lastName[0]}
+              </>
+            )}
+          </div>
+          <div>
+            <p className="font-medium text-gray-900">
+              {member.firstName} {member.lastName}
+            </p>
+            <p className="text-gray-500 text-xs uppercase">
+              ID: {member.id.slice(0, 8)}
+            </p>
+          </div>
+        </div>
+      ),
+    },
+    {
+      header: "Contact",
+      render: (member) => (
+        <div className="space-y-1">
+          <div className="flex items-center gap-2 text-gray-600 text-sm">
+            <Mail className="w-3.5 h-3.5" />
+            {member.email || "N/A"}
+          </div>
+          <div className="flex items-center gap-2 text-gray-600 text-sm">
+            <Phone className="w-3.5 h-3.5" />
+            {member.phoneNumber || "N/A"}
+          </div>
+        </div>
+      ),
+    },
+    {
+      header: "Join Date",
+      render: (member) => (
+        <p className="text-gray-600 text-sm">
+          {new Date(member.createdAt).toLocaleDateString()}
+        </p>
+      ),
+    },
+    {
+      header: "Actions",
+      className: "text-right",
+      render: (member) => (
+        <Link
+          href={`/dashboard/parishioners/${member.id}`}
+          className="hover:bg-primary-50 font-medium text-primary-600 hover:text-primary-700 text-sm"
+        >
+          View Profile
+        </Link>
+      ),
+    },
+  ];
 
   return (
     <div className="space-y-6">
@@ -75,161 +144,29 @@ const OutstationMembersPage = () => {
         />
       </div>
 
-      <div className="bg-white shadow-sm border border-gray-100 rounded-xl overflow-hidden">
-        <div className="p-6 border-gray-100 border-b">
-          <div className="flex sm:flex-row flex-col justify-between sm:items-center gap-4">
-            <div className="relative flex-1 max-w-md">
-              <Search className="top-1/2 left-3 absolute w-4 h-4 text-gray-400 -translate-y-1/2" />
-              <Input
-                placeholder="Search by name, email or phone..."
-                className="pl-10"
-                value={searchTerm}
-                onChange={(e) => setSearchTerm(e.target.value)}
-              />
-            </div>
-            <div className="flex items-center gap-2">
-              <Button variant="outline" size="sm" className="gap-2">
-                <Filter className="w-4 h-4" />
-                Filter
-              </Button>
-              {/* <Button
-                size="sm"
-                className="bg-primary-900 hover:bg-primary-800 text-white"
-              >
-                Add Member
-              </Button> */}
-            </div>
-          </div>
-        </div>
-
-        <div className="overflow-x-auto">
-          <Table>
-            <TableHeader>
-              <TableRow className="bg-gray-50/50">
-                <TableHead className="font-semibold text-gray-900">
-                  Name
-                </TableHead>
-                <TableHead className="font-semibold text-gray-900">
-                  Contact
-                </TableHead>
-                <TableHead className="font-semibold text-gray-900">
-                  Join Date
-                </TableHead>
-                <TableHead className="font-semibold text-gray-900 text-right">
-                  Actions
-                </TableHead>
-              </TableRow>
-            </TableHeader>
-            <TableBody>
-              {filteredMembers && filteredMembers.length > 0 ? (
-                filteredMembers.map((member) => (
-                  <TableRow
-                    key={member.id}
-                    className="hover:bg-gray-50/30 transition-colors"
-                  >
-                    <TableCell>
-                      <div className="flex items-center gap-3">
-                        <div className="flex justify-center items-center bg-primary-100 rounded-full w-10 h-10 overflow-hidden font-bold text-primary-700">
-                          {member.avatar && (
-                            <Image
-                              width={40}
-                              height={40}
-                              className="size-10"
-                              src={member.avatar}
-                              alt={
-                                member.firstName +
-                                " " +
-                                member.lastName +
-                                " " +
-                                member.otherNames
-                              }
-                            ></Image>
-                          )}
-                          {!member.avatar && (
-                            <>
-                              {member.firstName[0]}
-                              {member.lastName[0]}
-                            </>
-                          )}
-                        </div>
-                        <div>
-                          <p className="font-medium text-gray-900">
-                            {member.firstName} {member.lastName}
-                          </p>
-                          <p className="text-gray-500 text-xs">
-                            ID: {member.id.toUpperCase().slice(0, 8)}
-                          </p>
-                        </div>
-                      </div>
-                    </TableCell>
-                    <TableCell>
-                      <div className="space-y-1">
-                        <div className="flex items-center gap-2 text-gray-600 text-sm">
-                          <Mail className="w-3.5 h-3.5" />
-                          {member.email || "N/A"}
-                        </div>
-                        <div className="flex items-center gap-2 text-gray-600 text-sm">
-                          <Phone className="w-3.5 h-3.5" />
-                          {member.phoneNumber || "N/A"}
-                        </div>
-                      </div>
-                    </TableCell>
-                    <TableCell>
-                      <p className="text-gray-600 text-sm">
-                        {new Date(member.createdAt).toLocaleDateString()}
-                      </p>
-                    </TableCell>
-                    <TableCell className="text-right">
-                      <Link
-                        href={`/dashboard/parishioners/${member.id}`}
-                        className="hover:bg-primary-50 font-medium text-primary-600 hover:text-primary-700 text-sm"
-                      >
-                        View Profile
-                      </Link>
-                    </TableCell>
-                  </TableRow>
-                ))
-              ) : (
-                <TableRow>
-                  <TableCell
-                    colSpan={4}
-                    className="py-12 text-gray-500 text-center"
-                  >
-                    No members found matching your search.
-                  </TableCell>
-                </TableRow>
-              )}
-            </TableBody>
-          </Table>
-        </div>
-
-        {membersData && membersData.totalPages > 1 && (
-          <div className="flex justify-between items-center p-6 border-gray-100 border-t">
-            <p className="text-gray-500 text-sm">
-              Showing{" "}
-              <span className="font-medium">{filteredMembers?.length}</span> of{" "}
-              <span className="font-medium">{membersData.totalDocs}</span>{" "}
-              members
-            </p>
-            <div className="flex items-center gap-2">
-              <Button
-                variant="outline"
-                size="sm"
-                disabled={membersData.page === 1}
-              >
-                Previous
-              </Button>
-              <Button
-                variant="outline"
-                size="sm"
-                disabled={membersData.page === membersData.totalPages}
-              >
-                Next
-              </Button>
-            </div>
-          </div>
-        )}
-      </div>
+      <DataTable
+        data={filteredMembers}
+        columns={columns}
+        searchTerm={searchTerm}
+        onSearchChange={setSearchTerm}
+        searchPlaceholder="Search by name, email or phone..."
+        actions={
+          <Button variant="outline" size="sm" className="h-10 gap-2 border-gray-200">
+            <Filter className="w-4 h-4" />
+            Filter
+          </Button>
+        }
+        pagination={
+          membersData
+            ? {
+                page: membersData.page,
+                totalPages: membersData.totalPages,
+                totalDocs: membersData.totalDocs,
+                onPageChange: (newPage) => setPage(newPage),
+              }
+            : undefined
+        }
+      />
     </div>
   );
 };

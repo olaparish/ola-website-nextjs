@@ -11,7 +11,6 @@ import { useState } from "react";
 
 const Page = () => {
   const router = useRouter();
-  const [search, setSearch] = useState("");
 
   const { data: groupsData, isLoading, isError } = useQuery({
     queryKey: ["parish-groups"],
@@ -22,7 +21,6 @@ const Page = () => {
   if (isError) return <div className="p-8 text-center text-red-500">Error fetching outstations. Please try again.</div>;
 
   const outstations = groupsData?.outstations || [];
-  const filteredOutstations = outstations.filter(g => g.name.toLowerCase().includes(search.toLowerCase()));
 
   return (
     <div className="space-y-8">
@@ -30,18 +28,16 @@ const Page = () => {
         title="Outstations"
         subtitle="Manage and view all parish outstations"
         icon={MapPin}
-        searchValue={search}
-        onSearchChange={setSearch}
-        searchPlaceholder="Search outstations..."
         actionLabel="New Outstation"
         onAction={() => router.push("/dashboard/outstations/new")}
         actionIcon={UserPlus}
       />
 
-      <GroupsListTable 
-        groups={filteredOutstations} 
-        title="Active Outstations" 
+      <GroupsListTable
+        groups={outstations}
+        title="Active Outstations"
         onRowClick={(g) => router.push(`/dashboard/outstations/${g.slug}`)}
+        showSearch={true}
       />
     </div>
   );

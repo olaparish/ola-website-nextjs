@@ -11,8 +11,6 @@ import { useState } from "react";
 
 const Page = () => {
   const router = useRouter();
-  const [search, setSearch] = useState("");
-
   const { data: groupsData, isLoading, isError } = useQuery({
     queryKey: ["parish-groups"],
     queryFn: () => parishGroupService.getGroups(),
@@ -23,9 +21,6 @@ const Page = () => {
 
   const communities = groupsData?.communities || [];
   const societies = groupsData?.societies || [];
-  
-  const filteredCommunities = communities.filter(g => g.name.toLowerCase().includes(search.toLowerCase()));
-  const filteredSocieties = societies.filter(g => g.name.toLowerCase().includes(search.toLowerCase()));
 
   return (
     <div className="space-y-8">
@@ -33,23 +28,22 @@ const Page = () => {
         title="Parish Groups"
         subtitle="Manage communities and societies within the parish"
         icon={Users}
-        searchValue={search}
-        onSearchChange={setSearch}
-        searchPlaceholder="Search groups..."
         actionLabel="New Group"
         onAction={() => router.push("/dashboard/groups/new")}
         actionIcon={UserPlus}
       />
 
       <div className="space-y-6">
-        <GroupsListTable 
-          groups={filteredCommunities} 
-          title="Communities" 
+        <GroupsListTable
+          groups={communities}
+          title="Communities"
+          showSearch={true}
         />
-        
-        <GroupsListTable 
-          groups={filteredSocieties} 
-          title="Societies" 
+
+        <GroupsListTable
+          groups={societies}
+          title="Societies"
+          showSearch={true}
         />
       </div>
     </div>
