@@ -95,6 +95,8 @@ const ParishionersTable = (props: Props) => {
     ),
     index: true,
     pagination: true,
+    exportable: true,
+    exportFileName: "Parishioners_List",
     paginationClassName: cn("mt-12.5", props.paginationClassname),
     onRowClick: (item) => {
       router.push("parishioners/" + item.id);

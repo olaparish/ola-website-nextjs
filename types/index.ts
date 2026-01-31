@@ -61,7 +61,10 @@ export type NavElement = {
   href: string;
 };
 
-export type NavElementWithPems = NavElement & { permission?: string };
+export type NavElementWithPems = NavElement & { 
+  permission?: string;
+  roles?: string[];
+};
 
 export type MARITAL_STATUS =
   | "SINGLE"

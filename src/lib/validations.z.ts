@@ -6,6 +6,7 @@ export const MaritalStatusSchema = z.enum([
   "DIVORCED",
   "SEPARATED",
   "WIDOWED",
+  "RELIGIOUS",
 ]);
 
 export type MaritalStatus = z.infer<typeof MaritalStatusSchema>;

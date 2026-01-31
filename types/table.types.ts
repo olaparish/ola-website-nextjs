@@ -1,4 +1,4 @@
-import { PaginateResult } from "./inputs";
+import { PaginateResult } from "./parishioner";
 
 export type ColumnDef<T> = {
   key: keyof T | string;
@@ -21,5 +21,7 @@ export interface CustomTableProps<T> {
   footer?: React.ReactNode;
   fetchData: (pageNumber?: number) => Promise<PaginateResult<T>>;
   actions?: (items: T) => React.ReactNode;
+  exportable?: boolean;
+  exportFileName?: string;
   onRowClick?: (item: T) => void;
 }

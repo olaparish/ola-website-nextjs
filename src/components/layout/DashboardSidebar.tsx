@@ -16,8 +16,11 @@ import {
   MapPin,
   CreditCard,
   Settings,
+  Home,
+  Briefcase,
+  Church,
+  FileText,
 } from "lucide-react";
-import { NavElementWithPems } from "../../../types";
 import { subPages } from "@/app/(member-platform)/dashboard/data";
 import { ValidateRights } from "@/utils/validatePermissions";
 import { useSession } from "next-auth/react";
@@ -34,16 +37,35 @@ const iconMap: Record<string, any> = {
   Groups: Users2,
   Outstations: MapPin,
   Payments: CreditCard,
+  "My Marriage": Heart,
+  "My Home": Home,
+  "My Work": Briefcase,
+  "My Parish": Church,
+  "My Family": Users,
+  "Additional Info": FileText,
+  "My Finance": CreditCard,
 };
 
 const DashboardSidebar = () => {
   const pathname = usePathname();
   const { data: session } = useSession();
   const userPermissions = session?.user?.permissions || [];
+  const userRole = session?.user?.role;
 
-  const filteredPages = subPages.filter((page) =>
-    ValidateRights([page.permission as string], userPermissions)
-  );
+  const filteredPages = subPages.filter((page) => {
+    // Check permissions
+    const hasPermission = page.permission ? ValidateRights([page.permission as string], userPermissions) : true;
+    
+    // Check roles if specified
+    const hasRole = page.roles ? page.roles.includes(userRole as string) : true;
+
+    // Special case: if it has permissions but NO roles specified, it's a staff page.
+    // If it has ROLES but NO permission specified, it's a role-only page.
+    // If it has BOTH, both must pass.
+    // If it has NEITHER, it shows for everyone (like Dashboard).
+    
+    return hasPermission && hasRole;
+  });
 
   const isActive = (href: string) => {
     if (href === "/dashboard") return pathname === "/dashboard";
@@ -99,7 +121,7 @@ const DashboardSidebar = () => {
             <Settings className={cn("h-5 w-5", isActive("/dashboard/settings") ? "text-white" : "text-gray-500")} />
             Settings
           </Link>
-          <SignoutBtn className="px-3 py-2 text-sm font-medium transition-colors text-gray-600 hover:bg-gray-100 hover:text-gray-900 rounded-lg w-full flex items-center gap-3" />
+          <SignoutBtn className="px-3 py-2 text-sm font-medium transition-colors text-gray-600 hover:bg-gray-100 hover:text-gray-900 rounded-lg w-full flex items-center gap-3 font-medium" />
         </div>
       </div>
     </aside>

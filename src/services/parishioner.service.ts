@@ -69,9 +69,10 @@ export const parishionerService = {
   async getFinancialReport(
     userId: string,
     type: "receipts" | "expenditures" = "receipts",
+    page = 1,
   ): Promise<FinancialReport> {
     return api
-      .get<FinancialReport>(`/finance/users/${userId}?type=${type}`)
+      .get<FinancialReport>(`/finance/users/${userId}?type=${type}&page=${page}`)
       .then((res) => res.data);
   },
 };

@@ -20,9 +20,15 @@ import {
 import { toast } from "sonner";
 import { ChevronLeft, ChevronRight, Search, Filter } from "lucide-react";
 import { Input } from "../ui/input";
+import { ExportButton } from "../common/ExportButton";
 
 function CustomTable<T>(props: CustomTableProps<T>) {
   const [pageNumber, setPageNumber] = useState(1);
+
+  // Create simple column mapping for CSV export
+  const exportColumns = props.columns
+    .filter((col) => typeof col.key === "string" && col.label)
+    .map((col) => ({ key: col.key as string, label: col.label! }));
 
   const { data, isLoading, isError, refetch, isSuccess } = useQuery<
     PaginateResult<T>
@@ -92,6 +98,15 @@ function CustomTable<T>(props: CustomTableProps<T>) {
                 <Filter className="w-4 h-4" />
                 Filter
               </Button>
+              {props.exportable && data && (
+                <ExportButton 
+                  data={data.docs}
+                  columns={exportColumns}
+                  fileName={props.exportFileName || props.tableName || "export"}
+                  label="Export"
+                  className="h-10"
+                />
+              )}
               {props.actions && props.actions({} as T)} {/* Placeholder for actions */}
             </div>
           </div>

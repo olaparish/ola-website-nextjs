@@ -79,6 +79,41 @@ export const subPages: NavElementWithPems[] = [
     href: "/dashboard/payments",
     permission: "get:payment",
   },
+  {
+    name: "My Marriage",
+    href: "/dashboard/my-marriage",
+    roles: ["PARISHIONER"],
+  },
+  {
+    name: "My Home",
+    href: "/dashboard/my-home",
+    roles: ["PARISHIONER"],
+  },
+  {
+    name: "My Work",
+    href: "/dashboard/my-work",
+    roles: ["PARISHIONER"],
+  },
+  {
+    name: "My Parish",
+    href: "/dashboard/my-parish",
+    roles: ["PARISHIONER"],
+  },
+  {
+    name: "My Family",
+    href: "/dashboard/my-family",
+    roles: ["PARISHIONER"],
+  },
+  {
+    name: "Additional Info",
+    href: "/dashboard/additional-info",
+    roles: ["PARISHIONER"],
+  },
+  {
+    name: "My Finance",
+    href: "/dashboard/my-finance",
+    roles: ["PARISHIONER"],
+  },
 ];
 
 export const rangeOptions = [

@@ -10,7 +10,7 @@ export interface FileUploadResponse {
 }
 
 
-interface Paginate {
+export interface PaginationControlsType {
   totalDocs: number;
   limit: number;
   totalPages: number;
@@ -20,10 +20,5 @@ interface Paginate {
   hasNextPage: boolean;
   prevPage: number | null;
   nextPage: number | null;
-}
-export interface PaginationControlsType extends Paginate {
   changePage: (pageNumber: number) => void;
-}
-export interface PaginateResult<T> extends Paginate {
-  docs: T[];
 }
