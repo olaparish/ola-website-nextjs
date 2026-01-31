@@ -8,10 +8,11 @@ import {
 
 export const userService = {
   async update(
-    data: Partial<Omit<User, UpdateUserOmmissions>>
+    userId: string,
+    data: Partial<Omit<User, UpdateUserOmmissions>>,
   ): Promise<GetUserDetails<Parishioner>> {
     return api
-      .patch<{ data: GetUserDetails<Parishioner> }>("user", data)
+      .put<{ data: GetUserDetails<Parishioner> }>(`users/${userId}`, data)
       .then((res) => res.data.data);
   },
 };

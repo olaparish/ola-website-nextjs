@@ -67,7 +67,7 @@ const Page = () => {
         </div>
         <div className="w-full h-auto">
           <img
-            src={data?.user.avatar}
+            src={data?.parishPriest.picture || data?.user.avatar}
             alt="ola parish priest"
             className="max-h-225 object-cover"
           />

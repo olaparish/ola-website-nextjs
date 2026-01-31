@@ -10,13 +10,14 @@ import Image from "next/image";
 
 const Page = () => {
   const { data, isLoading, isError } = useQuery<PriestUser[]>({
-    queryKey: ["parish-priest"],
+    queryKey: ["priests", "current"],
     queryFn: async () => {
       const priests = await priestService.getCurrentPriests();
       if (!priests) {
         toast.error("Priests not found");
       }
       toast.success("Priests Fetched");
+      console.log("Priest: ", priests);
       return priests;
     },
     refetchOnWindowFocus: false,

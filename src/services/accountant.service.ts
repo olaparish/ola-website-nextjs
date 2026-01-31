@@ -30,4 +30,13 @@ export const accountantService = {
       .post<{ data: SuccessResponse }>("/accountants", data)
       .then((res) => res.data.data);
   },
+
+  async updateAccountant(
+    id: string,
+    data: Partial<Omit<import("../../types").Accountant, "id" | "createdAt" | "updatedAt">>
+  ): Promise<import("../../types").Accountant> {
+    return api
+      .patch<{ data: import("../../types").Accountant }>(`/accountants/${id}`, data)
+      .then((res) => res.data.data);
+  },
 };

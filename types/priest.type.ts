@@ -11,8 +11,8 @@ type BasePriest = {
   designation: string;
   arrivalDate: Date;
   departureDate?: null;
-  parish?: null;
-  diocese?: null;
+  parish?: string | null;
+  diocese?: string | null;
   deletedAt?: null;
   createdAt: Date;
   updatedAt: Date;
