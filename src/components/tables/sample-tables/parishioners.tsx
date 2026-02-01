@@ -26,8 +26,9 @@ const ParishionersTable = (props: Props) => {
   else {
     fetchData = async (
       page: number | undefined,
+      search?: string,
     ): Promise<PaginateResult<ParishionerUser>> => {
-      return await parishionerService.getAll(page);
+      return await parishionerService.getAll(page, search);
     };
   }
 
@@ -96,6 +97,7 @@ const ParishionersTable = (props: Props) => {
     index: true,
     pagination: true,
     exportable: true,
+    showSearch: true,
     exportFileName: "Parishioners_List",
     paginationClassName: cn("mt-12.5", props.paginationClassname),
     onRowClick: (item) => {

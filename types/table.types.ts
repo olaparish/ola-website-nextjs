@@ -19,9 +19,10 @@ export interface CustomTableProps<T> {
   paginationClassName?: string;
   pagination?: boolean;
   footer?: React.ReactNode;
-  fetchData: (pageNumber?: number) => Promise<PaginateResult<T>>;
+  fetchData: (page?: number, search?: string) => Promise<PaginateResult<T>>;
   actions?: (items: T) => React.ReactNode;
+  onRowClick?: (item: T) => void;
+  showSearch?: boolean;
   exportable?: boolean;
   exportFileName?: string;
-  onRowClick?: (item: T) => void;
 }

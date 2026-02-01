@@ -8,11 +8,12 @@ import {
 } from "../../types";
 
 export const catechistService = {
-  async getAll(page = 1, limit = 20): Promise<PaginateResult<CatechistUser>> {
+  async getAll(page = 1, search?: string, limit = 20): Promise<PaginateResult<CatechistUser>> {
     const url = new URL(BASE_URL + "/catechists");
 
     url.searchParams.append("limit", limit.toString());
     url.searchParams.append("page", page.toString());
+    if (search) url.searchParams.append("search", search);
 
     return api.get<PaginateResult<Catechist>>(url.toString()).then((res) => {
       return res.data as unknown as PaginateResult<CatechistUser>;

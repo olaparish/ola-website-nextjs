@@ -2,11 +2,12 @@ import api, { BASE_URL } from "@/utils/axios";
 import { PaginateResult, Baptism, ParishionerWitUser } from "../../types";
 
 export const baptismService = {
-  async getAll(page = 1, limit = 20): Promise<PaginateResult<Baptism>> {
+  async getAll(page = 1, search?: string, limit = 20): Promise<PaginateResult<Baptism>> {
     const url = new URL(BASE_URL + "/baptisms");
 
     url.searchParams.append("limit", limit.toString());
     url.searchParams.append("page", page.toString());
+    if (search) url.searchParams.append("search", search);
 
     return api.get<PaginateResult<Baptism>>(url.toString()).then((res) => {
       return res.data as unknown as PaginateResult<Baptism>;
@@ -15,12 +16,14 @@ export const baptismService = {
   async getBaptismData(
     baptismId: string,
     page = 1,
+    search?: string,
     limit = 20,
   ): Promise<PaginateResult<ParishionerWitUser>> {
     const url = new URL(`${BASE_URL}/baptisms/${baptismId}/parishioners`);
 
     url.searchParams.append("limit", limit.toString());
     url.searchParams.append("page", page.toString());
+    if (search) url.searchParams.append("search", search);
 
     return api
       .get<PaginateResult<ParishionerWitUser>>(url.toString())
