@@ -4,7 +4,7 @@ import {
   ColumnDef,
   CustomTableProps,
   PaginateResult,
-} from "../../../../types";
+} from "@/../types";
 import TableText from "../ui/normal-text";
 import { catechistService } from "@/services/catechist.service";
 import CustomTable from "../smart-table";
@@ -90,16 +90,18 @@ const CatechistTable = (props: Props) => {
     tableWrapperClassName: "bg-primary-100/30 w-auto",
     index: true,
     pagination: true,
+    showSearch: true,
+    exportable: true,
+    exportFileName: "Catechist_Records",
     paginationClassName: "mt-12.5",
     onRowClick: (item) => {
       router.push("/dashboard/catechists/" + item.id);
     },
     fetchData: async (
       pageNumber: number = 1,
+      search?: string,
     ): Promise<PaginateResult<CatechistUser>> => {
-      const api = catechistService.getAll;
-
-      const members: PaginateResult<CatechistUser> = await api(pageNumber);
+      const members: PaginateResult<CatechistUser> = await catechistService.getAll(pageNumber, search);
       return members;
     },
   };

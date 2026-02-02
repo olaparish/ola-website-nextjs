@@ -1,5 +1,6 @@
 /* eslint-disable @next/next/no-img-element */
 import SetPasswordForm from "@/components/forms/set-password-form";
+import { Suspense } from "react";
 
 const Page = () => {
   return (
@@ -18,7 +19,9 @@ const Page = () => {
           <br /> this account as a <br />
           <span className="font-bold text-secondary-900">Parish Leader</span>.
         </p> */}
-        <SetPasswordForm />
+        <Suspense fallback={<div>Loading...</div>}>
+          <SetPasswordForm />
+        </Suspense>
         <div className="mt-15 text-sm text-center">
           <p>Do you have issues</p>
           <p>

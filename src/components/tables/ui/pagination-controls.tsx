@@ -1,5 +1,5 @@
 import React from "react";
-import { PaginationControlsType } from "../../../../types";
+import { PaginationControlsType } from "@/../types";
 import { IconChevronLeft } from "@/components/icons/chevron-left";
 import { IconChevronRight } from "@/components/icons/chevron-right";
 

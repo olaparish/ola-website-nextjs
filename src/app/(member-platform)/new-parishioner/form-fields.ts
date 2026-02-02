@@ -1,6 +1,7 @@
 import { z } from "zod";
-import { FormFieldsType } from "../../../../types";
+// import { FormFieldsType } from "@/../types";
 import { getDateMaxValue } from "@/utils/time";
+import { FormFieldsType } from "@/../types";
 
 export const MARITAL_STATUS_OBJ = [
   { name: "Single", value: "SINGLE" },
@@ -8,6 +9,11 @@ export const MARITAL_STATUS_OBJ = [
   { name: "Separated", value: "SEPARATED" },
   { name: "Widowed", value: "WIDOWED" },
   { name: "Religious (Priest / Sister / Brother)", value: "RELIGIOUS" },
+];
+
+export const GENDER_OBJ = [
+  { name: "Male", value: "MALE" },
+  { name: "Female", value: "FEMALE" },
 ];
 
 
@@ -71,6 +77,13 @@ export const ProfileFields: FormFieldsType = [
     label: "Marital Status",
     required: true,
     options: MARITAL_STATUS_OBJ,
+  },
+  {
+    type: "select",
+    name: "gender",
+    label: "Gender",
+    required: true,
+    options: GENDER_OBJ,
   },
   {
     type: "file",
@@ -191,8 +204,13 @@ export const MemberProfileSchema = z.object({
   otherNames: z.string().optional(),
   dateOfBirth: z.string().min(1, "Date of birth is required"),
   phoneNumber: z.string().min(1, "Phone number is required"),
-  email: z.email("Invalid email address").optional(),
-  maritalStatus: z.enum(MARITAL_STATUS_OBJ.map((status) => status.value)),
+  email: z.string().email("Invalid email address").optional(),
+  maritalStatus: z.enum(
+    MARITAL_STATUS_OBJ.map((status) => status.value) as [string, ...string[]],
+  ),
+  gender: z.enum(
+    GENDER_OBJ.map((status) => status.value) as [string, ...string[]],
+  ),
 
   // Home Details
   residentialAddress: z.string().min(1, "Residential address is required"),
@@ -224,6 +242,7 @@ export type MemberFieldNames =
   | "phoneNumber"
   | "email"
   | "maritalStatus"
+  | "gender"
 
   // Home Details
   | "residentialAddress"

@@ -32,16 +32,18 @@ export const parishGroupService = {
 
   async getGroupMembers(
     page = 1,
+    search?: string,
     limit = 20,
   ): Promise<PaginateResult<User<Parishioner>>> {
     const url = new URL(BASE_URL + "/parish-groups/members");
 
     url.searchParams.append("limit", limit.toString());
     url.searchParams.append("page", page.toString());
+    if (search) url.searchParams.append("search", search);
 
     return api.get<GroupMembersResponseType>(url.toString()).then((res) => {
       const result = res.data;
-      const parsed = result.docs.map((res) => {
+      const parsed = result.docs.map((res: any) => {
         return { ...res.user, userData: { ...res, user: undefined } };
       });
       return {
@@ -68,16 +70,18 @@ export const parishGroupService = {
   async getGroupMembersBySlug(
     slug: string,
     page = 1,
+    search?: string,
     limit = 20,
   ): Promise<PaginateResult<User<Parishioner>>> {
     const url = new URL(BASE_URL + `/parish-groups/${slug}/members`);
 
     url.searchParams.append("limit", limit.toString());
     url.searchParams.append("page", page.toString());
+    if (search) url.searchParams.append("search", search);
 
     return api.get<GroupMembersResponseType>(url.toString()).then((res) => {
       const result = res.data;
-      const parsed = result.docs.map((res) => {
+      const parsed = result.docs.map((res: any) => {
         return { ...res.user, userData: { ...res, user: undefined } };
       });
       return {

@@ -1,6 +1,6 @@
 "use client";
 import { MemberNavigation } from "@/components/layout/navigations/Navigation";
-import { GetParishPriestType, NavElement } from "../../../../types";
+import { GetParishPriestType, NavElement } from "@/../types";
 import SignoutBtn from "@/components/common/signout-btn";
 import Image from "next/image";
 import Link from "next/link";

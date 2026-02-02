@@ -130,6 +130,59 @@ const SacramentsView = ({ data }: { data: DetailedParishionerUser }) => {
   );
 };
 
+const FamilyView = ({ data }: { data: DetailedParishionerUser }) => {
+  const p = data.userData;
+
+  const renderParent = (title: string, parentData: {
+    firstName?: string;
+    lastName?: string;
+    otherNames?: string;
+    phoneNumber?: string;
+    address?: string;
+    isAlive?: boolean;
+    isCatholic?: boolean;
+    isParishioner?: boolean;
+  }) => (
+    <div className="space-y-2">
+      <h3 className="font-bold text-gray-700">{title}</h3>
+      <p><span className="font-semibold">Name:</span> {parentData.firstName} {parentData.otherNames} {parentData.lastName}</p>
+      <p><span className="font-semibold">Phone:</span> {parentData.phoneNumber || 'N/A'}</p>
+      <p><span className="font-semibold">Address:</span> {parentData.address || 'N/A'}</p>
+      <p><span className="font-semibold">Status:</span> {parentData.isAlive ? "Alive" : "Deceased"} • {parentData.isCatholic ? "Catholic" : "Non-Catholic"}</p>
+      {parentData.isParishioner && (
+        <span className="inline-flex items-center bg-green-50 px-2 py-0.5 rounded-full border border-green-200 font-medium text-green-700 text-xs">
+          Parishioner
+        </span>
+      )}
+    </div>
+  );
+
+  return (
+    <div className="gap-8 grid grid-cols-1 md:grid-cols-2">
+      {renderParent("Father's Details", {
+        firstName: p.fatherFirstName,
+        lastName: p.fatherLastName,
+        otherNames: p.fatherOtherNames,
+        phoneNumber: p.fatherPhoneNumber,
+        address: p.fatherResidentialAddress,
+        isAlive: p.fatherIsAlive,
+        isCatholic: p.fatherIsCatholic,
+        isParishioner: p.fatherIsParishioner
+      })}
+      {renderParent("Mother's Details", {
+        firstName: p.motherFirstName,
+        lastName: p.motherLastName,
+        otherNames: p.motherOtherNames,
+        phoneNumber: p.motherPhoneNumber,
+        address: p.motherResidentialAddress,
+        isAlive: p.motherIsAlive,
+        isCatholic: p.motherIsCatholic,
+        isParishioner: p.motherIsParishioner
+      })}
+    </div>
+  );
+};
+
 const GroupsView = ({ data }: { data: DetailedParishionerUser }) => {
   const groups = data.userData.groups || [];
   if (groups.length === 0)
@@ -344,6 +397,10 @@ export default function ParishionerDetailsPage() {
 
       <Section title="Sacramental Details" defaultOpen={true}>
         <SacramentsView data={data} />
+      </Section>
+
+      <Section title="Family Information">
+        <FamilyView data={data} />
       </Section>
 
       <Section title="Groups & Societies">

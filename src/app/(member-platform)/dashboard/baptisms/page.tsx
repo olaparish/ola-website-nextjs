@@ -14,9 +14,6 @@ const Page = () => {
         title="Baptisms"
         subtitle="View and manage baptismal records"
         icon={Droplets}
-        searchValue={search}
-        onSearchChange={setSearch}
-        searchPlaceholder="Search baptism records..."
       />
 
       <BaptismsTable

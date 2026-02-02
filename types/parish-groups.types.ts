@@ -1,4 +1,4 @@
-import { PaginateResult } from "./inputs";
+import { PaginateResult } from "./parishioner";
 import { Parishioner } from "./parishioner";
 import { BaseUser, UserDataType } from "./users";
 

@@ -5,7 +5,7 @@ import {
   CustomTableProps,
   PaginateResult,
   Marriage,
-} from "../../../../types";
+} from "@/../types";
 import TableText from "../ui/normal-text";
 import CustomTable from "../smart-table";
 import { cn } from "@/lib/utils";
@@ -86,14 +86,18 @@ const MarriageTable = (props: Props) => {
     ),
     index: true,
     pagination: true,
+    showSearch: true,
+    exportable: true,
+    exportFileName: "Marriage_Records",
     paginationClassName: cn("mt-12.5", props.paginationClassname),
     onRowClick: (item) => {
       router.push("marriages/" + item.id);
     },
     fetchData: async (
       page: number | undefined,
+      search?: string,
     ): Promise<PaginateResult<Marriage>> => {
-      const res = await marriageService.getAll(page);
+      const res = await marriageService.getAll(page, search);
       return res;
     },
   };

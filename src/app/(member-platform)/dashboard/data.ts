@@ -1,4 +1,4 @@
-import { NavElementWithPems } from "../../../../types";
+import { NavElementWithPems } from "@/../types";
 
 export const newOptions: NavElementWithPems[] = [
   {

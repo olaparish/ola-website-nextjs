@@ -16,9 +16,6 @@ const Page = () => {
         title="Catechists"
         subtitle="Manage and view all parish catechists"
         icon={GraduationCap}
-        searchValue={search}
-        onSearchChange={setSearch}
-        searchPlaceholder="Search catechists..."
         actionLabel="Add Catechist"
         onAction={() => router.push("/new/forms/catechist")}
         actionIcon={UserPlus}

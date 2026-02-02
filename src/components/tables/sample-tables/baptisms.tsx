@@ -5,7 +5,7 @@ import {
   ColumnDef,
   CustomTableProps,
   PaginateResult,
-} from "../../../../types";
+} from "@/../types";
 import TableText from "../ui/normal-text";
 import CustomTable from "../smart-table";
 import { cn } from "@/lib/utils";
@@ -75,14 +75,18 @@ const BaptismsTable = (props: Props) => {
     ),
     index: true,
     pagination: true,
+    showSearch: true,
+    exportable: true,
+    exportFileName: "Baptism_Records",
     paginationClassName: cn("mt-12.5", props.paginationClassname),
     onRowClick: (item) => {
       router.push("baptisms/" + item.id);
     },
     fetchData: async (
       page: number | undefined,
+      search?: string,
     ): Promise<PaginateResult<Baptism>> => {
-      return await baptismService.getAll(page);
+      return await baptismService.getAll(page, search);
     },
   };
 

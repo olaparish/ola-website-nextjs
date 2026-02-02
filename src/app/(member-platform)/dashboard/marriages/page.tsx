@@ -14,9 +14,6 @@ const Page = () => {
         title="Marriages"
         subtitle="View and manage matrimonial records"
         icon={Heart}
-        searchValue={search}
-        onSearchChange={setSearch}
-        searchPlaceholder="Search marriage records..."
       />
 
       <MarriageTable

@@ -4,7 +4,7 @@ import {
   ColumnDef,
   CustomTableProps,
   PaginateResult,
-} from "../../../../types";
+} from "@/../types";
 import TableText from "../ui/normal-text";
 import CustomTable from "../smart-table";
 import { cn } from "@/lib/utils";
@@ -69,19 +69,21 @@ const AccountantTable = (props: Props) => {
   ];
 
   const tableProps: CustomTableProps<AccountantUser> = {
-    tableName: "List of Catechists",
+    tableName: "List of Accountants",
     queryKey: ["accountants"],
     columns: tableColumns,
     tableWrapperClassName: "h-auto bg-primary-100/30 no-scrollbar-y w-auto",
     index: true,
     pagination: true,
+    showSearch: true,
+    exportable: true,
+    exportFileName: "Accountant_Records",
     paginationClassName: "mt-12.5",
     fetchData: async (
       pageNumber: number = 1,
+      search?: string,
     ): Promise<PaginateResult<AccountantUser>> => {
-      const api = accountantService.getAll;
-
-      const members: PaginateResult<AccountantUser> = await api(pageNumber);
+      const members: PaginateResult<AccountantUser> = await accountantService.getAll(pageNumber, search);
       return members;
     },
     onRowClick: (item) => {

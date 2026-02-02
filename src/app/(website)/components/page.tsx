@@ -5,7 +5,7 @@ import MultiSelect from "@/components/ui/MultiSelect";
 import Select from "@/components/ui/Select";
 import TagInput from "@/components/ui/TagInput";
 import React, { useState } from "react";
-import { NavElement, SelectOption } from "../../../../types";
+import { NavElement, SelectOption } from "@/../types";
 import NavSelect from "@/components/ui/NavSelect";
 import {
   MemberNavigation,
