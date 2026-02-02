@@ -1,7 +1,7 @@
 import { cn } from "@/lib/utils";
 import React from "react";
 
-type Props = { text: string; className: string };
+type Props = { text: string; className?: string };
 const TableText = ({ text, className }: Props) => {
   return (
     <span

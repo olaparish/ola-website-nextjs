@@ -1,5 +1,4 @@
 "use client";
-import React from "react";
 import { SubmitHandler, useForm } from "react-hook-form";
 import { Input } from "../ui/input";
 import { Label } from "../ui/label";
@@ -82,8 +81,8 @@ const SigninForm = ({ type }: Props) => {
           }
           setAccessToken(res.data.tokenData.access.token);
           router.push(callbackUrl);
+          toast.success("Sign in success");
         } catch (error) {
-          console.log("Sign in error: ", error);
           signOut();
           throw new Error("User dashboard not implemented");
         }

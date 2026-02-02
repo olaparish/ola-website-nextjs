@@ -1,3 +1,4 @@
+import { cn } from "@/lib/utils";
 import React, { useEffect, useState, type ReactNode } from "react";
 import { createPortal } from "react-dom";
 
@@ -23,12 +24,18 @@ const Modal: React.FC<ModalProps> = ({
   }, []);
 
   if (!isOpen || !isClient || !portalRoot) return <></>;
-  
+
   return createPortal(
-    <div className={"fixed inset-0 z-[9999] bg-primary-900 w-full h-full " + (className || "")} onClick={onClose}>
+    <div
+      className={cn(
+        "z-[9999] fixed inset-0 bg-primary-900 w-full h-full",
+        className,
+      )}
+      onClick={onClose}
+    >
       {children}
     </div>,
-    portalRoot
+    portalRoot,
   );
 };
 

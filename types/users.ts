@@ -1,5 +1,6 @@
 import { ParishGroup } from "./parish-groups.types";
 import { Parishioner } from "./parishioner";
+import { GetParishPriestType } from "./priest.type";
 
 export const Roles = {
   PARISHIONER: "PARISHIONER",
@@ -58,9 +59,13 @@ export type UserTypes =
   | "SOCIETY"
   | "OUTSTATION";
 
-export type UserDataType = Parishioner | ParishGroup | null;
+export type UserDataType = Parishioner | ParishGroup | GetParishPriestType | null;
 
-export type ParishionerUser = User<Parishioner>;
+export interface ParishionerUser extends User<Parishioner> {
+  societies: ParishGroup[];
+  community: ParishGroup[];
+  station: ParishGroup[];
+};
 export type ParishGroupUser = User<ParishGroup>;
 
 export type AppUser = ParishionerUser | ParishGroupUser;
@@ -78,7 +83,5 @@ export type SessionUser = {
   role: string;
   permissions: string[];
 };
-
-
 
 export type UpdateUserOmmissions = "id" | "role";

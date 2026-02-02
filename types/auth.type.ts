@@ -6,9 +6,13 @@ export type Credentials = {
   password: string;
 };
 
-export type UserLoginTypes = "leader" | "parishioner";
-// c0985371;
+export type SetPasswordCredentials = {
+  password: string;
+  confirmPassword: string;
+  token: string;
+};
 
+export type UserLoginTypes = "leader" | "parishioner";
 
 export interface TokenObj {
   token: string;
@@ -24,3 +28,5 @@ export type SignInResponse<TUser = any> =
       permissions: string[];
     }
   | { requires2FA: true; token: string };
+
+export type SetPasswordResponse = { status: boolean; message: string };

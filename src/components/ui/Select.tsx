@@ -26,6 +26,7 @@ const Select = ({ id, name, className, options, ...props }: Props) => {
         ref={props.ref} // 👈 very important for RHF
         onChange={props.onChange} // 👈 RHF's change handler
         onBlur={props.onBlur}
+        required={props.required}
         className={cn(
           "flex rounded-10 w-full min-w-0",
           "border",
@@ -39,7 +40,7 @@ const Select = ({ id, name, className, options, ...props }: Props) => {
           "disabled:pointer-events-none disabled:cursor-not-allowed disabled:opacity-50",
           "focus-visible:border-primary-900 focus:border",
           "aria-invalid:ring-red-100 dark:aria-invalid:ring-red-200 aria-invalid:border-red-500 aria-invalid:ring-2",
-          className
+          className,
         )}
         defaultValue="" // 👈 This keeps RHF happy for uncontrolled input
       >

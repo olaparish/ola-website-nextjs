@@ -1,6 +1,5 @@
 /* eslint-disable @next/next/no-img-element */
 import SigninForm from "@/components/forms/signin-form";
-import React from "react";
 
 const Page = () => {
   return (
