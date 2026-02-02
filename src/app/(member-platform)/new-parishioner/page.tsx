@@ -15,7 +15,7 @@ import {
   NewParishionerFormData,
   ParishGroupResponse,
   SelectOption,
-} from "../../../../types";
+} from "@/../types";
 import { Label } from "@/components/ui/label";
 import Select from "@/components/ui/Select";
 import { Button } from "@/components/ui/button";

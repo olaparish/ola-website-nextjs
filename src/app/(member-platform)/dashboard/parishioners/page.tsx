@@ -16,9 +16,6 @@ const Page = () => {
         title="Parishioners"
         subtitle="Manage and view all registered parishioners"
         icon={Users}
-        searchValue={search}
-        onSearchChange={setSearch}
-        searchPlaceholder="Search parishioners..."
         actionLabel="Add Parishioner"
         onAction={() => router.push("/dashboard/parishioners/new")}
         actionIcon={UserPlus}

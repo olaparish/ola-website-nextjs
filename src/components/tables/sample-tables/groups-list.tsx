@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { ParishGroup } from "../../../../types";
+import { ParishGroup } from "@/../types";
 import TableText from "../ui/normal-text";
 import { useRouter } from "next/navigation";
 import { Search, Filter } from "lucide-react";

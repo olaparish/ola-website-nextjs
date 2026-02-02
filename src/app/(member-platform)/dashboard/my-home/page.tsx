@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 "use client";
 
 import { useState, useEffect } from "react";
@@ -66,7 +67,9 @@ export default function MyHomePage() {
 
   const renderField = (label: string, value: string | undefined, Icon: any) => (
     <div className="space-y-1.5">
-      <p className="text-xs font-medium text-gray-400 uppercase tracking-wider">{label}</p>
+      <p className="font-medium text-gray-400 text-xs uppercase tracking-wider">
+        {label}
+      </p>
       <div className="flex items-center gap-2 text-gray-900">
         {Icon && <Icon className="w-4 h-4 text-gray-400" />}
         <span className="font-semibold">{value || "Not provided"}</span>
@@ -75,7 +78,7 @@ export default function MyHomePage() {
   );
 
   return (
-    <div className="max-w-4xl mx-auto py-8">
+    <div className="mx-auto py-8 max-w-4xl">
       <ParishionerDetailCard
         title="Home & Address"
         description="Your current residential and digital address information."
@@ -87,32 +90,36 @@ export default function MyHomePage() {
       >
         <form onSubmit={handleSubmit(onSubmit)} className="space-y-8">
           {isEditing ? (
-            <div className="space-y-8 animate-in fade-in slide-in-from-top-4 duration-500">
-              <div className="grid grid-cols-1 gap-6">
+            <div className="space-y-8 slide-in-from-top-4 animate-in duration-500 fade-in">
+              <div className="gap-6 grid grid-cols-1">
                 <div className="space-y-2">
-                  <Label htmlFor="residentialAddress">Residential Address</Label>
+                  <Label htmlFor="residentialAddress">
+                    Residential Address
+                  </Label>
                   <div className="relative">
-                    <MapPin className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-gray-400" />
-                    <Input 
+                    <MapPin className="top-1/2 left-3 absolute w-4 h-4 text-gray-400 -translate-y-1/2" />
+                    <Input
                       id="residentialAddress"
-                      {...register("residentialAddress")} 
-                      className="pl-10 rounded-xl border-gray-200"
+                      {...register("residentialAddress")}
+                      className="pl-10 border-gray-200 rounded-xl"
                       placeholder="e.g. House No. 12, West Hills"
                     />
                   </div>
                   {errors.residentialAddress && (
-                    <p className="text-red-500 text-xs">{errors.residentialAddress.message}</p>
+                    <p className="text-red-500 text-xs">
+                      {errors.residentialAddress.message}
+                    </p>
                   )}
                 </div>
 
                 <div className="space-y-2">
                   <Label htmlFor="digitalAddress">Digital Address (GPS)</Label>
                   <div className="relative">
-                    <Navigation className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-gray-400" />
-                    <Input 
+                    <Navigation className="top-1/2 left-3 absolute w-4 h-4 text-gray-400 -translate-y-1/2" />
+                    <Input
                       id="digitalAddress"
-                      {...register("digitalAddress")} 
-                      className="pl-10 rounded-xl border-gray-200"
+                      {...register("digitalAddress")}
+                      className="pl-10 border-gray-200 rounded-xl"
                       placeholder="e.g. GA-123-4567"
                     />
                   </div>
@@ -120,10 +127,10 @@ export default function MyHomePage() {
               </div>
 
               <div className="flex justify-end pt-6">
-                <Button 
-                  type="submit" 
+                <Button
+                  type="submit"
                   disabled={updateMutation.isPending}
-                  className="bg-primary-900 hover:bg-primary-800 rounded-xl px-8 py-6 h-auto font-bold text-lg shadow-xl shadow-primary-900/20"
+                  className="bg-primary-900 hover:bg-primary-800 shadow-primary-900/20 shadow-xl px-8 py-6 rounded-xl h-auto font-bold text-lg"
                 >
                   {updateMutation.isPending ? (
                     <Loader2 className="mr-2 w-5 h-5 animate-spin" />
@@ -135,10 +142,18 @@ export default function MyHomePage() {
               </div>
             </div>
           ) : (
-            <div className="space-y-10 animate-in fade-in duration-500">
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-y-10">
-                {renderField("Residential Address", parishioner?.residentialAddress, MapPin)}
-                {renderField("Digital Address (GPS)", parishioner?.digitalAddress, Navigation)}
+            <div className="space-y-10 animate-in duration-500 fade-in">
+              <div className="gap-y-10 grid grid-cols-1 md:grid-cols-2">
+                {renderField(
+                  "Residential Address",
+                  parishioner?.residentialAddress,
+                  MapPin,
+                )}
+                {renderField(
+                  "Digital Address (GPS)",
+                  parishioner?.digitalAddress,
+                  Navigation,
+                )}
               </div>
             </div>
           )}

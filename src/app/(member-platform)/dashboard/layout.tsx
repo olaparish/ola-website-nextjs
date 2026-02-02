@@ -1,5 +1,5 @@
 "use client";
-import { NavElement } from "../../../../types";
+import { NavElement } from "@/../types";
 import Link from "next/link";
 import { useSession } from "next-auth/react";
 import { useEffect } from "react";

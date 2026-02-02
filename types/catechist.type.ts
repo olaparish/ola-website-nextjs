@@ -30,6 +30,7 @@ export type CreateCatechistDto = {
   otherNames: string;
   email: string;
   phoneNumber: string;
+  gender: 'MALE' | 'FEMALE';
   avatar?: string;
   station: string;
 };

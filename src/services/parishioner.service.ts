@@ -10,6 +10,7 @@ import {
   DetailedParishionerUser,
   FinancialReport,
   Parishioner,
+  UpdateParishDetailsDtoType,
   UpdateParishionerDtoType,
 } from "../../types/parishioner";
 
@@ -59,6 +60,15 @@ export const parishionerService = {
       .then((res) => res.data.data);
   },
 
+  async updateMyParish(
+    id: string,
+    data: UpdateParishDetailsDtoType,
+  ): Promise<GetUserDetails<Parishioner>> {
+    return api
+      .patch<{ data: GetUserDetails<Parishioner> }>(`parishioner/my-parish/${id}`, data)
+      .then((res) => res.data.data);
+  },
+
   async getParishionerDetails(
     id: string,
   ): Promise<DetailedParishionerUser> {
@@ -71,9 +81,11 @@ export const parishionerService = {
     userId: string,
     type: "receipts" | "expenditures" = "receipts",
     page = 1,
+    search?: string,
   ): Promise<FinancialReport> {
+    const url = `/finance/users/${userId}?type=${type}&page=${page}${search ? `&search=${search}` : ""}`;
     return api
-      .get<FinancialReport>(`/finance/users/${userId}?type=${type}&page=${page}`)
+      .get<FinancialReport>(url)
       .then((res) => res.data);
   },
 };

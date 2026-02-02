@@ -4,7 +4,7 @@ import { useQuery } from "@tanstack/react-query";
 import { statsService } from "@/services/stats.service";
 import { parishionerService } from "@/services/parishioner.service";
 import { rangeOptions } from "@/app/(member-platform)/dashboard/data";
-import { RangeOptionId } from "../../../../types";
+import { RangeOptionId } from "@/../types";
 import { useState } from "react";
 import StatCard from "@/components/dashboard/StatCard";
 import { 
@@ -32,7 +32,7 @@ export const StaffDashboardOverview = () => {
 
   const { data: parishioners, isLoading: isParishionersLoading } = useQuery({
     queryKey: ["recent-parishioners"],
-    queryFn: () => parishionerService.getAll(1, 5),
+    queryFn: () => parishionerService.getAll(1, undefined, 5),
   });
 
   return (

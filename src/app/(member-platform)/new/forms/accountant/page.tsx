@@ -10,6 +10,7 @@ import { toast } from "sonner";
 import { CreateAccountantDto } from "../../../../../../types";
 import FormSuccessPage from "../../../../../components/forms/success-page";
 import { accountantService } from "@/services/accountant.service";
+import Select from "@/components/ui/Select";
 
 const Page = () => {
   const { mutate, isPending, isError, isSuccess } = useMutation({
@@ -28,6 +29,7 @@ const Page = () => {
       otherNames: formData.get("otherNames") as string,
       email: formData.get("email") as string,
       phoneNumber: formData.get("phoneNumber") as string,
+      gender: formData.get("gender") as "MALE" | "FEMALE",
     };
 
 
@@ -36,7 +38,7 @@ const Page = () => {
 
   if (isSuccess) {
     toast.success(
-      "Resident Priest created successfully.\nYou will be redirected in 5 seconds",
+      "Accountant created successfully.\nYou will be redirected in 5 seconds",
     );
   }
 
@@ -76,12 +78,22 @@ const Page = () => {
       required: true,
       placeholder: "Akolgo",
     },
+    {
+      name: "gender",
+      type: "select",
+      label: "Gender",
+      required: true,
+      options: [
+        { name: "Male", value: "MALE" },
+        { name: "Female", value: "FEMALE" },
+      ],
+    },
   ];
 
   return (
     <form className="w-full max-w-[720px]" onSubmit={formSubmithandler}>
       {isSuccess && (
-        <FormSuccessPage message="Resident Priest Created Successfully" />
+        <FormSuccessPage message="Accountant Created Successfully" />
       )}
       <p className="font-medium text-secondary-900 sm:text-left text-center">
         Please enter the following information
@@ -93,14 +105,23 @@ const Page = () => {
               <Label className="text-primary-900" htmlFor={field.name}>
                 {field.label}
               </Label>
-              <Input
-                className="w-full"
-                id={field.name}
-                name={field.name}
-                type={field.type}
-                placeholder={field.placeholder}
-                required={field.required}
-              />
+              {field.type === "select" ? (
+                <Select
+                  id={field.name}
+                  name={field.name}
+                  required={field.required}
+                  options={field.options || []}
+                />
+              ) : (
+                <Input
+                  className="w-full"
+                  id={field.name}
+                  name={field.name}
+                  type={field.type}
+                  placeholder={field.placeholder}
+                  required={field.required}
+                />
+              )}
             </div>
           ))}
         </div>
@@ -117,7 +138,7 @@ const Page = () => {
       {isError && (
         <ErrorSpan
           className="block mt-4"
-          message="Failed to create resident priest. Please try again later"
+          message="Failed to create accountant. Please try again later"
         />
       )}
     </form>

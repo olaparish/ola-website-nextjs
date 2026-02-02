@@ -1,5 +1,5 @@
 import { z } from "zod";
-import { FormFieldsType } from "../../../../types";
+import { FormFieldsType } from "@/../types";
 import { getDateMaxValue } from "@/utils/time";
 
 export const MARITAL_STATUS_OBJ = [

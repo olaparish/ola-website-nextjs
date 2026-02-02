@@ -15,19 +15,19 @@ import {
   NewParishionerFormData,
   ParishGroupResponse,
   SelectOption,
-} from "../../../../types";
+} from "@/../types";
 import { Label } from "@/components/ui/label";
 import Select from "@/components/ui/Select";
 import { Button } from "@/components/ui/button";
 import MultiSelect from "@/components/ui/MultiSelect";
 import { ImageInput } from "@/components/ui/ImageInput";
-import { FileInputType } from "../../../../types/inputs";
+import { FileInputType } from "@/../types/inputs";
 import { useMutation, useQuery } from "@tanstack/react-query";
 import { parishionerService } from "@/services/parishioner.service";
 import { configService } from "@/services/config.service";
 import { Spinner } from "@/components/ui/spinner";
 import { toast } from "sonner";
-import { CreateParishionerResponseType } from "../../../../types/parishioner";
+import { CreateParishionerResponseType } from "@/../types/parishioner";
 import { processFile } from "@/utils/fileUtils";
 import { useParishGroupStore } from "@/hooks/useParishGroups";
 import { useRouter } from "next/navigation";

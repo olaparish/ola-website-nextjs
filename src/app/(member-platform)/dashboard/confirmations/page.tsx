@@ -14,9 +14,6 @@ const Page = () => {
         title="Confirmations"
         subtitle="View and manage confirmation records"
         icon={Flame}
-        searchValue={search}
-        onSearchChange={setSearch}
-        searchPlaceholder="Search confirmation records..."
       />
 
       <ConfirmationsTable

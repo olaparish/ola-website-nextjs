@@ -41,6 +41,7 @@ export type BaseUser = {
   email?: string;
   avatar?: string;
   phoneNumber: string;
+  gender?: 'MALE' | 'FEMALE';
   deletedAt?: Date;
   createdAt: Date;
   updatedAt: Date;

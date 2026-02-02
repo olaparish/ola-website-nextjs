@@ -5,7 +5,7 @@ import {
   CustomTableProps,
   PaginateResult,
   ParishionerWitUser,
-} from "../../../../types";
+} from "@/../types";
 import TableText from "../ui/normal-text";
 import CustomTable from "../smart-table";
 import { cn } from "@/lib/utils";

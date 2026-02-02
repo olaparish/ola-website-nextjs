@@ -5,7 +5,7 @@ import { useParishionerStore } from "@/stores/useParishioner";
 import { useQuery } from "@tanstack/react-query";
 import { useSession } from "next-auth/react";
 import { useEffect } from "react";
-import { GetUserDetails, Parishioner } from "../../../../types";
+import { GetUserDetails, Parishioner } from "@/../types";
 import DataFetchSpinner from "@/components/ui/data-fetch-spinner";
 import DataFetchError from "@/components/ui/data-fetch-error";
 

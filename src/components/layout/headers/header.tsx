@@ -6,7 +6,7 @@ import { IconMenu } from "../../icons/icon-menu";
 import Modal from "../../common/modal";
 import Link from "next/link";
 import NavItem from "../../ui/navItem";
-import { DropDownProps, MultiDropDownOption, MultiDropDownProps } from "../../../../types";
+import { DropDownProps, MultiDropDownOption, MultiDropDownProps } from "@/../types";
 import { IconChevronRight } from "../../icons/chevron-right";
 import { communitiesData, outstationsData, societiesData } from "@/data";
 import MobileNavigation from "../MobileNavigation";

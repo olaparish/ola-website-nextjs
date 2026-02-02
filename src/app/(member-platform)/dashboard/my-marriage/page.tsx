@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 "use client";
 
 import { useState, useEffect } from "react";
@@ -51,7 +52,9 @@ export default function MyMarriagePage() {
     if (parishioner) {
       reset({
         maritalStatus: parishioner.maritalStatus as any,
-        spouseIsParishioner: parishioner.spouseIsParishioner === "1" || (parishioner.spouseIsParishioner as any) === true,
+        spouseIsParishioner:
+          parishioner.spouseIsParishioner === "1" ||
+          (parishioner.spouseIsParishioner as any) === true,
         spouseFirstName: parishioner.spouseFirstName || "",
         spouseLastName: parishioner.spouseLastName || "",
         spouseOtherNames: parishioner.spouseOtherNames || "",
@@ -66,7 +69,7 @@ export default function MyMarriagePage() {
       // Map back to string for backend if needed, but usually the service handles DTO
       const submitData = {
         ...data,
-        spouseIsParishioner: data.spouseIsParishioner ? "1" : "0"
+        spouseIsParishioner: data.spouseIsParishioner ? "1" : "0",
       };
       return parishionerService.update(user.id, submitData as any);
     },
@@ -87,7 +90,9 @@ export default function MyMarriagePage() {
 
   const renderField = (label: string, value: string | undefined, Icon: any) => (
     <div className="space-y-1.5">
-      <p className="text-xs font-medium text-gray-400 uppercase tracking-wider">{label}</p>
+      <p className="font-medium text-gray-400 text-xs uppercase tracking-wider">
+        {label}
+      </p>
       <div className="flex items-center gap-2 text-gray-900">
         {Icon && <Icon className="w-4 h-4 text-gray-400" />}
         <span className="font-semibold">{value || "Not provided"}</span>
@@ -96,7 +101,7 @@ export default function MyMarriagePage() {
   );
 
   return (
-    <div className="max-w-4xl mx-auto py-8">
+    <div className="mx-auto py-8 max-w-4xl">
       <ParishionerDetailCard
         title="Marriage & Spouse"
         description="Manage your marital status and spouse information."
@@ -108,62 +113,86 @@ export default function MyMarriagePage() {
       >
         <form onSubmit={handleSubmit(onSubmit)} className="space-y-8">
           {isEditing ? (
-            <div className="space-y-8 animate-in fade-in slide-in-from-top-4 duration-500">
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+            <div className="space-y-8 slide-in-from-top-4 animate-in duration-500 fade-in">
+              <div className="gap-6 grid grid-cols-1 md:grid-cols-2">
                 <div className="space-y-2">
                   <Label htmlFor="maritalStatus">Marital Status</Label>
-                  <Select 
+                  <Select
                     id="maritalStatus"
                     options={MARITAL_STATUS_OBJ}
                     {...register("maritalStatus")}
                   />
                   {errors.maritalStatus && (
-                    <p className="text-red-500 text-xs">{errors.maritalStatus.message}</p>
+                    <p className="text-red-500 text-xs">
+                      {errors.maritalStatus.message}
+                    </p>
                   )}
                 </div>
 
                 <div className="flex items-center space-x-2 pt-8">
-                  <Switch 
-                    id="spouse-is-parishioner" 
+                  <Switch
+                    id="spouse-is-parishioner"
                     checked={spouseIsParishioner}
-                    onCheckedChange={(checked) => setValue("spouseIsParishioner", checked, { shouldDirty: true })}
+                    onCheckedChange={(checked) =>
+                      setValue("spouseIsParishioner", checked, {
+                        shouldDirty: true,
+                      })
+                    }
                   />
-                  <Label htmlFor="spouse-is-parishioner" className="mb-0">Is spouse a parishioner?</Label>
+                  <Label htmlFor="spouse-is-parishioner" className="mb-0">
+                    Is spouse a parishioner?
+                  </Label>
                 </div>
               </div>
 
-              <div className="pt-6 border-t border-gray-100">
-                <h4 className="text-sm font-bold text-gray-900 mb-4 flex items-center gap-2">
-                   <User className="w-4 h-4" /> Spouse Details
+              <div className="pt-6 border-gray-100 border-t">
+                <h4 className="flex items-center gap-2 mb-4 font-bold text-gray-900 text-sm">
+                  <User className="w-4 h-4" /> Spouse Details
                 </h4>
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <div className="gap-6 grid grid-cols-1 md:grid-cols-2">
                   <div className="space-y-2">
                     <Label htmlFor="spouseFirstName">First Name</Label>
-                    <Input id="spouseFirstName" {...register("spouseFirstName")} className="rounded-xl border-gray-200" />
+                    <Input
+                      id="spouseFirstName"
+                      {...register("spouseFirstName")}
+                      className="border-gray-200 rounded-xl"
+                    />
                   </div>
                   <div className="space-y-2">
                     <Label htmlFor="spouseLastName">Last Name</Label>
-                    <Input id="spouseLastName" {...register("spouseLastName")} className="rounded-xl border-gray-200" />
+                    <Input
+                      id="spouseLastName"
+                      {...register("spouseLastName")}
+                      className="border-gray-200 rounded-xl"
+                    />
                   </div>
                   <div className="space-y-2">
                     <Label htmlFor="spouseOtherNames">Other Names</Label>
-                    <Input id="spouseOtherNames" {...register("spouseOtherNames")} className="rounded-xl border-gray-200" />
+                    <Input
+                      id="spouseOtherNames"
+                      {...register("spouseOtherNames")}
+                      className="border-gray-200 rounded-xl"
+                    />
                   </div>
                   <div className="space-y-2">
                     <Label htmlFor="spousePhoneNumber">Phone Number</Label>
                     <div className="relative">
-                       <Phone className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-gray-400" />
-                       <Input id="spousePhoneNumber" {...register("spousePhoneNumber")} className="pl-10 rounded-xl border-gray-200" />
+                      <Phone className="top-1/2 left-3 absolute w-4 h-4 text-gray-400 -translate-y-1/2" />
+                      <Input
+                        id="spousePhoneNumber"
+                        {...register("spousePhoneNumber")}
+                        className="pl-10 border-gray-200 rounded-xl"
+                      />
                     </div>
                   </div>
                 </div>
               </div>
 
               <div className="flex justify-end pt-6">
-                <Button 
-                  type="submit" 
+                <Button
+                  type="submit"
                   disabled={updateMutation.isPending}
-                  className="bg-primary-900 hover:bg-primary-800 rounded-xl px-8 py-6 h-auto font-bold text-lg shadow-xl shadow-primary-900/20"
+                  className="bg-primary-900 hover:bg-primary-800 shadow-primary-900/20 shadow-xl px-8 py-6 rounded-xl h-auto font-bold text-lg"
                 >
                   {updateMutation.isPending ? (
                     <Loader2 className="mr-2 w-5 h-5 animate-spin" />
@@ -175,19 +204,44 @@ export default function MyMarriagePage() {
               </div>
             </div>
           ) : (
-            <div className="space-y-10 animate-in fade-in duration-500">
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-y-10">
-                {renderField("Marital Status", parishioner?.maritalStatus, Heart)}
-                {renderField("Spouse is Parishioner", (parishioner?.spouseIsParishioner === "1" || (parishioner?.spouseIsParishioner as any) === true) ? "YES" : "NO", CheckCircle2)}
+            <div className="space-y-10 animate-in duration-500 fade-in">
+              <div className="gap-y-10 grid grid-cols-1 md:grid-cols-2">
+                {renderField(
+                  "Marital Status",
+                  parishioner?.maritalStatus,
+                  Heart,
+                )}
+                {renderField(
+                  "Spouse is Parishioner",
+                  parishioner?.spouseIsParishioner === "1" ||
+                    (parishioner?.spouseIsParishioner as any) === true
+                    ? "YES"
+                    : "NO",
+                  CheckCircle2,
+                )}
               </div>
 
-              <div className="pt-10 border-t border-gray-50">
-                <h4 className="text-sm font-bold text-gray-400 uppercase tracking-widest mb-6">Spouse Information</h4>
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-y-10">
-                  {renderField("First Name", parishioner?.spouseFirstName, User)}
+              <div className="pt-10 border-gray-50 border-t">
+                <h4 className="mb-6 font-bold text-gray-400 text-sm uppercase tracking-widest">
+                  Spouse Information
+                </h4>
+                <div className="gap-y-10 grid grid-cols-1 md:grid-cols-2">
+                  {renderField(
+                    "First Name",
+                    parishioner?.spouseFirstName,
+                    User,
+                  )}
                   {renderField("Last Name", parishioner?.spouseLastName, User)}
-                  {renderField("Other Names", parishioner?.spouseOtherNames, User)}
-                  {renderField("Phone Number", parishioner?.spousePhoneNumber, Phone)}
+                  {renderField(
+                    "Other Names",
+                    parishioner?.spouseOtherNames,
+                    User,
+                  )}
+                  {renderField(
+                    "Phone Number",
+                    parishioner?.spousePhoneNumber,
+                    Phone,
+                  )}
                 </div>
               </div>
             </div>

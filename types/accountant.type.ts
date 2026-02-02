@@ -25,5 +25,6 @@ export type CreateAccountantDto = {
   otherNames: string;
   email: string;
   phoneNumber: string;
+  gender: 'MALE' | 'FEMALE';
   avatar?: string;
 };

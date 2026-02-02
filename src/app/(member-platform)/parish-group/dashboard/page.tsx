@@ -138,12 +138,16 @@ const Page = () => {
     tableWrapperClassName: "h-220",
     index: true,
     pagination: true,
+    showSearch: true,
+    exportable: true,
+    exportFileName: "Group_Members",
     paginationClassName: "flex justify-end mt-12.5",
     fetchData: async (
-      pageNumber: number = 1
+      pageNumber: number = 1,
+      search?: string,
     ): Promise<PaginateResult<User<Parishioner>>> => {
       const members: PaginateResult<User<Parishioner>> =
-        await parishGroupService.getGroupMembers(pageNumber);
+        await parishGroupService.getGroupMembers(pageNumber, search);
       return members;
     },
   };

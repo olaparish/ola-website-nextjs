@@ -5,7 +5,7 @@ import {
   ColumnDef,
   CustomTableProps,
   PaginateResult,
-} from "../../../../types";
+} from "@/../types";
 import TableText from "../ui/normal-text";
 import CustomTable from "../smart-table";
 import { cn } from "@/lib/utils";
@@ -68,14 +68,18 @@ const ConfrimationsTable = (props: Props) => {
     ),
     index: true,
     pagination: true,
+    showSearch: true,
+    exportable: true,
+    exportFileName: "Confirmation_Records",
     paginationClassName: cn("mt-12.5", props.paginationClassname),
     onRowClick: (item) => {
       router.push("confirmations/" + item.id);
     },
     fetchData: async (
       page: number | undefined,
+      search?: string,
     ): Promise<PaginateResult<Confirmation>> => {
-      return await confirmationService.getAll(page);
+      return await confirmationService.getAll(page, search);
     },
   };
 

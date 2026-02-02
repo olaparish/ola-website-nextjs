@@ -16,9 +16,6 @@ const Page = () => {
         title="Accountants"
         subtitle="Manage and view all parish accountants"
         icon={Landmark}
-        searchValue={search}
-        onSearchChange={setSearch}
-        searchPlaceholder="Search accountants..."
         actionLabel="Add Accountant"
         onAction={() => router.push("/dashboard/accountants/new")}
         actionIcon={UserPlus}

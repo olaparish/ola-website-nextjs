@@ -40,6 +40,9 @@ export interface Parishioner {
   confirmationDate?: string;
 
   // Parents
+  fatherIsAlive?: boolean;
+  fatherIsCatholic?: boolean;
+  fatherParishionerId?: string;
   fatherIsParishioner?: boolean;
   fatherFirstName?: string;
   fatherLastName?: string;
@@ -47,6 +50,9 @@ export interface Parishioner {
   fatherPhoneNumber?: string;
   fatherResidentialAddress?: string;
 
+  motherIsAlive?: boolean;
+  motherIsCatholic?: boolean;
+  motherParishionerId?: string;
   motherIsParishioner?: boolean;
   motherFirstName?: string;
   motherLastName?: string;
@@ -103,12 +109,24 @@ export type UpdateParishionerDtoType = {
   motherPhoneNumber?: string;
   motherResidentialAddress?: string;
   motherIsParishioner?: boolean;
+  motherIsAlive?: boolean;
+  motherIsCatholic?: boolean;
+  motherParishionerId?: string;
   fatherFirstName?: string;
   fatherLastName?: string;
   fatherOtherNames?: string;
   fatherPhoneNumber?: string;
   fatherResidentialAddress?: string;
   fatherIsParishioner?: boolean;
+  fatherIsAlive?: boolean;
+  fatherIsCatholic?: boolean;
+  fatherParishionerId?: string;
+};
+
+export type UpdateParishDetailsDtoType = {
+  communityId?: string;
+  stationId?: string;
+  societies?: string[];
 };
 
 export interface ParishionerWitUser extends Parishioner {
@@ -120,6 +138,8 @@ export interface DetailedParishioner extends Parishioner {
   confirmation?: any;
   marriage?: any;
   groups?: ParishGroup[];
+  fatherParishioner?: DetailedParishionerUser;
+  motherParishioner?: DetailedParishionerUser;
 }
 
 export interface DetailedParishionerUser {
