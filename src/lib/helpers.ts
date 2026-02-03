@@ -24,19 +24,7 @@ export function selectMinimalTokenData(tokenData: any) {
 
 export function getLoginCallback(userType: UserTypes) {
   console.log("Callback for: ", userType);
-  const callbackUrls = {
-    parishioner: "/parishioner/dashboard",
-    groups: "/parish-group/dashboard",
-    catechist: "/catechist/dashboard",
-    accountant: "/accountant/dashboard",
-    chairman: "/parish-council-chairman/dashboard",
-    priest: "/priest/dashboard",
-    parish_priest: "/parish-priest/dashboard",
-  };
-
-  if (["COMMUNITY", "SOCIETY", "OUTSTATION"].includes(userType))
-    return callbackUrls.groups;
-  else return callbackUrls[userType.toLowerCase() as keyof typeof callbackUrls];
+  return "/dashboard";
 }
 
 // | "PARISHIONER"

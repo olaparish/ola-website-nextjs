@@ -75,16 +75,22 @@ export const { handlers, signIn, signOut, auth } = NextAuth({
     },
 
     async authorized({ request, auth }) {
-      console.log("I am here");
       const isLoggedIn = !!auth?.user;
 
       const pathname = request.nextUrl.pathname;
-      console.log("pathname: ", pathname);
       const authName = pathname.split("/")[1];
       const objectState = UserStates[authName as keyof typeof UserStates];
 
+      if (authName === "dashboard") {
+        if (!isLoggedIn) {
+          return Response.redirect(
+            new URL("/auth/parishioner/login", request.url)
+          );
+        }
+        return true;
+      }
+
       if (objectState && !isLoggedIn) {
-        console.log("Is not logged in");
         return Response.redirect(
           new URL(`/auth/${objectState.loginPathName}/login`, request.url)
         );
