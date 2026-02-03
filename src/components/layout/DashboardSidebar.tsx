@@ -44,6 +44,7 @@ const iconMap: Record<string, any> = {
   "My Family": Users,
   "Additional Info": FileText,
   "My Finance": CreditCard,
+  Finance: Calculator,
 };
 
 const DashboardSidebar = () => {

@@ -80,6 +80,11 @@ export const subPages: NavElementWithPems[] = [
     permission: "get:payment",
   },
   {
+    name: "Finance",
+    href: "/dashboard/finance",
+    permission: "view:finance",
+  },
+  {
     name: "My Marriage",
     href: "/dashboard/my-marriage",
     roles: ["PARISHIONER"],
