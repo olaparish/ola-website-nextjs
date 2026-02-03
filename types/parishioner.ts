@@ -160,6 +160,13 @@ export type PaginateResult<T> = {
   nextPage: number | null;
 };
 
+export interface PaginateOptions {
+  page?: number;
+  limit?: number;
+  sort?: string | any;
+  pagination?: boolean;
+}
+
 export interface ReceiptItem {
   id: string;
   receiptId: string;
