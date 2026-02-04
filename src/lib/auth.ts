@@ -26,6 +26,10 @@ const UserStates = {
     route: "/priest",
     loginPathName: "leader",
   },
+  "parish-youth": {
+    route: "/parish-youth",
+    loginPathName: "leader",
+  },
 };
 export const { handlers, signIn, signOut, auth } = NextAuth({
   providers: [
@@ -41,7 +45,7 @@ export const { handlers, signIn, signOut, auth } = NextAuth({
 
         if (credentials.user && credentials.tokenData) {
           const user = JSON.parse(credentials.user as string);
-          console.log("User: ", user);
+          // console.log("User: ", user);
           const tokenData = JSON.parse(credentials.tokenData as string);
           const userType = JSON.parse(credentials.userType as string);
           return { ...user, tokenData, userType };

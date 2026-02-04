@@ -38,7 +38,7 @@ const Layout = ({ children }: Readonly<Props>) => {
   if (status === "loading") return <DataFetchSpinner />;
 
   return (
-    <div className="flex h-screen bg-gray-50 overflow-hidden font-montserrat">
+    <div className="flex bg-gray-50 h-screen overflow-hidden font-montserrat">
       {/* Sidebar - Desktop */}
       <div className="hidden md:block">
         <DashboardSidebar />
@@ -46,7 +46,7 @@ const Layout = ({ children }: Readonly<Props>) => {
 
       {/* Sidebar - Mobile Overlay */}
       {isSidebarOpen && (
-        <div className="fixed inset-0 z-50 flex md:hidden">
+        <div className="md:hidden z-50 fixed inset-0 flex">
           <div
             className="fixed inset-0 bg-black/50"
             onClick={() => setIsSidebarOpen(false)}
@@ -56,7 +56,7 @@ const Layout = ({ children }: Readonly<Props>) => {
       )}
 
       {/* Main Content Area */}
-      <div className="relative flex flex-1 flex-col overflow-y-auto overflow-x-hidden md:ml-64">
+      <div className="relative flex flex-col flex-1 md:ml-64 overflow-x-hidden overflow-y-auto">
         <DashboardHeader onMenuClick={() => setIsSidebarOpen(true)} />
         
         <main className="flex-1 p-4 md:p-8">

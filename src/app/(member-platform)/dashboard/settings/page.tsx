@@ -112,6 +112,12 @@ const SettingsPage = () => {
             </h4>
             <div className="space-y-3">
               <div className="flex justify-between text-sm">
+                <span className="text-gray-500">ID</span>
+                <span className="font-semibold text-primary-700 capitalize">
+                  {session?.user?.id.slice(0, 8)}
+                </span>
+              </div>
+              <div className="flex justify-between text-sm">
                 <span className="text-gray-500">Role</span>
                 <span className="font-semibold text-primary-700 capitalize">
                   {userRole.toLowerCase().replace("_", " ")}

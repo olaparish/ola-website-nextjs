@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 "use client";
 
 import Link from "next/link";
@@ -53,18 +54,22 @@ const DashboardSidebar = () => {
   const userPermissions = session?.user?.permissions || [];
   const userRole = session?.user?.role;
 
+  console.log("Session: ", session);
   const filteredPages = subPages.filter((page) => {
     // Check permissions
-    const hasPermission = page.permission ? ValidateRights([page.permission as string], userPermissions) : true;
-    
+    const hasPermission = page.permission
+      ? ValidateRights([page.permission as string], userPermissions)
+      : true;
+
     // Check roles if specified
     const hasRole = page.roles ? page.roles.includes(userRole as string) : true;
 
+    // console.log("Has has permission: ", hasPermission);
     // Special case: if it has permissions but NO roles specified, it's a staff page.
     // If it has ROLES but NO permission specified, it's a role-only page.
     // If it has BOTH, both must pass.
     // If it has NEITHER, it shows for everyone (like Dashboard).
-    
+
     return hasPermission && hasRole;
   });
 
@@ -74,15 +79,15 @@ const DashboardSidebar = () => {
   };
 
   return (
-    <aside className="fixed left-0 top-0 z-40 h-screen w-64 border-r bg-white transition-transform overflow-y-auto">
-      <div className="flex h-full flex-col px-3 py-4">
-        <Link href="/dashboard" className="mb-10 flex items-center px-2">
+    <aside className="top-0 left-0 z-40 fixed bg-white border-r w-64 h-screen overflow-y-auto transition-transform">
+      <div className="flex flex-col px-3 py-4 h-full">
+        <Link href="/dashboard" className="flex items-center mb-10 px-2">
           <Image
             src="/logo.webp"
             alt="OLA Parish Logo"
             width={150}
             height={60}
-            className="h-10 w-auto"
+            className="w-auto h-10"
           />
         </Link>
 
@@ -96,33 +101,45 @@ const DashboardSidebar = () => {
                 key={page.href}
                 href={page.href}
                 className={cn(
-                  "flex items-center gap-3 rounded-lg px-3 py-2 text-sm font-medium transition-colors",
+                  "flex items-center gap-3 px-3 py-2 rounded-lg font-medium text-sm transition-colors",
                   active
                     ? "bg-secondary-900 text-white"
-                    : "text-gray-600 hover:bg-gray-100 hover:text-gray-900"
+                    : "text-gray-600 hover:bg-gray-100 hover:text-gray-900",
                 )}
               >
-                <Icon className={cn("h-5 w-5", active ? "text-white" : "text-gray-500")} />
+                <Icon
+                  className={cn(
+                    "w-5 h-5",
+                    active ? "text-white" : "text-gray-500",
+                  )}
+                />
                 {page.name}
               </Link>
             );
           })}
         </nav>
 
-        <div className="mt-auto pt-4 border-t space-y-1">
+        <div className="space-y-1 mt-auto pt-4 border-t">
           <Link
             href="/dashboard/settings"
             className={cn(
-              "flex items-center gap-3 rounded-lg px-3 py-2 text-sm font-medium transition-colors",
+              "flex items-center gap-3 px-3 py-2 rounded-lg font-medium text-sm transition-colors",
               isActive("/dashboard/settings")
                 ? "bg-secondary-900 text-white"
-                : "text-gray-600 hover:bg-gray-100 hover:text-gray-900"
+                : "text-gray-600 hover:bg-gray-100 hover:text-gray-900",
             )}
           >
-            <Settings className={cn("h-5 w-5", isActive("/dashboard/settings") ? "text-white" : "text-gray-500")} />
+            <Settings
+              className={cn(
+                "w-5 h-5",
+                isActive("/dashboard/settings")
+                  ? "text-white"
+                  : "text-gray-500",
+              )}
+            />
             Settings
           </Link>
-          <SignoutBtn className="px-3 py-2 text-sm font-medium transition-colors text-gray-600 hover:bg-gray-100 hover:text-gray-900 rounded-lg w-full flex items-center gap-3 font-medium" />
+          <SignoutBtn className="flex items-center gap-3 hover:bg-gray-100 px-3 py-2 rounded-lg w-full font-medium font-medium text-gray-600 hover:text-gray-900 text-sm transition-colors" />
         </div>
       </div>
     </aside>

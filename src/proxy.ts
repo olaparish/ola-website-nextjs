@@ -10,5 +10,6 @@ export const config = {
     "/parish-council-chairman/:path*",
     "/parish-priest/:path*",
     "/priest/:path*",
+    "/parish-youth/:path*",
   ],
 };

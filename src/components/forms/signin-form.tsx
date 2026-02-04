@@ -83,7 +83,7 @@ const SigninForm = ({ type }: Props) => {
           router.push(callbackUrl);
           toast.success("Sign in success");
         } catch (error) {
-          signOut();
+          // signOut();
           throw new Error("User dashboard not implemented");
         }
       } else {

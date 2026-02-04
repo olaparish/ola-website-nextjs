@@ -20,7 +20,7 @@ const Layout = ({
         alt="blessed virgin mary"
         className="top-1/2 -left-23 z-10 absolute opacity-5 w-auto h-auto object-contain -translate-y-1/2"
       />
-      <div className="z-20 absolute w-full h-full">{children}</div>
+      <div className="z-20 absolute px-5 w-full h-full">{children}</div>
     </div>
   );
 };

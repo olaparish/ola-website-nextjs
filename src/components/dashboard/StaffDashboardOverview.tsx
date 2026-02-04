@@ -21,10 +21,13 @@ import {
   Plus
 } from "lucide-react";
 import Link from "next/link";
+import { useSession } from "next-auth/react";
 
 export const StaffDashboardOverview = () => {
+  const { data: session } = useSession();
   const [range, setRange] = useState<RangeOptionId>("current_year");
 
+  const userPermissions = session?.user?.permissions;
   const { data: stats, isLoading: isStatsLoading } = useQuery({
     queryKey: ["stats", range],
     queryFn: () => statsService.get(range),
@@ -38,9 +41,9 @@ export const StaffDashboardOverview = () => {
   return (
     <div className="space-y-8">
       {/* Header Section */}
-      <div className="flex flex-col md:flex-row justify-between md:items-center gap-4">
+      <div className="flex md:flex-row flex-col justify-between md:items-center gap-4">
         <div>
-          <h2 className="text-2xl font-bold text-gray-900">
+          <h2 className="font-bold text-gray-900 text-2xl">
             Dashboard Overview
           </h2>
           <p className="text-gray-500">
@@ -51,7 +54,7 @@ export const StaffDashboardOverview = () => {
           <select
             value={range}
             onChange={(e) => setRange(e.target.value as RangeOptionId)}
-            className="block w-full p-2.5 text-sm text-gray-700 bg-white border rounded-lg shadow-sm focus:ring-secondary-900 focus:border-secondary-900 transition-all"
+            className="block bg-white shadow-sm p-2.5 border focus:border-secondary-900 rounded-lg focus:ring-secondary-900 w-full text-gray-700 text-sm transition-all"
           >
             {rangeOptions.map((option) => (
               <option key={option.id} value={option.id}>
@@ -63,12 +66,12 @@ export const StaffDashboardOverview = () => {
       </div>
 
       {/* Stats Grid */}
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-4">
+      <div className="gap-4 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5">
         {isStatsLoading ? (
           Array.from({ length: 5 }).map((_, i) => (
             <div
               key={i}
-              className="h-32 bg-gray-100 rounded-xl animate-pulse"
+              className="bg-gray-100 rounded-xl h-32 animate-pulse"
             />
           ))
         ) : (
@@ -107,89 +110,91 @@ export const StaffDashboardOverview = () => {
         )}
       </div>
 
-      <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
+      <div className="gap-8 grid grid-cols-1 lg:grid-cols-3">
         {/* Finance Overview */}
-        <div className="lg:col-span-1 space-y-4">
-          <h3 className="text-lg font-bold text-gray-900">Finance Summary</h3>
-          <div className="bg-white border rounded-xl shadow-sm overflow-hidden">
-            <div className="p-6 bg-secondary-900 text-white">
-              <p className="text-sm font-medium text-secondary-100 uppercase tracking-wider">
-                Net Balance
-              </p>
-              <h4 className="text-3xl font-bold mt-1">
-                GHS {stats?.finance.netBalance.toLocaleString() || "0.00"}
-              </h4>
-            </div>
-            <div className="p-6 space-y-6">
-              <div className="flex items-center justify-between">
-                <div className="flex items-center gap-3">
-                  <div className="p-2 bg-green-50 rounded-lg">
-                    <TrendingUp className="w-5 h-5 text-green-600" />
-                  </div>
-                  <div>
-                    <p className="text-sm font-medium text-gray-500">
-                      Total Income
-                    </p>
-                    <p className="text-lg font-bold text-gray-900">
-                      GHS{" "}
-                      {stats?.finance.totalIncome.toLocaleString() || "0.00"}
-                    </p>
-                  </div>
-                </div>
-                <div className="text-right">
-                  <p className="text-xs text-gray-400">Transactions</p>
-                  <p className="text-sm font-semibold">
-                    {stats?.finance.incomeCount || 0}
-                  </p>
-                </div>
+        {userPermissions?.includes("view:finance") && (
+          <div className="space-y-4 lg:col-span-1">
+            <h3 className="font-bold text-gray-900 text-lg">Finance Summary</h3>
+            <div className="bg-white shadow-sm border rounded-xl overflow-hidden">
+              <div className="bg-secondary-900 p-6 text-white">
+                <p className="font-medium text-secondary-100 text-sm uppercase tracking-wider">
+                  Net Balance
+                </p>
+                <h4 className="mt-1 font-bold text-3xl">
+                  GHS {stats?.finance.netBalance.toLocaleString() || "0.00"}
+                </h4>
               </div>
-
-              <div className="pt-6 border-t flex items-center justify-between">
-                <div className="flex items-center gap-3">
-                  <div className="p-2 bg-red-50 rounded-lg">
-                    <TrendingDown className="w-5 h-5 text-red-600" />
+              <div className="space-y-6 p-6">
+                <div className="flex justify-between items-center">
+                  <div className="flex items-center gap-3">
+                    <div className="bg-green-50 p-2 rounded-lg">
+                      <TrendingUp className="w-5 h-5 text-green-600" />
+                    </div>
+                    <div>
+                      <p className="font-medium text-gray-500 text-sm">
+                        Total Income
+                      </p>
+                      <p className="font-bold text-gray-900 text-lg">
+                        GHS{" "}
+                        {stats?.finance.totalIncome.toLocaleString() || "0.00"}
+                      </p>
+                    </div>
                   </div>
-                  <div>
-                    <p className="text-sm font-medium text-gray-500">
-                      Total Expenditure
-                    </p>
-                    <p className="text-lg font-bold text-gray-900">
-                      GHS{" "}
-                      {stats?.finance.totalExpenditure.toLocaleString() ||
-                        "0.00"}
+                  <div className="text-right">
+                    <p className="text-gray-400 text-xs">Transactions</p>
+                    <p className="font-semibold text-sm">
+                      {stats?.finance.incomeCount || 0}
                     </p>
                   </div>
                 </div>
-                <div className="text-right">
-                  <p className="text-xs text-gray-400">Transactions</p>
-                  <p className="text-sm font-semibold">
-                    {stats?.finance.expenditureCount || 0}
-                  </p>
+
+                <div className="flex justify-between items-center pt-6 border-t">
+                  <div className="flex items-center gap-3">
+                    <div className="bg-red-50 p-2 rounded-lg">
+                      <TrendingDown className="w-5 h-5 text-red-600" />
+                    </div>
+                    <div>
+                      <p className="font-medium text-gray-500 text-sm">
+                        Total Expenditure
+                      </p>
+                      <p className="font-bold text-gray-900 text-lg">
+                        GHS{" "}
+                        {stats?.finance.totalExpenditure.toLocaleString() ||
+                          "0.00"}
+                      </p>
+                    </div>
+                  </div>
+                  <div className="text-right">
+                    <p className="text-gray-400 text-xs">Transactions</p>
+                    <p className="font-semibold text-sm">
+                      {stats?.finance.expenditureCount || 0}
+                    </p>
+                  </div>
                 </div>
               </div>
             </div>
           </div>
-        </div>
+        )}
 
         {/* Recent Parishioners */}
-        <div className="lg:col-span-2 space-y-4">
-          <div className="flex items-center justify-between">
-            <h3 className="text-lg font-bold text-gray-900">
+        <div className="space-y-4 lg:col-span-2">
+          <div className="flex justify-between items-center">
+            <h3 className="font-bold text-gray-900 text-lg">
               Recent Enrollments
             </h3>
             <Link
               href="/dashboard/parishioners"
-              className="text-sm font-medium text-primary-900 hover:text-secondary-900 flex items-center gap-1 transition-colors"
+              className="flex items-center gap-1 font-medium text-primary-900 hover:text-secondary-900 text-sm transition-colors"
             >
               View all <ChevronRight className="w-4 h-4" />
             </Link>
           </div>
-          <div className="bg-white border rounded-xl shadow-sm overflow-hidden">
+          <div className="bg-white shadow-sm border rounded-xl overflow-hidden">
             {isParishionersLoading ? (
               Array.from({ length: 5 }).map((_, i) => (
                 <div
                   key={i}
-                  className="h-16 bg-gray-50 border-b animate-pulse"
+                  className="bg-gray-50 border-b h-16 animate-pulse"
                 />
               ))
             ) : (
@@ -198,10 +203,10 @@ export const StaffDashboardOverview = () => {
                   <Link
                     key={p.id}
                     href={`/dashboard/parishioners/${p.id}`}
-                    className="group flex items-center justify-between p-4 hover:bg-gray-50 transition-colors"
+                    className="group flex justify-between items-center hover:bg-gray-50 p-4 transition-colors"
                   >
                     <div className="flex items-center gap-4">
-                      <div className="w-10 h-10 rounded-full bg-primary-100 flex items-center justify-center text-primary-900 font-bold">
+                      <div className="flex justify-center items-center bg-primary-100 rounded-full w-10 h-10 font-bold text-primary-900">
                         {p.firstName.charAt(0)}
                         {p.lastName.charAt(0)}
                       </div>
@@ -210,7 +215,7 @@ export const StaffDashboardOverview = () => {
                           {p.firstName} {p.otherNames ? `${p.otherNames} ` : ""}
                           {p.lastName}
                         </p>
-                        <p className="text-xs text-gray-500">
+                        <p className="text-gray-500 text-xs">
                           Member since{" "}
                           {new Date(p.createdAt).toLocaleDateString()}
                         </p>
@@ -218,10 +223,10 @@ export const StaffDashboardOverview = () => {
                     </div>
                     <div className="flex items-center gap-4">
                       <div className="hidden sm:block text-right">
-                        <p className="text-sm font-medium text-gray-700">
+                        <p className="font-medium text-gray-700 text-sm">
                           {p.userData.occupation}
                         </p>
-                        <p className="text-xs text-gray-400">
+                        <p className="text-gray-400 text-xs">
                           {p.userData.residentialAddress}
                         </p>
                       </div>
@@ -230,7 +235,7 @@ export const StaffDashboardOverview = () => {
                   </Link>
                 ))}
                 {(!parishioners || parishioners.docs.length === 0) && (
-                  <div className="p-8 text-center text-gray-500">
+                  <div className="p-8 text-gray-500 text-center">
                     No recent enrollments found.
                   </div>
                 )}
@@ -242,44 +247,54 @@ export const StaffDashboardOverview = () => {
 
       {/* Quick Actions */}
       <div className="space-y-4">
-        <h3 className="text-lg font-bold text-gray-900">Quick Actions</h3>
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+        <h3 className="font-bold text-gray-900 text-lg">Quick Actions</h3>
+        <div className="gap-4 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4">
           <Link
             href="/new-parishioner"
-            className="group flex items-center gap-4 p-4 bg-white border rounded-xl shadow-sm hover:border-primary-900 transition-all"
+            className="group flex items-center gap-4 bg-white shadow-sm p-4 border hover:border-primary-900 rounded-xl transition-all"
           >
-            <div className="p-3 bg-blue-50 text-blue-600 rounded-lg group-hover:bg-primary-900 group-hover:text-white transition-all">
+            <div className="bg-blue-50 group-hover:bg-primary-900 p-3 rounded-lg text-blue-600 group-hover:text-white transition-all">
               <Plus className="w-6 h-6" />
             </div>
             <span className="font-semibold text-gray-700">Add Parishioner</span>
           </Link>
-          <Link
-            href="/dashboard/parishioners"
-            className="group flex items-center gap-4 p-4 bg-white border rounded-xl shadow-sm hover:border-primary-900 transition-all"
-          >
-            <div className="p-3 bg-purple-50 text-purple-600 rounded-lg group-hover:bg-primary-900 group-hover:text-white transition-all">
-              <Users className="w-6 h-6" />
-            </div>
-            <span className="font-semibold text-gray-700">Manage Members</span>
-          </Link>
-          <Link
-            href="/dashboard/payments"
-            className="group flex items-center gap-4 p-4 bg-white border rounded-xl shadow-sm hover:border-primary-900 transition-all"
-          >
-            <div className="p-3 bg-green-50 text-green-600 rounded-lg group-hover:bg-primary-900 group-hover:text-white transition-all">
-              <Wallet className="w-6 h-6" />
-            </div>
-            <span className="font-semibold text-gray-700">View Payments</span>
-          </Link>
-          <Link
-            href="/dashboard/baptisms"
-            className="group flex items-center gap-4 p-4 bg-white border rounded-xl shadow-sm hover:border-primary-900 transition-all"
-          >
-            <div className="p-3 bg-cyan-50 text-cyan-600 rounded-lg group-hover:bg-primary-900 group-hover:text-white transition-all">
-              <Droplets className="w-6 h-6" />
-            </div>
-            <span className="font-semibold text-gray-700">Baptism Records</span>
-          </Link>
+          {userPermissions?.includes("get:parishioner") && (
+            <Link
+              href="/dashboard/parishioners"
+              className="group flex items-center gap-4 bg-white shadow-sm p-4 border hover:border-primary-900 rounded-xl transition-all"
+            >
+              <div className="bg-purple-50 group-hover:bg-primary-900 p-3 rounded-lg text-purple-600 group-hover:text-white transition-all">
+                <Users className="w-6 h-6" />
+              </div>
+              <span className="font-semibold text-gray-700">
+                Manage Members
+              </span>
+            </Link>
+          )}
+          {userPermissions?.includes("view:finance") && (
+            <Link
+              href="/dashboard/payments"
+              className="group flex items-center gap-4 bg-white shadow-sm p-4 border hover:border-primary-900 rounded-xl transition-all"
+            >
+              <div className="bg-green-50 group-hover:bg-primary-900 p-3 rounded-lg text-green-600 group-hover:text-white transition-all">
+                <Wallet className="w-6 h-6" />
+              </div>
+              <span className="font-semibold text-gray-700">View Payments</span>
+            </Link>
+          )}
+          {userPermissions?.includes("get:baptism") && (
+            <Link
+              href="/dashboard/baptisms"
+              className="group flex items-center gap-4 bg-white shadow-sm p-4 border hover:border-primary-900 rounded-xl transition-all"
+            >
+              <div className="bg-cyan-50 group-hover:bg-primary-900 p-3 rounded-lg text-cyan-600 group-hover:text-white transition-all">
+                <Droplets className="w-6 h-6" />
+              </div>
+              <span className="font-semibold text-gray-700">
+                Baptism Records
+              </span>
+            </Link>
+          )}
         </div>
       </div>
     </div>

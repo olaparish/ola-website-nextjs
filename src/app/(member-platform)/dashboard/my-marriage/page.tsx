@@ -18,6 +18,7 @@ import { MARITAL_STATUS_OBJ } from "@/app/(member-platform)/new-parishioner/form
 import { MaritalStatusSchema } from "@/lib/validations.z";
 import { Label } from "@/components/ui/label";
 import { Switch } from "@/components/ui/switch";
+import { cleanObject } from "@/utils/cleanObject";
 
 const marriageSchema = z.object({
   maritalStatus: MaritalStatusSchema.optional(),
@@ -65,13 +66,18 @@ export default function MyMarriagePage() {
 
   const updateMutation = useMutation({
     mutationFn: async (data: MarriageFormValues) => {
+    console.log("Here: I am submitting", user);
+
       if (!user?.id) throw new Error("User ID not found");
+    console.log("Here 2: I am submitting", data);
+
       // Map back to string for backend if needed, but usually the service handles DTO
-      const submitData = {
-        ...data,
-        spouseIsParishioner: data.spouseIsParishioner ? "1" : "0",
-      };
-      return parishionerService.update(user.id, submitData as any);
+      console.log("I am here: ", data);
+      // const submitData = {
+      //   ...data,
+      //   spouseIsParishioner: data.spouseIsParishioner ? "1" : "0",
+      // };
+      return parishionerService.update(user.id, data as any);
     },
     onSuccess: (updatedData) => {
       setAll(updatedData);
@@ -85,7 +91,9 @@ export default function MyMarriagePage() {
   });
 
   const onSubmit = (data: MarriageFormValues) => {
-    updateMutation.mutate(data);
+    const parsed = cleanObject(data);
+
+    updateMutation.mutate(parsed);
   };
 
   const renderField = (label: string, value: string | undefined, Icon: any) => (
@@ -99,6 +107,8 @@ export default function MyMarriagePage() {
       </div>
     </div>
   );
+
+  console.log("Errors: ", errors);
 
   return (
     <div className="mx-auto py-8 max-w-4xl">
